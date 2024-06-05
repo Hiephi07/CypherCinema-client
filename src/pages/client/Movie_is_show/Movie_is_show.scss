@@ -1,0 +1,245 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondarfy: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
+  }
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+  
+  .Container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0; /* Optional: Add padding to the container */
+  }
+  
+  .carl {
+    margin: 0 10px; /* Add margin to each item */
+  }
+  
+  .carl img {
+    width: 100%; /* Ensure images fit their containers */
+    display: block; /* Remove any default inline spacing */
+  }
+  .btn-muave {
+    border-radius: 4px;
+    transition: all 0.3s ease-out;
+    background: linear-gradient(180deg, #50B648 0%, #90C63F 59.9%, #B2EC0F 99.48%);
+    &:hover {
+        background: linear-gradient(0deg, #50B648 0%, #90C63F 59.9%, #B2EC0F 99.48%);
+
+    }
+    margin-bottom: 10px;
+}
+.btn-custom-green {
+  background-color: rgb(0, 185, 18); /* Màu nền xanh */
+  color: #ffffff; /* Màu chữ trắng */
+  padding: 0.5rem 1rem; /* Khoảng cách giữa nội dung và viền (padding) */
+  border-radius: 0.375rem; /* Góc bo viền */
+  border: none; /* Loại bỏ viền */
+  cursor: pointer; /* Con trỏ chuột thành dạng con trỏ */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+  margin-left: 10px; /* Khoảng cách với phần tử bên trái */
+}
+
+
+.btn-custom-green:hover {
+  background-color: rgb(0, 150, 15); /* Darker green on hover */
+ 
+}
+.nd b{
+  font-size: 23px;
+ color: #fff;
+ 
+}
+.nd h2{
+  scrollbar-color:  #454D6A;
+  font-size: 15px;
+  color:#A9B7E9 ;
+ padding-bottom: 10px;
+ padding-top: 5px;
+}
+.btn-nd{
+  margin-top: 20px;
+  margin-bottom: 15px;
+ width: auto;
+}
+.nd b{
+  margin-top: 10px;
+}
+.nd h2{
+  margin-bottom: 5px;
+}
+.btn-t18{
+  margin-right: 15px;
+  
+}
+.tieude{
+  text-align: center;
+  margin-top: 35px;
+}
+#btn-button{
+  max-width: 30px;
+  max-height: 30px;
+  font-size: 20px;
+}
+.btn-phude{
+  max-height: 30px;
+  font-size: 15px;
+  color: #fff;
+  
+  
+ 
+}
+
+.carl{
+  padding-left: 30px;
+}
+.carl img{
+  border-radius: 20px;
+  margin-top: 20px;
+}
+.slider-container
+{
+  background: #454D6A;
+}
+.tieude{
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+.btn-icon {
+  margin-left: 10px;
+text-align: center;
+}
+svg{
+  margin-top: -8px;
+}
+.content-nd{
+  text-align: left;
+}
+.slider-container .slick-arrow {
+  display: none !important;
+}
+
+.slider-container:hover .slick-arrow {
+  display: block !important;
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0px; /* Điều chỉnh kích thước nếu cần */
+  height: 0px; /* Điều chỉnh kích thước nếu cần */
+  z-index: 1;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  
+  
+  
+}
+.btn-thongtin{
+  border-radius: 4px;
+    transition: all 0.3s ease-out;
+    background: linear-gradient(180deg, #50B648 0%, #90C63F 59.9%, #B2EC0F 99.48%);
+    &:hover {
+        background: linear-gradient(0deg, #50B648 0%, #90C63F 59.9%, #B2EC0F 99.48%);
+
+    }
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.slick-prev {
+  left: 0px; /* Điều chỉnh vị trí nút "Previous" */
+}
+
+.slick-next {
+  right: 20px; /* Điều chỉnh vị trí nút "Next" */
+}
+
+/* Màu của mũi tên */
+.slick-prev:before,
+.slick-next:before {
+  color: #006400; /* Màu xanh lá cây đậm */
+}
+
+.slick-prev:before {
+  content: '\2190'; /* Ký hiệu mũi tên trái */
+}
+
+.slick-next:before {
+  content: '\2192'; /* Ký hiệu mũi tên phải */
+}
