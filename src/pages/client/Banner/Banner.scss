@@ -1,0 +1,16 @@
+/* CSS */
+.btn-submit-banner {
+    border: 2px solid green;
+    border-radius: 7px;
+  }
+  
+  .btn-submit-banner button {
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-submit-banner button:hover {
+    background-color: green;
+  }
+  
