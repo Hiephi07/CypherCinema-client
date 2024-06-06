@@ -1,12 +1,15 @@
 import './App.scss'
-import Test from './pages/Test'
 import './assets/fonts/fonts.scss'
+import Header from './components/client/header/Header'
+
+
 function App() {
 
   return (
     <>
-      <h4>Hello world</h4>
-      <Test></Test>
+      <Header />
+      {/* <Test></Test> */}
+
     </>
   )
 }

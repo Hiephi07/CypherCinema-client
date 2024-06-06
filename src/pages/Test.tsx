@@ -10,10 +10,11 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
+
 const Test = () => {
   return (
-    <div>
-      <Card>
+    <div >
+      <Card >
         <CardHeader>
         <CardTitle className="font-black text-23.04px">Đăng ký</CardTitle>
           <CardDescription>
@@ -31,7 +32,7 @@ const Test = () => {
         </div>
         </CardContent>
         <CardFooter>
-          <Button>Click me</Button>
+          <Button>Thêm</Button>
         </CardFooter>
       </Card>
     </div>

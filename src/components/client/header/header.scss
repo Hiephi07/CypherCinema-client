@@ -1,0 +1,26 @@
+header {
+    background: linear-gradient(180deg, rgba(106, 107, 108, 0.3) 0%, rgba(144, 145, 146, 0.3) 59.9%, rgba(216, 216, 216, 0.3) 99.48%);
+
+    nav {
+        margin: 0 auto;
+        max-width: 1328px;
+        
+        .box-right {
+            // min-width: 456px;
+            .ButtonGradientReversed {
+                border-radius: 4px;
+                transition: all 0.3s ease-out;
+                background: linear-gradient(180deg, #50B648 0%, #90C63F 59.9%, #B2EC0F 99.48%);
+                &:hover {
+                    background: linear-gradient(0deg, #50B648 0%, #90C63F 59.9%, #B2EC0F 99.48%);
+            
+                }
+            }
+        
+        }
+        
+    }
+}
+
+
+
