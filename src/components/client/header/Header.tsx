@@ -1,4 +1,4 @@
-import "./header.scss";
+import styles from "./header.module.scss";
 import logo from "../../../assets/images/Logo/logo.png";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,7 @@ const Header = () => {
   }
   return (
     <header>
-      <nav className="flex justify-between items-center h-24 px-3.5 ">
+      <nav className="flex justify-between items-center h-24 px-3.5">
         {/*Section box letf */}
         <div className="box-left flex justify-start items-center">
           <div className="w-16 h-16 mr-8 bg-white rounded-full">
@@ -208,7 +208,8 @@ const Header = () => {
 
           {/* Đặt vé */}
           <Link
-            className="  mx-2 ButtonGradientReversed font-black text-15.64px px-5 py-2 text-#fff "
+            // className="mx-2 font-black text-15.64px px-5 py-2 text-#fff"
+            className={styles.ButtonGradientReversed }
             to={``}
           >
             <span className="flex items-center">
