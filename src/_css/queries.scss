@@ -1,0 +1,30 @@
+// Keep these in sync with the breakpoints exported in '../cssVariables.js'
+
+$breakpoint-xs-width: 400px;
+$breakpoint-s-width: 768px;
+$breakpoint-m-width: 1024px;
+$breakpoint-l-width: 1440px;
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-xs-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$breakpoint-s-width}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: #{$breakpoint-m-width}) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (max-width: #{$breakpoint-l-width}) {
+    @content;
+  }
+}

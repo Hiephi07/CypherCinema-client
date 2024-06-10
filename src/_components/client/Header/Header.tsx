@@ -1,12 +1,12 @@
-import styles from "./header.module.scss";
-import logo from "../../../assets/images/Logo/logo.png";
+import styles from "./Header.module.scss";
+// import logo from "../../../assets/images/Logo/logo.png";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/_components/ui/button";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card";
+} from "@/_components/ui/hover-card";
 import { useState } from "react";
 import { HiMiniTicket } from "react-icons/hi2";
 import { FaChevronDown } from "react-icons/fa";
@@ -23,26 +23,41 @@ const Header = () => {
         {/*Section box letf */}
         <div className="box-left flex justify-start items-center">
           <div className="w-16 h-16 mr-8 bg-white rounded-full">
-            <img src={logo} alt="" />
+            <img
+              src={"assets/images/Logo/logo.png"}
+              alt=""
+            />
           </div>
           <ul className="flex text-14.4px text-#ffc items-center ">
             <li className="first:mr-1.5">
-              <Link className="hover:text-#fff  py-2.5 font-black" to={``}>
+              <Link
+                className="hover:text-#fff  py-2.5 font-black"
+                to={``}
+              >
                 Lịch chiếu
               </Link>
             </li>
             <li className="mx-1.5">
-              <Link className="hover:text-#fff  py-2.5 font-black" to={``}>
+              <Link
+                className="hover:text-#fff  py-2.5 font-black"
+                to={``}
+              >
                 Hệ thống rạp
               </Link>
             </li>
             <li className="mx-1.5">
-              <Link className="hover:text-#fff py-2.5 font-black " to={``}>
+              <Link
+                className="hover:text-#fff py-2.5 font-black "
+                to={``}
+              >
                 Khuyến mãi/Sự kiện
               </Link>
             </li>
             <li className="mx-1.5">
-              <Link className="hover:text-#fff py-2.5 font-black" to={``}>
+              <Link
+                className="hover:text-#fff py-2.5 font-black"
+                to={``}
+              >
                 Cửa hàng
               </Link>
             </li>
@@ -109,7 +124,9 @@ const Header = () => {
                           ? "bg-#72be43 :text-#ffc"
                           : "hover:bg-#2c2c2c4a hover:text-#72be43"
                       } font-normal  block py-2.5 px-5 `}
-                      onClick={() => handleOptionClick("Hà Nội")}
+                      onClick={() =>
+                        handleOptionClick("Hà Nội")
+                      }
                     >
                       Hà Nội
                     </li>
@@ -119,7 +136,9 @@ const Header = () => {
                           ? "bg-#72be43 :text-#ffc"
                           : "hover:bg-#2c2c2c4a hover:text-#72be43"
                       } font-normal  block py-2.5 px-5 `}
-                      onClick={() => handleOptionClick("TP.Hồ Chí Minh")}
+                      onClick={() =>
+                        handleOptionClick("TP.Hồ Chí Minh")
+                      }
                     >
                       TP.Hồ Chí Minh
                     </li>
@@ -129,7 +148,9 @@ const Header = () => {
                           ? "bg-#72be43 :text-#ffc"
                           : "hover:bg-#2c2c2c4a hover:text-#72be43"
                       } font-normal  block py-2.5 px-5 `}
-                      onClick={() => handleOptionClick("TP.Huế")}
+                      onClick={() =>
+                        handleOptionClick("TP.Huế")
+                      }
                     >
                       TP.Huế
                     </li>
@@ -139,7 +160,9 @@ const Header = () => {
                           ? "bg-#72be43 :text-#ffc"
                           : "hover:bg-#2c2c2c4a hover:text-#72be43"
                       } font-normal  block py-2.5 px-5 `}
-                      onClick={() => handleOptionClick("Đồng Nai")}
+                      onClick={() =>
+                        handleOptionClick("Đồng Nai")
+                      }
                     >
                       Đồng Nai
                     </li>
@@ -167,7 +190,10 @@ const Header = () => {
             >
               <form className="pt-2.5 px-6 mb-4">
                 <div className="grid w-full max-w-sm items-center gap-1.5 mb-5">
-                  <label className="text-#fff mb-2 text-14.4px" htmlFor="email">
+                  <label
+                    className="text-#fff mb-2 text-14.4px"
+                    htmlFor="email"
+                  >
                     Email *
                   </label>
                   <input
@@ -178,7 +204,10 @@ const Header = () => {
                   />
                 </div>
                 <div className="grid w-full max-w-sm items-center gap-1.5 mb-5">
-                  <label className="text-#fff mb-2 text-14.4px" htmlFor="email">
+                  <label
+                    className="text-#fff mb-2 text-14.4px"
+                    htmlFor="email"
+                  >
                     Nhật khẩu *
                   </label>
                   <input
@@ -209,11 +238,12 @@ const Header = () => {
           {/* Đặt vé */}
           <Link
             // className="mx-2 font-black text-15.64px px-5 py-2 text-#fff"
-            className={styles.ButtonGradientReversed }
+            className={styles.ButtonGradientReversed}
             to={``}
           >
             <span className="flex items-center">
-              <HiMiniTicket className="mr-2 size-6 " /> MUA VÉ
+              <HiMiniTicket className="mr-2 size-6 " /> MUA
+              VÉ
             </span>
           </Link>
         </div>

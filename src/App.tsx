@@ -1,20 +1,21 @@
-import './App.scss'
-import './assets/fonts/fonts.scss'
-import Header from './components/client/header/Header'
-import Movie_is_showing from './pages/client/Movie_is_show/Movie_is_showing'
-
+import { Routes, Route } from "react-router-dom";
+import "./App.scss";
+import "../public/assets/fonts/fonts.scss";
+import HomePage from "./pages/client/home-pages/HomePage";
+import LoginPage from "./pages/client/login/LoginPage";
 
 function App() {
-
   return (
     <>
-      <Header />
-      {/* <Test></Test> */}
-      <Movie_is_showing />
-
+      <Routes>
+        <Route path="/">
+          <Route index element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element />
+        </Route>
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
-
+export default App;
