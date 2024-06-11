@@ -1,19 +1,19 @@
 // Font for title small and description
 @font-face {
-    font-family: 'Light';
-    src: url('./BeVietnamPro-Light.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Light";
+  src: url("./BeVietnamPro-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 // Font for title
 @font-face {
-    font-family: 'Black';
-    src: url('./BeVietnamPro-Black.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+  font-family: "Black";
+  src: url("./BeVietnamPro-Black.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
 
 * {
-    font-family: 'Light', sans-serif;
+  font-family: "Light", sans-serif;
 }
