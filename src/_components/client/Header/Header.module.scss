@@ -7,10 +7,11 @@ header {
     rgba(216, 216, 216, 0.3) 99.48%
   );
 
-  nav {
-    margin: 0 auto;
-    max-width: 1328px;
-  }
+    nav {
+        margin: 0 auto;
+        max-width: 1328px;
+    }
+    
 }
 
 @keyframes stuckMoveDown {
@@ -34,7 +35,6 @@ header {
   height: 60px;
   align-items: center;
 }
-
 .ButtonGradientReversed {
   border-radius: 4px;
   transition: all 0.3s ease-out;
