@@ -13,3 +13,7 @@ export const getAllMovies = async (
     return [];
   }
 };
+
+export const getMovieById = () => {};
+export const updateMovie = () => {};
+export const deleteMovie = () => {};
