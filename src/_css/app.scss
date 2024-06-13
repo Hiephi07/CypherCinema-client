@@ -1,6 +1,7 @@
 @use "./queries.scss" as *;
 @use "./color.scss" as *;
 @use "./type.scss" as *;
+@use "./fonts.scss" as *;
 @import "./theme.scss";
 
 :root {
@@ -124,4 +125,22 @@ a {
 
 svg {
   vertical-align: middle;
+}
+
+.btn-primary {
+  @extend %btn-primary;
+}
+
+.tag {
+  @extend %tag;
+}
+.age-limit {
+  @extend %age-limit;
+}
+.format {
+  @extend %format;
+}
+
+.active {
+  @extend %active;
 }

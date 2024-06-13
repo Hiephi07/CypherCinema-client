@@ -1,0 +1,143 @@
+.col-inner {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 1 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 100%;
+}
+.buttons {
+  background-color: linear-gradient(
+    180deg,
+    #50b648 0%,
+    #90c63f 59.9%,
+    #b2ec0f 99.48%
+  );
+  display: flex;
+  flex-direction: row;
+  justify-content: space-start;
+  align-items: center;
+  gap: 8px;
+}
+.meta {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: var(--theme-text);
+  span {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    font-size: 0.7em;
+    border-radius: 4px;
+    text-align: center;
+    padding: 0 4px;
+    margin: 1px 2px;
+  }
+
+  .age-limit {
+    vertical-align: middle;
+    min-width: 28px;
+    font-weight: 700;
+    background: rgb(238, 0, 0);
+    background: -moz-linear-gradient(
+      0deg,
+      rgba(238, 0, 0, 1) 0%,
+      rgba(198, 63, 63, 1) 50%,
+      rgba(182, 92, 72, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(238, 0, 0, 1) 0%,
+      rgba(198, 63, 63, 1) 50%,
+      rgba(182, 92, 72, 1) 100%
+    );
+    background: linear-gradient(
+      0deg,
+      rgba(238, 0, 0, 1) 0%,
+      rgba(198, 63, 63, 1) 50%,
+      rgba(182, 92, 72, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ee0000",endColorstr="#b65c48",GradientType=1);
+  }
+
+  .type {
+    text-transform: uppercase;
+    border: 1px solid #ffd600;
+    font-size: 0.6em;
+  }
+  .format {
+    background: rgb(0, 185, 18);
+    background: -moz-linear-gradient(
+      0deg,
+      rgba(0, 185, 18, 1) 0%,
+      rgba(80, 182, 72, 1) 50%
+    );
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(0, 185, 18, 1) 0%,
+      rgba(80, 182, 72, 1) 50%
+    );
+    background: linear-gradient(
+      0deg,
+      rgba(0, 185, 18, 1) 0%,
+      rgba(80, 182, 72, 1) 50%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00b912",endColorstr="#50b648",GradientType=1);
+  }
+}
+.title {
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-size: 1em;
+  height: 24px;
+}
+
+.cats {
+  margin-bottom: 20px;
+  font-size: 0.8em;
+  color: #ccc;
+  height: 21px;
+  overflow: hidden;
+}
+
+.ticket-button {
+  margin: 0 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+  color: var(--theme-text);
+  font-weight: bolder;
+
+  span {
+    font-size: 0.8em;
+  }
+  .logo {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url("/assets/images/Icons/iconticket.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+  }
+}
+.infoBtn {
+  border: 1px solid #90c63f;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: #90c63f;
+    transition-duration: 200ms;
+  }
+}
+.info {
+  background: transparent;
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin: 3px 0;
+}
