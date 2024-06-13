@@ -10,8 +10,6 @@ const HomePage = () => {
       <ModalMovieProvider>
         <UpComingMovies />
       </ModalMovieProvider>
-      {/* <Header /> */}
-      <UpComingMovies />
     </>
   );
 };
