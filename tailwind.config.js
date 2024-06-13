@@ -20,6 +20,7 @@ module.exports = {
       black: ["Black", "sans-serif"],
     },
     fontSize: {
+      "10px": "0.625rem",
       "12.8px": "0.8rem",
       "14.4px": "0.9rem",
       "15.52px": "0.97rem",
@@ -33,6 +34,8 @@ module.exports = {
     },
     extend: {
       colors: {
+        '#151720': '#151720',
+        '#090b13': '#090b13',
         '#ffc':'#ffffffcc',
         '#fff': '#fff',
         '#90C63F': '#90C63F',

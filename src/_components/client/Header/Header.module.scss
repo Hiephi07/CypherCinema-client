@@ -1,3 +1,4 @@
+
 header {
   background: linear-gradient(
     180deg,
@@ -6,14 +7,33 @@ header {
     rgba(216, 216, 216, 0.3) 99.48%
   );
 
-  nav {
-    margin: 0 auto;
-    max-width: 1328px;
-
-    .box-right {
-      // min-width: 456px;
+    nav {
+        margin: 0 auto;
+        max-width: 1328px;
     }
+    
+}
+
+@keyframes stuckMoveDown {
+  0% {
+      transform: translateY(-100%);
   }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+.scrolled {
+  background-color: black; /* Màu nền mới khi header được cuộn xuống */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm shadow để header trở nên nổi bật */
+  animation: stuckMoveDown .6s ease 0s 1 normal none running ;
+  height: 60px;
+  align-items: center;
 }
 .ButtonGradientReversed {
   border-radius: 4px;
