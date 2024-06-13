@@ -275,7 +275,7 @@ const Header = () => {
           <input
             type="checkbox"
             className={styles.input}
-            onChange={(event) => toggleTheme(event)}
+            onChange={toggleTheme}
           />
           <span className={styles.slider} />
         </label>

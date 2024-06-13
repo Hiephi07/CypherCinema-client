@@ -81,6 +81,7 @@
   --theme-elevation-950: var(--color-base-950);
   --theme-elevation-1000: var(--color-base-1000);
 
+  --theme-dot: var(--color-base-1000);
   --theme-bg: var(--theme-elevation-0);
   --theme-input-bg: var(--theme-elevation-50);
   --theme-text: var(--theme-elevation-750);
@@ -120,7 +121,7 @@
 [data-theme="dark"] {
   --theme-elevation-0: var(--color-base-1000);
   --theme-elevation-50: var(--color-base-950);
-  --theme-elevation-100: var(--color-base-900);
+  --theme-elevation-100: var(--bg-color);
   --theme-elevation-150: var(--color-base-850);
   --theme-elevation-200: var(--color-base-800);
   --theme-elevation-250: var(--color-base-750);
@@ -199,6 +200,8 @@
   --theme-error-850: var(--color-error-150);
   --theme-error-900: var(--color-error-100);
   --theme-error-950: var(--color-error-50);
+
+  --theme-dot: var(--color-white-500-40);
 
   --theme-bg: var(--theme-elevation-100);
   --theme-text: var(--theme-elevation-900);

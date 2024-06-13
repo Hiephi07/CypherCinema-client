@@ -4,7 +4,7 @@ export const ThemeContext = React.createContext("light");
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
   document.documentElement.dataset.theme = theme;
-  const toggleTheme = (event: Event) => {
+  const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     if (
       document.documentElement.dataset.theme !== newTheme
