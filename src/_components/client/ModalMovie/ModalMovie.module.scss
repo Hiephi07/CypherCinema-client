@@ -1,6 +1,7 @@
 .modal-movie {
-  position: absolute;
+  position: fixed;
   color: var(--theme-text);
+  overflow: hidden;
   background-color: var(--theme-bg);
   top: 10%;
   left: 10%;

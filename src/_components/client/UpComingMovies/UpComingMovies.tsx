@@ -30,7 +30,7 @@ const UpComingMovies = () => {
 
   return (
     <>
-      <section className="flex flex-col   justify-center items-center max-w-[1330px] mx-[15px] ">
+      <section className="flex flex-col   justify-center items-center max-w-[1330px] mx-[15px] relative">
         <h2 className="text-[var(--theme-text)] font-700 text-[1.6em] my-[20px]">
           Phim đang chiếu
         </h2>
@@ -68,37 +68,37 @@ const UpComingMovies = () => {
             </ol>
           )}
         </div>
+        <button
+          className="absolute z-5 left-[8px] top-[300px] "
+          type="button"
+          aria-label="Previous"
+          onClick={() => slide(1)}
+        >
+          <img
+            src="/assets/images/Icons/left-arrow.svg"
+            alt=""
+            style={{
+              width: "50px",
+              height: "50px",
+            }}
+          />
+        </button>
+        <button
+          className="absolute z-5 right-[0px] top-[300px] "
+          type="button"
+          aria-label="Next"
+          onClick={() => slide(-1)}
+        >
+          <img
+            src="/assets/images/Icons/right-arrow.svg"
+            alt=""
+            style={{
+              width: "50px",
+              height: "50px",
+            }}
+          />
+        </button>
       </section>{" "}
-      <button
-        className="absolute z-5 left-[28px] top-[400px] "
-        type="button"
-        aria-label="Previous"
-        onClick={() => slide(1)}
-      >
-        <img
-          src="/assets/images/Icons/left-arrow.svg"
-          alt=""
-          style={{
-            width: "50px",
-            height: "50px",
-          }}
-        />
-      </button>
-      <button
-        className="absolute z-5 right-[28px] top-[400px] "
-        type="button"
-        aria-label="Next"
-        onClick={() => slide(-1)}
-      >
-        <img
-          src="/assets/images/Icons/right-arrow.svg"
-          alt=""
-          style={{
-            width: "50px",
-            height: "50px",
-          }}
-        />
-      </button>
       {isModalOpen && (
         <ModalMovie toggleModal={toggleModal} />
       )}
