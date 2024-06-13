@@ -1,5 +1,6 @@
-
 header {
+  height: 108px;
+  transition: all ease-in-out 0,6;
   background: linear-gradient(
     180deg,
     rgba(106, 107, 108, 0.3) 0%,
@@ -11,7 +12,6 @@ header {
         margin: 0 auto;
         max-width: 1328px;
     }
-    
 }
 
 @keyframes stuckMoveDown {
@@ -34,6 +34,7 @@ header {
   animation: stuckMoveDown .6s ease 0s 1 normal none running ;
   height: 60px;
   align-items: center;
+
 }
 .ButtonGradientReversed {
   border-radius: 4px;

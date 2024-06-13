@@ -1,5 +1,5 @@
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/_components/ui/button';
 import React, { Component } from "react";
 import Slider from "react-slick";
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './Footer.module.scss'
 import { Link } from 'react-router-dom'
-import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa'
 
 
 

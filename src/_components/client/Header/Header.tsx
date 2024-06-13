@@ -1,5 +1,4 @@
 import styles from "./Header.module.scss";
-// import logo from "../../../assets/images/Logo/logo.png";
 import { Link } from "react-router-dom";
 import { Button } from "@/_components/ui/button";
 import {
@@ -53,7 +52,7 @@ const Header = () => {
           <ul className="flex text-12.8px text-#ffc items-center ">
             <li className="first:mr-1.5">
               <Link
-                className="hover:text-#fff  py-2.5 font-black"
+                className={`${scrolled ? 'hover:text-#72be43' : 'hover:text-#fff '} py-2.5 font-black`}
                 to={``}
               >
                 Lịch chiếu
@@ -61,7 +60,7 @@ const Header = () => {
             </li>
             <li className="mx-1.5">
               <Link
-                className="hover:text-#fff  py-2.5 font-black"
+                className={`${scrolled ? 'hover:text-#72be43' : 'hover:text-#fff '} py-2.5 font-black`}
                 to={``}
               >
                 Hệ thống rạp
@@ -69,7 +68,7 @@ const Header = () => {
             </li>
             <li className="mx-1.5">
               <Link
-                className="hover:text-#fff py-2.5 font-black "
+                className={`${scrolled ? 'hover:text-#72be43' : 'hover:text-#fff '} py-2.5 font-black`}
                 to={``}
               >
                 Khuyến mãi/Sự kiện
@@ -77,7 +76,7 @@ const Header = () => {
             </li>
             <li className="mx-1.5">
               <Link
-                className="hover:text-#fff py-2.5 font-black"
+                className={`${scrolled ? 'hover:text-#72be43' : 'hover:text-#fff '} py-2.5 font-black`}
                 to={``}
               >
                 Cửa hàng
@@ -88,7 +87,7 @@ const Header = () => {
                 <HoverCardTrigger asChild>
                   <Button
                     variant={"default"}
-                    className="transition-all duration-300 ease-in-out border-0 text-#ffc hover:text-#fff py-2.5 font-black mx-1.5 bg-transparent m-0 px-0 hover:bg-transparent"
+                    className={`${scrolled ? 'hover:text-#72be43' : 'hover:text-#fff '} transition-all duration-300 ease-in-out border-0 text-#ffc py-2.5 font-black mx-1.5 bg-transparent m-0 px-0 hover:bg-transparent`}
                   >
                     Khác
                   </Button>
@@ -267,8 +266,7 @@ const Header = () => {
               VÉ
             </span>
           </Link>
-        </div>
-      </nav>
+
       {/*toggle theme */}
       <button>
         <label className={styles.switch}>
@@ -299,7 +297,8 @@ const Header = () => {
           <span className={styles.slider} />
         </label>
       </button>
-
+        </div>
+      </nav>
     </header>
   </div>
   );

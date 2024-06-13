@@ -24,10 +24,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./src/*"
+        "./src/*",
+      ],
+      "@@/*": [
+        "./public/*",
       ]
     }
   },
-  "include": ["src"],
+  "include": ["src", "public"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
