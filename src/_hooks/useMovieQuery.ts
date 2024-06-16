@@ -8,6 +8,7 @@ export const useMovieQuery = () => {
   const { data, ...any } = useQuery({
     queryKey: ["MOVIE_KEY"],
     queryFn: async () => {
+      console.log(data);
       return await MovieService.getAll();
     },
   });

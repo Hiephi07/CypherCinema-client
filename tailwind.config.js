@@ -39,6 +39,7 @@ module.exports = {
         '0': '0px',
       },
       colors: {
+        '#1a1a1a': '#1a1a1a',
         '#ccc': '#ccc',
         '#98CF74': '#98CF74',
         '#76777f': '#76777f',

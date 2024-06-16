@@ -1,43 +1,110 @@
-import { Button } from "@/components/ui/button";
-import React, { useContext, useState } from "react";
-import styles from "./UpComingMovies.scss";
+import {
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+// import styles from "./UpComingMovies.scss";
 import { useMovieQuery } from "@/_hooks/useMovieQuery";
 import { motion, useAnimation } from "framer-motion";
 import MovieCard from "../MovieCard/MovieCard";
 import ModalMovie from "../ModalMovie/ModalMovie";
 import { ModalContext } from "@/_context/ModalMovie";
+import ModalConfirm from '@/components/client/ModalConfirm/ModalConfirm';
 
 const UpComingMovies = () => {
   const { data: movies } = useMovieQuery();
+
   const [direction, setDirection] = useState(0);
+  const maxCardSlide = 3;
+
   const { isModalOpen, toggleModal } =
     useContext(ModalContext);
+
+  const [isConfirmModal, setConfirmModal] = useState(false);
+  const toggleConfirmModal = () => {
+    console.log("ok");
+    setConfirmModal(!isConfirmModal);
+  };
+  const control = useAnimation();
+
+  const btnAnimate = {
+    hover: {
+      scale: 1.2,
+      x: 0,
+      opacity: 0.7,
+    },
+    initial: { scale: 1, x: -10, opacity: 0 },
+  };
+
+  const [isHovered, setIsHovered] = useState(false);
 
   const [activeSlide, setActiveSlide] = useState(0);
 
   const slide = (newDirection: number) => {
     const newSlide = activeSlide + newDirection;
+    if (!movies || movies.length === 0) return;
+    if (
+      Math.abs(newSlide) >=
+      movies?.length - maxCardSlide
+    ) {
+      setActiveSlide(0);
+      setDirection(0);
+      control.start({
+        x: `${0}%`,
+      });
+    } else if (newSlide >= 0) {
+      return;
+    } else {
+      setActiveSlide(newSlide);
+
+      setDirection(
+        (prevDirection) => prevDirection + newDirection
+      );
+      control.start({
+        x: `${(direction + newDirection) * 20}%`,
+      });
+    }
+  };
+  const btnDot = (newSlide: number) => {
     setActiveSlide(newSlide);
-    console.log(activeSlide);
-    setDirection(
-      (prevDirection) => prevDirection + newDirection
-    );
-    constrols.start({
-      x: `${(direction + newDirection) * 20}%`,
+    setDirection(newSlide);
+    control.start({
+      x: `${newSlide * 20}%`,
     });
   };
-  const constrols = useAnimation();
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (
+        movies &&
+        Math.abs(activeSlide) >=
+          movies?.length - maxCardSlide
+      ) {
+        setActiveSlide(0);
+        setDirection(0);
+        control.start({
+          x: `${0}%`,
+        });
+      } else slide(-1);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [activeSlide, movies]);
 
   return (
     <>
-      <section className="flex flex-col   justify-center items-center max-w-[1330px] mx-[15px] relative">
+      {/* Up coming movies  */}
+      <section
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="flex flex-col overflow-hidden  justify-center items-center max-w-[1330px] mx-[auto] relative"
+      >
         <h2 className="text-[var(--theme-text)] font-700 text-[1.6em] my-[20px]">
-          Phim đang chiếu
+          Phim sắp chiếu
         </h2>
         <motion.div
-          animate={constrols}
+          animate={control}
           transition={{ duration: 0.5 }}
-          className="block w-full l-0 h-[600px] overflow-hidden"
+          className="block w-full l-0 h-[600px] "
         >
           {movies &&
             movies.map((item, idx) => {
@@ -46,21 +113,24 @@ const UpComingMovies = () => {
                   key={idx}
                   movie={item}
                   number={idx}
+                  toggleConfirm={toggleConfirmModal}
                 />
               );
             })}
         </motion.div>
+        {/* dots start */}
         <div className="mt-[-20px]">
           {movies && (
             <ol className="flex flex-row gap-3 mx-auto ">
               {movies.map((item, idx) => {
                 return (
                   <li
+                    onClick={() => btnDot(-idx)}
                     key={idx}
-                    className={` w-[12px] h-[12px] rounded-[50%] cursor-pointer   opacity-[0.4]  ${
+                    className={` w-[12px] h-[12px] rounded-[50%] cursor-pointer  duration-300 ${
                       -idx === activeSlide
                         ? "active"
-                        : "bg-[var(--theme-dot)]"
+                        : "bg-[var(--theme-dot)] "
                     }`}
                   ></li>
                 );
@@ -68,13 +138,25 @@ const UpComingMovies = () => {
             </ol>
           )}
         </div>
-        <button
-          className="absolute z-5 left-[8px] top-[300px] "
+        {/* dots end */}
+
+        {/* btn control start  */}
+        <motion.button
+          variants={{
+            hover: {
+              background:
+                "linear-gradient(90deg,rgba(26,29,41,1) 0%,rgba(0,0,0,0) 100%)",
+            },
+          }}
+          animate={isHovered ? "hover" : ""}
+          className="absolute z-5 duration-200 left-0 h-[532px]  "
           type="button"
           aria-label="Previous"
           onClick={() => slide(1)}
         >
-          <img
+          <motion.img
+            variants={btnAnimate}
+            animate={isHovered ? "hover" : "initial"}
             src="/assets/images/Icons/left-arrow.svg"
             alt=""
             style={{
@@ -82,14 +164,30 @@ const UpComingMovies = () => {
               height: "50px",
             }}
           />
-        </button>
-        <button
-          className="absolute z-5 right-[0px] top-[300px] "
+        </motion.button>
+        <motion.button
+          variants={{
+            hover: {
+              background:
+                "linear-gradient(270deg, rgba(26, 29, 41, 1) 0%, rgba(0, 0, 0, 0) 100%)",
+            },
+          }}
+          animate={isHovered ? "hover" : ""}
+          className="absolute z-5 right-[0px] h-[532px] "
           type="button"
           aria-label="Next"
           onClick={() => slide(-1)}
         >
-          <img
+          <motion.img
+            variants={{
+              hover: {
+                scale: 1.2,
+                x: 0,
+                opacity: 0.7,
+              },
+              initial: { scale: 1, x: 10, opacity: 0 },
+            }}
+            animate={isHovered ? "hover" : "initial"}
             src="/assets/images/Icons/right-arrow.svg"
             alt=""
             style={{
@@ -97,11 +195,16 @@ const UpComingMovies = () => {
               height: "50px",
             }}
           />
-        </button>
+        </motion.button>
+        {/* btn control end */}
       </section>{" "}
       {isModalOpen && (
         <ModalMovie toggleModal={toggleModal} />
       )}
+      <ModalConfirm
+        isOpen={isConfirmModal}
+        toggleModal={toggleConfirmModal}
+      ></ModalConfirm>
     </>
   );
 };

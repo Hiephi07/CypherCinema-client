@@ -5,16 +5,18 @@ import Event from "@/components/client/Event/Event";
 import Promotion from "@/components/client/Promotion/Promotion";
 import UpComingMovies from "@/components/client/UpComingMovies/UpComingMovies";
 import ModalMovieProvider from "@/_context/ModalMovie";
-import React from "react";
+import Movie_is_showing from "@/components/client/MovieIsShow/MovieIsShow";
 
 const HomePage = () => {
   return (
     <>
+      
       <Banner />
-        {/* <ModalMovieProvider>
-          <UpComingMovies />
-        </ModalMovieProvider> */}
+       
         <main className="container">
+           <ModalMovieProvider>
+          <UpComingMovies />
+        </ModalMovieProvider>
           <ComingsoonMovie />
           <BannerButton />
           <Promotion />

@@ -69,14 +69,14 @@ const [currentSlider, setCurrentSlider] = useState<number>(0);
 
 const settings = {
   infinite: true,
-  speed: 500,
+  speed: 400,
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
   prevArrow: <PrevArrow isVisible={isHovered} />,
   nextArrow: <NextArrow isVisible={isHovered} />,
   autoplay: false,
-  autoplaySpeed: 3000,
+  autoplaySpeed: 5000,
   dots: true,
 
   customPaging: (index: number) => (
@@ -104,7 +104,7 @@ const settings = {
         {arrBanner.map((slider) => (
           <div className="px-8 pb-7 ">
             <div className="wrap-img mb-5 ">
-            <Link to={``}><img src={slider.img} alt={slider.title} /></Link>
+            <Link to={``}><img className="rounded-[8px]" src={slider.img} alt={slider.title} /></Link>
             </div>
             <Link to={``}><h4 className="mb-2 font-black text-14.4px text-#b2ec0f">{slider.title}</h4></Link>
             <span className=" text-#fff text-12.8px">{slider.time}</span>
