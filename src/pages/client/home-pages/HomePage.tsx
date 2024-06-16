@@ -9,6 +9,8 @@ const HomePage = () => {
       <Header />
       <ModalMovieProvider>
         <UpComingMovies />
+        <UpComingMovies />
+        <UpComingMovies />
       </ModalMovieProvider>
     </>
   );

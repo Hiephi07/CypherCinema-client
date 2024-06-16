@@ -7,9 +7,11 @@ import { ModalContext } from "@/_context/ModalMovie";
 const MovieCard: React.FC<{
   movie: IMovie;
   number: number;
-}> = ({ movie, number }) => {
+  toggleConfirm: () => void;
+}> = ({ movie, number, toggleConfirm }) => {
   const { isModalOpen, toggleModal } =
     useContext(ModalContext);
+  // console.log(number);
 
   return (
     <>
@@ -73,15 +75,14 @@ const MovieCard: React.FC<{
                   </a>
                 </div>
                 <div className={styles.buttons}>
-                  <a
+                  <button
+                    onClick={toggleConfirm}
                     // onclick="ldapp_bookNow('Phim này chỉ dành cho trẻ em trên 16 tuổi. Vui lòng cân nhắc khi mua vé. BQL Rạp sẽ phải từ chối cho vào nếu sai quy định.', 'the-watchers-nhung-ke-theo-doi');return false;"
-                    href="/"
-                    target="_self"
                     className={`btn-primary px-[8px] flex flex-row justify-center items-center ${styles["ticket-button"]}`}
                   >
                     <span className={styles.logo}></span>
                     <span className="">Mua vé ngay</span>
-                  </a>
+                  </button>
                   <a
                     title="THE WATCHERS: NHỮNG KẺ THEO DÕI"
                     data-url="https://bhdstar.vn/phim/the-watchers-nhung-ke-theo-doi/"
