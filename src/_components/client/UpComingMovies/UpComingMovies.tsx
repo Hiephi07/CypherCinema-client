@@ -86,7 +86,7 @@ const UpComingMovies = () => {
       {/* Up coming movies  */}
       <section className="flex flex-col overflow-hidden  justify-center items-center max-w-[1330px] mx-[auto] relative">
         <h2 className="text-[var(--theme-text)] font-700 text-[1.6em] my-[20px]">
-          Phim đang chiếu
+          Phim sắp chiếu
         </h2>
         <motion.div
           animate={control}
