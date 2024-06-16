@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import styles from "./MovieCard.module.scss";
 import { IMovie } from "@/_interfaces/IMovie";
-import ModalMovie from "../ModalMovie/ModalMovie";
 import { ModalContext } from "@/_context/ModalMovie";
+import ModalMovie from "../ModalMovie/ModalMovie";
 
 const MovieCard: React.FC<{
   movie: IMovie;

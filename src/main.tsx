@@ -4,10 +4,8 @@ import App from "./App.tsx";
 import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
 import ThemeProvider from "./_context/ThemeProvider.tsx";
-import {
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 
 const queryClient = new QueryClient();
 

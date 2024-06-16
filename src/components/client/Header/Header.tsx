@@ -1,11 +1,11 @@
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
-import { Button } from "@/_components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/_components/ui/hover-card";
+} from "@/components/ui/hover-card";
 import { useState, useEffect, useContext } from "react";
 import { HiMiniTicket } from "react-icons/hi2";
 import { FaChevronDown } from "react-icons/fa";
@@ -39,7 +39,7 @@ const Header = () => {
   }
   return (
   <div className="">
-    <header className={`  ${styles.header} ${scrolled ? styles.scrolled : ''} `}>
+    <header className={`fixed z-50 left-0 right-0  ${styles.header} ${scrolled ? styles.scrolled : ''} `}>
       <nav className="flex justify-between items-center h-full px-3.5">
         {/*Section box letf */}
         <div className="box-left flex justify-start items-center">
@@ -89,14 +89,15 @@ const Header = () => {
                     variant={"default"}
                     className={`${scrolled ? 'hover:text-#72be43' : 'hover:text-#fff '} transition-all duration-300 ease-in-out border-0 text-#ffc py-2.5 font-black mx-1.5 bg-transparent m-0 px-0 hover:bg-transparent`}
                   >
-                    Khác
+                    Khác 
+                    <FaChevronDown className="ml-0.5 size-2 mt-0.5 " />
                   </Button>
                 </HoverCardTrigger>
                 <HoverCardContent
                   sideOffset={1}
                   align="start"
                   alignOffset={-18}
-                  className="rounded-xl w-56 px-0 text-12.8px bg-transparent border-#bababa py-2.5 min-w-56"
+                  className="rounded-xl w-56 px-0 text-12.8px border-#bababa bg-#2c2c2c4a py-2.5 min-w-56"
                 >
                   <Link
                     to={``}
@@ -136,7 +137,7 @@ const Header = () => {
                   sideOffset={0}
                   align="end"
                   alignOffset={-18}
-                  className="rounded-xl w-56 px-0 text-12.8px bg-transparent border-#bababa py-2 min-w-64"
+                  className="rounded-xl w-56 px-0 text-12.8px bg-#2c2c2c4a border-#bababa py-2 min-w-64"
                 >
                   <ul className="text-left">
                   <li

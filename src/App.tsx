@@ -1,19 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
-import "@@/assets/fonts/fonts.scss";
-// import HomePage from "./pages/client/home-pages/HomePage";
-// import LoginPage from "./pages/client/login/LoginPage";
-import Header from "./_components/client/Header/Header";
+import Header from "./components/client/Header/Header";
 import HomePage from "./pages/client/home-pages/HomePage";
 import LoginPage from "./pages/client/login/LoginPage";
-import Footer from "./_components/client/Footer/Footer";
-import Event from "./_components/client/Event/Event";
+import Footer from "./components/client/Footer/Footer";
 
 function App() {
   return (
     <>
+      <div className="container- p-0 m-0 relative bg-#1a1d29">
       <Header />
-      <Event />
+      <main>
       <Routes>
         <Route path="/">
           <Route index element={<HomePage />} />
@@ -21,7 +18,9 @@ function App() {
           <Route path="/signup" element />
         </Route>
       </Routes>
+      </main>
       <Footer />
+      </div>
     </>
   );
 }

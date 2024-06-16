@@ -6,6 +6,7 @@ module.exports = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./public/**/*.{ttf,jpg,png, svg}",
   ],
   prefix: "",
   theme: {
@@ -21,6 +22,7 @@ module.exports = {
     },
     fontSize: {
       "10px": "0.625rem",
+      "11px": '0.6875rem',
       "12.8px": "0.8rem",
       "14.4px": "0.9rem",
       "15.52px": "0.97rem",
@@ -33,7 +35,14 @@ module.exports = {
       "25.6px": "1.6rem",
     },
     extend: {
+      lineHeight: {
+        '0': '0px',
+      },
       colors: {
+        '#ccc': '#ccc',
+        '#98CF74': '#98CF74',
+        '#76777f': '#76777f',
+        '#1a1d29': '#1a1d29',
         '#151720': '#151720',
         '#090b13': '#090b13',
         '#ffc':'#ffffffcc',

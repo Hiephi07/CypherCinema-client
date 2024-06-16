@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Button } from "@/_components/ui/button";
+import { Button } from "@/components/ui/button";
 import "./Movie_is_show.scss";
 
 function Arrow(props: {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/_components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,9 +7,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/_components/ui/card";
+} from "@/components/ui/card";
 import { Label } from "@radix-ui/react-label";
-import { Input } from "@/_components/ui/input";
+import { Input } from "@/components/ui/input";
 
 const Test = () => {
   return (

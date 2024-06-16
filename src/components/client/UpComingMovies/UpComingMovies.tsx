@@ -1,4 +1,4 @@
-import { Button } from "@/_components/ui/button";
+import { Button } from "@/components/ui/button";
 import React, { useContext, useState } from "react";
 import styles from "./UpComingMovies.scss";
 import { useMovieQuery } from "@/_hooks/useMovieQuery";
