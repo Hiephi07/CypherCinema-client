@@ -10,18 +10,17 @@ import Movie_is_showing from "@/components/client/MovieIsShow/MovieIsShow";
 const HomePage = () => {
   return (
     <>
-      
       <Banner />
-       
-        <main className="container">
-           <ModalMovieProvider>
+
+      <main className="container">
+        <ModalMovieProvider>
           <UpComingMovies />
         </ModalMovieProvider>
-          <ComingsoonMovie />
-          <BannerButton />
-          <Promotion />
-          <Event /> 
-        </main>
+        <ComingsoonMovie />
+        <BannerButton />
+        <Promotion />
+        <Event />
+      </main>
     </>
   );
 };

@@ -100,11 +100,9 @@ const MovieCard: React.FC<{
                         alt="Browser with large and small images of a coffee cup and plants"
                       />
                     </picture> */}
-                    <img
+                    <span
                       onClick={toggleModal}
-                      src="/assets/images/Icons/info.png"
                       className={styles.info}
-                      alt="Browser with large and small images of a coffee cup and plants"
                     />
                   </a>
                 </div>

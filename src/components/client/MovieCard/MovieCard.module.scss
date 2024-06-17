@@ -104,11 +104,13 @@
 
 .ticket-button {
   margin: 0 5px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border-radius: 4px;
   color: var(--theme-text);
   font-weight: bolder;
+  width: 147px;
+  height: 41px;
 
   span {
     font-size: 0.8em;
@@ -124,20 +126,39 @@
   }
 }
 .infoBtn {
-  border: 1px solid #90c63f;
-  padding-left: 4px;
-  padding-right: 4px;
+  background-color: #2c2c2c4a;
+  border-color: #90c63f;
   border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  color: #fff;
+  display: inline-block;
 
+  font-size: 12.8px;
+  font-weight: 700;
+  letter-spacing: 0.384px;
+  line-height: 30.72px;
+  margin: 0 0 0 5px;
+  padding: 4px 8px;
+  text-align: center;
+  text-transform: uppercase;
   &:hover {
     background-color: #90c63f;
     transition-duration: 200ms;
   }
 }
 .info {
-  background: transparent;
+  color: #fff;
+  display: block;
+
+  font-size: 12.8px;
+  font-weight: 700;
+  letter-spacing: 0.384px;
+  line-height: 20.48px;
+  margin: 3px 0px;
+  text-align: center;
+  text-transform: uppercase;
   width: 24px;
   height: 24px;
-  display: block;
-  margin: 3px 0;
+  background-image: url("https://www.bhdstar.vn/wp-content/themes/loodo-starter/inc/imgs/infoIcon.svg");
 }

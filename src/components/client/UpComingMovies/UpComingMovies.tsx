@@ -1,15 +1,11 @@
-import {
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { useContext, useEffect, useState } from "react";
 // import styles from "./UpComingMovies.scss";
 import { useMovieQuery } from "@/_hooks/useMovieQuery";
 import { motion, useAnimation } from "framer-motion";
 import MovieCard from "../MovieCard/MovieCard";
 import ModalMovie from "../ModalMovie/ModalMovie";
 import { ModalContext } from "@/_context/ModalMovie";
-import ModalConfirm from '@/components/client/ModalConfirm/ModalConfirm';
+import ModalConfirm from "@/components/client/ModalConfirm/ModalConfirm";
 
 const UpComingMovies = () => {
   const { data: movies } = useMovieQuery();
@@ -119,9 +115,9 @@ const UpComingMovies = () => {
             })}
         </motion.div>
         {/* dots start */}
-        <div className="mt-[-20px]">
+        <div className="">
           {movies && (
-            <ol className="flex flex-row gap-3 mx-auto ">
+            <ol className="flex flex-row gap-3 mx-auto mt-[35px] mb-[30px] ">
               {movies.map((item, idx) => {
                 return (
                   <li
