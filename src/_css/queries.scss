@@ -18,7 +18,7 @@ $breakpoint-l-width: 1440px;
 }
 
 @mixin laptop {
-  @media (max-width: #{$breakpoint-m-width}) {
+  @media (min-width: #{$breakpoint-m-width}) {
     @content;
   }
 }

@@ -1,7 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 // import styles from "./UpComingMovies.scss";
 import { useMovieQuery } from "@/_hooks/useMovieQuery";
-import { motion, useAnimation } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  useDragControls,
+} from "framer-motion";
 import MovieCard from "../MovieCard/MovieCard";
 import ModalMovie from "../ModalMovie/ModalMovie";
 import { ModalContext } from "@/_context/ModalMovie";
@@ -9,6 +13,7 @@ import ModalConfirm from "@/components/client/ModalConfirm/ModalConfirm";
 
 const UpComingMovies = () => {
   const { data: movies } = useMovieQuery();
+  console.log(movies);
 
   const [direction, setDirection] = useState(0);
   const maxCardSlide = 3;
@@ -18,7 +23,6 @@ const UpComingMovies = () => {
 
   const [isConfirmModal, setConfirmModal] = useState(false);
   const toggleConfirmModal = () => {
-    console.log("ok");
     setConfirmModal(!isConfirmModal);
   };
   const control = useAnimation();
@@ -69,6 +73,9 @@ const UpComingMovies = () => {
     });
   };
 
+  const controlDrag = useDragControls();
+  const slideDistance = 100;
+  // slide run automatic
   useEffect(() => {
     const timer = setInterval(() => {
       if (
@@ -84,7 +91,10 @@ const UpComingMovies = () => {
       } else slide(-1);
     }, 5000);
     return () => clearInterval(timer);
-  }, [activeSlide, movies]);
+  }, [activeSlide, movies, control]);
+
+  //control drag slide
+  // useEffect(() => {});
 
   return (
     <>
@@ -99,8 +109,9 @@ const UpComingMovies = () => {
         </h2>
         <motion.div
           animate={control}
+          drag="x"
           transition={{ duration: 0.5 }}
-          className="block w-full l-0 h-[600px] "
+          className="block w-full l-0 h-[537px] "
         >
           {movies &&
             movies.map((item, idx) => {
