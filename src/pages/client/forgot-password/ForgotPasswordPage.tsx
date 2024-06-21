@@ -30,7 +30,7 @@ const ForgotPasswordPage = () => {
           </div>
           <form
             action=""
-            className="w-[360px] h-[127px] text-[var(--theme-text)] mx-auto "
+            className="w-[full] h-[127px] text-[var(--theme-text)] mx-auto "
           >
             <p
               className="leading-[25.6px] w-full "

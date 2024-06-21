@@ -42,24 +42,33 @@ export const footerInfo2 = [
 
 export const footerInfo3 = [
   {
+    title:
+      "Công ty TNHH MTV Ngôi Sao Cineplex BHD Việt Nam ",
+    detail: "",
+  },
+  {
     title: "",
     detil:
       "Công ty TNHH MTV Ngôi Sao Cineplex BHD Việt Nam",
   },
   {
-    title: "Giấy CNĐKDN",
+    title: "Giấy CNĐKDN: ",
     detail:
       "Giấy phép kinh doanh số: 0104597158. Đăng ký lần đầu ngày 15 tháng 04 năm 2010",
   },
 
   {
     title: "Địa Chỉ:",
-    detil:
+    detail:
       " Tầng 11, Tòa nhà Hồng Hà Building, Lý Thường Kiệt, P.Phan Chu Trinh, Quận Hoàn Kiếm, Hà Nội",
   },
   {
     title: "Hotline:",
     detail: "19002099",
+  },
+  {
+    title: "",
+    detail: "COPYRIGHT 2010 BHD STAR. ALL RIGHTS RESERVED",
   },
 ];
 

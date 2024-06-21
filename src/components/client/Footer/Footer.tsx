@@ -146,19 +146,6 @@ const Footer = () => {
                 </span>
               );
             })}
-            <strong className="block font-[700]">
-              Công ty TNHH MTV Ngôi Sao Cineplex BHD Việt
-              Nam
-            </strong>
-            <span className="block">
-              <strong></strong>
-            </span>
-            <span className="block">
-              <strong>Hotline:</strong> 19002099
-            </span>
-            <span className="block">
-              <strong></strong>
-            </span>
           </div>
         </div>
       </section>
