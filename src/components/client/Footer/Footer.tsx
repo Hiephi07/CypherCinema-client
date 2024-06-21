@@ -5,6 +5,7 @@ import {
   footerInfo1,
   footerInfo2,
   footerIcons,
+  footerInfo3,
 } from "@/_constant";
 
 const Footer = () => {
@@ -44,19 +45,19 @@ const Footer = () => {
             </span>
           </div>
 
-          <div className="box-center px-6 pb-4 min-w-96">
+          <div className="box-center px-6 pb-4 ">
             <h2 className="font-black">
               QUY ĐỊNH ĐIỀU KHOẢN
             </h2>
             <span
-              className={`${styles.coloredHr} border border-1 border-solid border-#fff block w-28 h-2.5 rounded-full my-4`}
+              className={`${styles.coloredHr} border border-1 border-solid border-#fff block  h-2.5 rounded-full my-4`}
             />
             <ul className="text-14.4px font-semibold">
               {footerInfo2.map((item, idx) => {
                 return (
                   <li className=" mb-4" key={idx}>
                     <Link
-                      className="all ease-in-out duration-300 hover:text-#72be43"
+                      className="all ease-in-out min-w-[100%] duration-300 hover:text-#72be43"
                       to={item.link}
                     >
                       {item.title}
@@ -137,25 +138,26 @@ const Footer = () => {
             />
           </div>
           <div className="text-12.8px text-#fff font-light leading-[23.04px]">
+            {footerInfo3.map((item, idx) => {
+              return (
+                <span className="block" key={idx}>
+                  <strong> {item.title} </strong>{" "}
+                  {item.detail}
+                </span>
+              );
+            })}
             <strong className="block font-[700]">
               Công ty TNHH MTV Ngôi Sao Cineplex BHD Việt
               Nam
             </strong>
             <span className="block">
-              <strong>Giấy CNĐKDN:</strong> Giấy phép kinh
-              doanh số: 0104597158. Đăng ký lần đầu ngày 15
-              tháng 04 năm 2010
-            </span>
-            <span className="block">
-              <strong>Địa Chỉ:</strong> Tầng 11, Tòa nhà
-              Hồng Hà Building, Lý Thường Kiệt, P.Phan Chu
-              Trinh, Quận Hoàn Kiếm, Hà Nội
+              <strong></strong>
             </span>
             <span className="block">
               <strong>Hotline:</strong> 19002099
             </span>
             <span className="block">
-              COPYRIGHT 2010 BHD STAR. ALL RIGHTS RESERVED
+              <strong></strong>
             </span>
           </div>
         </div>
