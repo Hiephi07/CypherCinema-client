@@ -16,6 +16,7 @@
   font-style: normal;
 }
 
-* {
-  font-family: "Light", sans-serif;
+:root {
+  --font-light: "Light";
+  --font-black: "Black";
 }

@@ -14,7 +14,6 @@
   font-size: 64px;
   line-height: 70px;
   font-weight: bold;
-
   @include laptop {
     font-size: 42px;
     line-height: 42px;
@@ -73,12 +72,11 @@
 }
 
 %body {
-  font-size: 18px;
-  line-height: 32px;
-
+  font-size: 15px;
+  line-height: 24px;
   @include laptop {
-    font-size: 15px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 32px;
   }
 }
 

@@ -6,8 +6,7 @@
 
 :root {
   --base: 24px;
-  --font-body: "Jost", san-serif;
-  --font-jost: "Jost", san-serif;
+  --font-body: var(--font-light), san-serif;
 
   --gutter-h: 180px;
   --block-padding: 120px;
@@ -25,6 +24,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: var(--font-body);
 }
 
 html {
@@ -46,7 +46,6 @@ body,
 }
 
 body {
-  font-family: var(--font-jost);
   margin: 0;
   padding: 0;
   color: var(--color-dark-500);
@@ -95,10 +94,9 @@ h6 {
 }
 
 p {
-  margin: 0;
-
+  margin: calc(var(--base) * 0.75) 0;
   @include laptop {
-    margin: calc(var(--base) * 0.75) 0;
+    margin: 0;
   }
 }
 

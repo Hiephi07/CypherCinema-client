@@ -81,7 +81,9 @@ const MovieCard: React.FC<{
                     className={`btn-primary px-[8px] flex flex-row justify-center items-center ${styles["ticket-button"]}`}
                   >
                     <span className={styles.logo}></span>
-                    <span className="">Mua vé ngay</span>
+                    <span className="uppercase text-[12.8px] w-[120px]">
+                      Mua vé ngay
+                    </span>
                   </button>
                   <a
                     title="THE WATCHERS: NHỮNG KẺ THEO DÕI"

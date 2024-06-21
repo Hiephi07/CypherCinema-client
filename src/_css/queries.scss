@@ -6,13 +6,13 @@ $breakpoint-m-width: 1024px;
 $breakpoint-l-width: 1440px;
 
 @mixin mobile {
-  @media (max-width: #{$breakpoint-xs-width}) {
+  @media (min-width: #{$breakpoint-xs-width}) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media (max-width: #{$breakpoint-s-width}) {
+  @media (min-width: #{$breakpoint-s-width}) {
     @content;
   }
 }
@@ -24,7 +24,7 @@ $breakpoint-l-width: 1440px;
 }
 
 @mixin pc {
-  @media (max-width: #{$breakpoint-l-width}) {
+  @media (min-width: #{$breakpoint-l-width}) {
     @content;
   }
 }
