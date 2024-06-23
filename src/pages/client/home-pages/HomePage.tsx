@@ -21,6 +21,7 @@ const HomePage = () => {
         <Promotion />
         <Event />
       </main>
+      <div className="relative w-full h-full"></div>
     </>
   );
 };

@@ -4,10 +4,10 @@ import "./App.scss";
 // import LoginPage from "./pages/client/login/LoginPage";
 import Header from "@/components/client/Header/Header";
 import HomePage from "./pages/client/home-pages/HomePage";
-import LoginPage from "./pages/client/login/LoginPage";
 import Footer from "@/components/client/Footer/Footer";
 import NotFoundPage from "./pages/client/404-notfound/NotFound";
 import ForgotPasswordPage from "./pages/client/forgot-password/ForgotPasswordPage";
+import AuthPage from "./pages/client/auth/AuthPage";
 
 function App() {
   return (
@@ -18,11 +18,7 @@ function App() {
           <Routes>
             <Route path="/">
               <Route index element={<HomePage />} />
-              <Route
-                path="/auth/login"
-                element={<LoginPage />}
-              />
-              <Route path="/auth/register" element />
+              <Route path="/auth" element={<AuthPage />} />
               <Route
                 path="/auth/forgot-password"
                 element={<ForgotPasswordPage />}
