@@ -1,0 +1,22 @@
+@use "../../../_css/queries.scss" as *;
+@use "../../../_css/common.scss" as *;
+
+.boxleft {
+  width: 390px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+
+  @include laptop {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+  }
+  @include tablet {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+  }
+}

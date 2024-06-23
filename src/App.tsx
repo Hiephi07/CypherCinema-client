@@ -8,6 +8,8 @@ import LoginPage from "./pages/client/login/LoginPage";
 import Footer from "@/components/client/Footer/Footer";
 import NotFoundPage from "./pages/client/404-notfound/NotFound";
 import ForgotPasswordPage from "./pages/client/forgot-password/ForgotPasswordPage";
+import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
                 element={<LoginPage />}
               />
               <Route path="/auth/register" element />
+              <Route path="/auth/user-info" element={<UserInfomation />} />
               <Route
                 path="/auth/forgot-password"
                 element={<ForgotPasswordPage />}

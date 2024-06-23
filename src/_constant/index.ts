@@ -62,3 +62,31 @@ export const footerIcons = [
     link: "",
   },
 ];
+
+export const userPoint = [
+  {title: 'Điểm RP:'},
+  {title: 'Tổng visit:'},
+  {title: 'Expried visit:'},
+  {title: 'Active visit:'},
+  {title: 'Tổng chi tiêu trong tháng (6/2024): '},
+  {title: 'Vui lòng đăng ảnh chân dung, thấy rõ mặt có kích thước: ngang 200 pixel và dọc 200 pixel (dung lượng dưới 1MB)'},
+]
+
+export const formLabel = [
+  {label: 'Họ *'},
+  {label: 'Email *'},
+  {label: 'Mật khẩu'},
+  {label: 'Số điện thoại *'},
+  {label: 'Giới tính *'},
+  {label: 'Ngày sinh *'},
+  {label: 'Tỉnh/Thành phố *'},
+  {label: 'Địa chỉ *'},
+]
+
+export const userInfo = [
+  {title: 'Tên đăng nhập:'},
+  {title: 'Số thẻ:'},
+  {title: 'Hạng thẻ:'},
+  {title: 'Ngày đăng ký:'},
+]
+

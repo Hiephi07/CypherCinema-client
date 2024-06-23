@@ -11,7 +11,6 @@ const HomePage = () => {
   return (
     <>
       <Banner />
-
       <main className="container">
         <ModalMovieProvider>
           <UpComingMovies />
