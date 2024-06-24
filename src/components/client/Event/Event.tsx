@@ -12,6 +12,8 @@ import event4 from '@@/assets/images/PromotionalEvents/Events/item4.png'
 import event5 from '@@/assets/images/PromotionalEvents/Events/item5.png'
 import event6 from '@@/assets/images/PromotionalEvents/Events/item6.png'
 import styles from './Event.module.scss'
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { IoIosClose } from "react-icons/io";
 
 const PrevArrow = ({ style, onClick, isVisible }: any) => {
   return (
@@ -101,12 +103,84 @@ const settings = {
      onMouseLeave={() => setIsHovered(false)}>
       <h1 className="font-black text-17.6px text-#fff text-center pb-6 pt-8">Sự kiện</h1>
       <Slider {...settings} className="cursor-grab">
-        {arrBanner.map((slider) => (
-          <div className="px-8 pb-7 ">
+        {arrBanner.map((slider, index) => (
+          <div className="px-8 pb-7 " key={index}>
+            <Sheet>
+            <SheetTrigger >
             <div className="wrap-img mb-5 ">
-            <Link to={``}><img className="rounded-[8px]" src={slider.img} alt={slider.title} /></Link>
+            <img className="rounded-[8px]" src={slider.img} alt={slider.title} />
             </div>
-            <Link to={``}><h4 className="mb-2 font-black text-14.4px text-#b2ec0f">{slider.title}</h4></Link>
+            <h4 className="text-left mb-2 font-black text-14.4px text-#b2ec0f hover:text-#72be43">{slider.title}</h4>
+            </SheetTrigger>
+            <SheetContent
+                  className="mt-12 ml-40 w-[996px] h-[550px] bg-#1a1a1a border-0 rounded-xl"
+                  side={"top"}
+                >
+                  <div className="flex box-border justify-center ">
+                    <div className="pr-4">
+                      <div className="w-[320px]  rounded-xl ">
+                        <img
+                          src={slider.img}
+                          alt=""
+                          className="rounded-xl h-full w-full"
+                        />
+                      </div>
+                      <div className="flex justify-center"></div>
+                    </div>
+                    <div className="pl-4 text-#fff">
+                      <h1 className="text-#72be43 font-bold text-20px mb-5">
+                        TILL WE MEET: NẾU GẶP LẠI EM TRÊN
+                        NGỌN ĐỒI
+                      </h1>
+                      <p className="text-12.8px mb-5">
+                        Thiếu niên rắc rối Yuri quay ngược
+                        thời gian về năm 1945 và yêu một phi
+                        công cảm tử, Akira.
+                      </p>
+                      <div className="flex text-12.8px mb-5">
+                        <span className="mr-1 text-#ccc">
+                          Đạo diễn:
+                        </span>
+                        <Link to={``}>Yoichi Narita</Link>
+                      </div>
+                      <div className="flex text-12.8px mb-5">
+                        <span className="mr-1 text-#ccc">
+                          Diễn viên:
+                        </span>
+                        <Link to={``}>
+                          Haruka Fukuhara, Hayato Onozuka
+                        </Link>
+                      </div>
+                      <div className="flex text-12.8px mb-5">
+                        <span className="mr-1 text-#ccc">
+                          Thể loại:
+                        </span>
+                        <Link to={``}> Romance</Link>
+                      </div>
+                      <div className="flex text-12.8px mb-5">
+                        <span className="mr-1 text-#ccc">
+                          Khởi chiếu:
+                        </span>
+                        <Link to={``}>21/06/2024</Link>
+                      </div>
+                      <div className="flex text-12.8px mb-5">
+                        <span className="mr-1 text-#ccc">
+                          Thời lượng:
+                        </span>
+                        <Link to={``}>120 ph</Link>
+                      </div>
+                    </div>
+                  </div>
+                  <SheetClose
+                    className="fill-#fff z-40 hover:transition-colors hover:duration-200 hover:ease-in-out absolute top-2.5 right-2.5 hover:text-#72be43"
+                    asChild
+                  >
+                    <button type="submit">
+                      <IoIosClose className="size-7" />
+                    </button>
+                  </SheetClose>
+                </SheetContent>
+            </Sheet>
             <span className={` ${styles.truncateMultiline}  text-#fff text-[12px] text-clip `}>{slider.time}</span>
           </div>
         ))}

@@ -93,21 +93,9 @@ const Header = () => {
                       ? "hover:text-#72be43"
                       : "hover:text-#fff "
                   } py-2.5 font-black`}
-                  to={``}
+                  to={`/event`}
                 >
-                  Khuyến mãi/Sự kiện
-                </Link>
-              </li>
-              <li className="mx-1.5">
-                <Link
-                  className={`${
-                    scrolled
-                      ? "hover:text-#72be43"
-                      : "hover:text-#fff "
-                  } py-2.5 font-black`}
-                  to={``}
-                >
-                  Cửa hàng
+                  Sự kiện
                 </Link>
               </li>
               <li className="last:ml-1.5">
@@ -135,7 +123,7 @@ const Header = () => {
                       to={``}
                       className="hover:bg-#2c2c2c4a hover:text-#72be43 block py-2 px-5"
                     >
-                      Về chúng tôi
+                      Giới thiệu
                     </Link>
                     <Link
                       to={``}

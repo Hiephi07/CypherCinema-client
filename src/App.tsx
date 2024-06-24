@@ -8,6 +8,7 @@ import Footer from "@/components/client/Footer/Footer";
 import NotFoundPage from "./pages/client/404-notfound/NotFound";
 import ForgotPasswordPage from "./pages/client/forgot-password/ForgotPasswordPage";
 import AuthPage from "./pages/client/auth/AuthPage";
+import EventPage from "./pages/client/event-pages/EventPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/">
               <Route index element={<HomePage />} />
+              <Route path="/event" element={<EventPage />} />
               <Route path="/auth" element={<AuthPage />} />
               <Route
                 path="/auth/forgot-password"

@@ -19,8 +19,11 @@ const HomePage = () => {
         <ComingsoonMovie />
         <BannerButton />
       </div>
-        <Promotion />
+      <StarMember />
+      <div className="container">
+        {/* <Promotion /> */}
         <Event />
+      </div>
       
     </>
   );

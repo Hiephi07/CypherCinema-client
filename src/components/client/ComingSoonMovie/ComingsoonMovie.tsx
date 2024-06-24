@@ -201,7 +201,7 @@ const ComingsoonMovie = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <h1
-          className={`font-black text-17.6px text-#fff text-center relative z-10 `}
+          className={`font-black text-17.6px text-#fff text-center relative z-10 pb-[30px]`}
         >
           Phim sắp chiếu
         </h1>
@@ -209,24 +209,24 @@ const ComingsoonMovie = () => {
           {...settings}
           className="cursor-grab  relative z-10"
         >
-          {arrBanner.map((slider) => (
-            <div className="px-3 pb-3 ">
+          {arrBanner.map((slider, index) => (
+            <div className="px-3 pb-3 " key={index}>
+              <Sheet>
+              <SheetTrigger className="">
+
               <div className="wrap-img ">
-                <Link className="" to={``}>
                   <img
                     className="rounded-xl"
                     src={slider.img}
                     alt={slider.title}
                   />
-                </Link>
               </div>
-              <Link
-                to={``}
-                className={`font-black text-12.8px text-#fff hover:text-#72be43`}
+              <div
+                className={`font-black text-12.8px text-#fff hover:text-#72be43 inline-block`}
               >
                 <TooltipProvider delayDuration={0}>
                   <Tooltip>
-                    <TooltipTrigger className="text-left mt-3 truncate w-32">
+                    <TooltipTrigger className="text-left mt-3 truncate w-[220px]">
                       {slider.title}
                     </TooltipTrigger>
                     <TooltipContent
@@ -245,7 +245,7 @@ const ComingsoonMovie = () => {
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
-              </Link>
+              </div>
               <div className="flex mt-2 text-11px">
                 <p className="block text-#ccc  mr-1">
                   Thể loại phim:
@@ -257,9 +257,8 @@ const ComingsoonMovie = () => {
                   {slider.category}
                 </Link>
               </div>
-              <Sheet>
-                <SheetTrigger className="font-bold uppercase transition-all duration-600 ease-in-out mt-4 text-10px py-0 px-3 h-8 border rounded border-#90C63F border-solid text-#fff bg-#2c2c2c4a hover:text-#fff hover:bg-#72be43">
-                  <div className="flex items-center justify-start ">
+              
+                  <div className="w-[80%] flex items-center justify-start font-bold uppercase transition-all duration-600 ease-in-out mt-4 text-10px py-0 px-3 h-8 border rounded border-#90C63F border-solid text-#fff bg-#2c2c2c4a hover:text-#fff hover:bg-#72be43">
                     <IoIosInformationCircle className="mr-1 size-3" />{" "}
                     Thông tin chi tiết
                   </div>
