@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Check, ChevronsUpDown } from "lucide-react"
-
 import {
   Select,
   SelectContent,
@@ -26,7 +25,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
- 
+
+import Selectt, { StylesConfig } from 'react-select'
 const days = [
   { id: '1', label: "1" },
   { id: '2', label: "2" },
@@ -61,27 +61,26 @@ const days = [
   { id: '31', label: "31" }
 ]
 
-
+const customStyles: StylesConfig = {
+  control: (provided, state) => ({
+    ...provided,
+    backgroundColor: '#1a1d29',
+    border: '1px solid #454D6A',
+    color: 'red',
+    borderRadius: '6px',
+    padding: '2px',
+    maxHeight: '36px',
+    fontSize: '14.2px',
+  }),
+  // Tùy chỉnh các phần còn lại của dropdown tại đây nếu cần
+};
    
 const Day = () => {
-    const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState('')
+
   return (
     <>
-    <Select>
-      <SelectTrigger  className=" bg-#1a1d29 border-[1px] border-solid border-#454D6A text-#fff rounded-[6px] p-[9px] max-h-9 text-[14.2px]">
-        <SelectValue placeholder="Select a fruit" className="bg-#1a1d29" />
-      </SelectTrigger>
-      <SelectContent className="bg-#1a1d29 " >
-        <SelectGroup className="">
-          
-          <SelectLabel className="text-#fff">Vui lòng chọn</SelectLabel>
-          {days.map((day) => (
-            <SelectItem asChild={false}  key={day.id} value={day.id} className=" text-#fff hover:text-#fff hover:bg-#72be43">{day.label}</SelectItem>
-          ))}
-        </SelectGroup>
-      </SelectContent>
-    </Select>
+    <Selectt classNamePrefix="custom-select"
+      styles={customStyles} options={days} />
     </>
   )
 }

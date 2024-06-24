@@ -6,20 +6,24 @@ import Promotion from "@/components/client/Promotion/Promotion";
 import UpComingMovies from "@/components/client/UpComingMovies/UpComingMovies";
 import ModalMovieProvider from "@/_context/ModalMovie";
 import Movie_is_showing from "@/components/client/MovieIsShow/MovieIsShow";
+import StarMember from "@/components/client/StarMember/StarMember";
 
 const HomePage = () => {
   return (
     <>
       <Banner />
-      <main className="container">
+      <div className="container">
         <ModalMovieProvider>
           <UpComingMovies />
         </ModalMovieProvider>
         <ComingsoonMovie />
         <BannerButton />
-        <Promotion />
-        <Event />
-      </main>
+      </div>
+      <StarMember />
+      <div className="container">
+      {/* <Promotion /> */}
+      <Event />
+      </div>
     </>
   );
 };

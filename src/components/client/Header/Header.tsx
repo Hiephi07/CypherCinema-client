@@ -232,7 +232,7 @@ const Header = () => {
             <HoverCard openDelay={200}>
               <HoverCardTrigger asChild>
                 <Link
-                  to={``}
+                  to={`/auth`}
                   className="flex items-center transition-all duration-600 ease-in-out mx-2 text-12.8px font-medium px-3 py-2 h-9  border rounded border-#90C63F border-solid text-#ffc bg-#2c2c2c4a hover:text-#fff hover:bg-#72be43"
                 >
                   Đăng nhập/Đăng ký
@@ -281,12 +281,18 @@ const Header = () => {
                       Quên mật khẩu?
                     </Link>
                   </div>
-                  <Button className="transition-all duration-300 ease-in-out rounded h-8  text-12.8px border-#90C63F font-bold w-full mb-5 bg-#72be43 hover:bg-#5B9836 hover:border-#90C63F">
+                  <Button
+                    type="submit"
+                    className="transition-all duration-300 ease-in-out rounded h-8  text-12.8px border-#90C63F font-bold w-full mb-5 bg-#72be43 hover:bg-#5B9836 hover:border-#90C63F"
+                  >
                     ĐĂNG NHẬP
                   </Button>
-                  <Button className="transition-all duration-300 ease-in-out rounded h-8  text-12.8px border-#90C63F border font-bold w-full hover:bg-#5B9836">
+                  <Link
+                    to={"/auth"}
+                    className="transition-all duration-300 ease-in-out rounded h-8  text-12.8px border-#90C63F border font-bold w-full hover:bg-#5B9836"
+                  >
                     ĐĂNG KÝ THÀNH VIÊN
-                  </Button>
+                  </Link>
                 </form>
               </HoverCardContent>
             </HoverCard>

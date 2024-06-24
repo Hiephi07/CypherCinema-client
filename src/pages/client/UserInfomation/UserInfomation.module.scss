@@ -19,4 +19,13 @@
     justify-content: space-around;
     align-items: start;
   }
+
+}
+
+option {
+  padding: 15px;
+  &:hover {
+    background: #72be43;
+    color: red;
+  }
 }

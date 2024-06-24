@@ -124,7 +124,7 @@ const UserInfomation = () => {
                   <div className="">
                     <label htmlFor="" className="text-#fff text-[14px] inline-block mb-[10px]">Giới tính *</label>
                     <select id="gender" name="gender" className="block text-12.8px w-full text-#fff px-2 py-2 max-h-9 border rounded border-#454D6A focus:outline-none bg-#1A1D29 focus:bg-#151720 placeholder:text-#fff">
-                        <option value="male">Nam</option>
+                        <option value="male" className={` hover:bg-#72be43 p-5`}>Nam</option>
                         <option value="female">Nữ</option>
                         <option value="other">Khác</option>
                     </select>

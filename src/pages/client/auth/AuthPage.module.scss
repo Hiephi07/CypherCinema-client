@@ -1,0 +1,201 @@
+@use "../../../_css/common.scss" as *;
+.content-area {
+  padding-top: 132px;
+  padding-bottom: 20px;
+  position: relative;
+  color: var(--theme-text);
+  h2 {
+    font-weight: 700;
+    font-size: 1.2em;
+    line-height: 33.28px;
+    margin: 40px 0;
+    @include laptop {
+      font-size: 25.6px;
+    }
+  }
+  label {
+    display: block;
+    font-size: 14.4px;
+    line-height: 23.04px;
+    margin: 0 0 10px;
+    width: 100%;
+    color: #ffffff;
+  }
+  p {
+    margin: 0 0 15px;
+
+    input {
+      border: 1px solid #454d6a;
+      background-color: #1b1d29;
+      border-radius: 4px;
+      box-shadow: #0000 0px -28.8px 16px 0px;
+      padding: 4px 12px;
+      line-height: 25.6px;
+      font-size: 16px;
+      width: 100%;
+    }
+  }
+  button {
+    background-color: var(--primary-color);
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 15.52px;
+    font-weight: 700;
+    line-height: 37.248px;
+    margin: 0 15.52px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.4656px;
+    width: 100%;
+    transition-duration: 200ms;
+    &:hover {
+      background-color: var(--color-green-500);
+    }
+  }
+
+  .customer-auth {
+    display: flex;
+    max-width: 1330px;
+    margin: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @include laptop {
+      flex-direction: row;
+    }
+  }
+  .login-form {
+    padding: 0 15px 30px;
+    line-height: 25.6px;
+    width: 100%;
+    max-width: 443px;
+  }
+  .register-form {
+    max-width: 776px;
+    width: 100%;
+    padding: 0 15px 30px;
+    line-height: 25.6px;
+
+    .span-lap {
+      @include laptop {
+        max-width: 100% !important;
+        display: block;
+      }
+    }
+    .select-parent {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 151px;
+
+      @include laptop {
+        flex-direction: row;
+        height: auto;
+      }
+    }
+    .selection {
+      font-size: 16px;
+      width: 100%;
+      border: 1px solid #454d6a;
+      border-radius: 4px;
+      display: inline-block;
+      height: 40px;
+      position: relative;
+      cursor: pointer;
+      line-height: 40.112px;
+      padding: 0px 22.4px 0px 12px;
+      margin: 0 0px -4px 0px;
+      text-align: left;
+      @include laptop {
+        max-width: 229px;
+      }
+
+      &:checked {
+        height: 300px;
+      }
+
+      .select-Input {
+        border: 0;
+        height: 1px;
+        margin: -1;
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+      }
+      .select--arrow {
+        background-image: url(https://bhdstar.vn/wp-content/themes/loodo-starter/inc/imgs/chevron-down.png);
+        background-position: center;
+        background-size: 24px;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 30px;
+        height: 40px;
+        line-height: 40.112px;
+        text-align: left;
+      }
+    }
+
+    .radio-list {
+      label {
+        position: relative;
+        margin-right: 30px;
+        padding-left: 30px;
+        display: inline;
+        cursor: pointer;
+      }
+    }
+
+    .form-row {
+      @include laptop {
+        width: 48%;
+        float: left;
+
+        &:nth-child(odd) {
+          margin-right: 4%;
+        }
+      }
+    }
+    .form-row-wide {
+      clear: both;
+    }
+    .custom-checkbox {
+      z-index: 2;
+      display: inline;
+      position: absolute;
+      opacity: 0;
+      left: -15px;
+      cursor: pointer;
+      width: 250px;
+      height: 20px;
+
+      &:checked + .check-mark {
+        background-color: var(--primary-color);
+        &::after {
+          display: block;
+        }
+      }
+    }
+    .check-mark {
+      z-index: 1;
+      background: #0d0e13;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #454d6a;
+      border-radius: 4px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+    }
+    .radio {
+      border-radius: 50%;
+    }
+  }
+}

@@ -11,7 +11,7 @@ import event3 from '@@/assets/images/PromotionalEvents/Events/item3.png'
 import event4 from '@@/assets/images/PromotionalEvents/Events/item4.png'
 import event5 from '@@/assets/images/PromotionalEvents/Events/item5.png'
 import event6 from '@@/assets/images/PromotionalEvents/Events/item6.png'
-
+import styles from './Event.module.scss'
 
 const PrevArrow = ({ style, onClick, isVisible }: any) => {
   return (
@@ -99,7 +99,7 @@ const settings = {
      <section id="Promotion" className="px-4 pb-16"
      onMouseEnter={() => setIsHovered(true)}
      onMouseLeave={() => setIsHovered(false)}>
-      <h1 className="font-black text-17.6px text-#fff text-center pb-6">Sự kiện</h1>
+      <h1 className="font-black text-17.6px text-#fff text-center pb-6 pt-8">Sự kiện</h1>
       <Slider {...settings} className="cursor-grab">
         {arrBanner.map((slider) => (
           <div className="px-8 pb-7 ">
@@ -107,7 +107,7 @@ const settings = {
             <Link to={``}><img className="rounded-[8px]" src={slider.img} alt={slider.title} /></Link>
             </div>
             <Link to={``}><h4 className="mb-2 font-black text-14.4px text-#b2ec0f">{slider.title}</h4></Link>
-            <span className=" text-#fff text-12.8px">{slider.time}</span>
+            <span className={` ${styles.truncateMultiline}  text-#fff text-[12px] text-clip `}>{slider.time}</span>
           </div>
         ))}
       </Slider>
