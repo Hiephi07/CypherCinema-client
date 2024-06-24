@@ -19,11 +19,9 @@ const HomePage = () => {
         <ComingsoonMovie />
         <BannerButton />
       </div>
-      <StarMember />
-      <div className="container">
-      {/* <Promotion /> */}
-      <Event />
-      </div>
+        <Promotion />
+        <Event />
+      
     </>
   );
 };
