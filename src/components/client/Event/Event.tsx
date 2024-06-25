@@ -98,7 +98,7 @@ const settings = {
 
     return (
      <>
-     <section id="Promotion" className="px-4 pb-16"
+     <section id="Event" className="px-4 pb-16"
      onMouseEnter={() => setIsHovered(true)}
      onMouseLeave={() => setIsHovered(false)}>
       <h1 className="font-black text-17.6px text-#fff text-center pb-6 pt-8">Sự kiện</h1>

@@ -11,6 +11,7 @@ import AuthPage from "./pages/client/auth/AuthPage";
 import EventPage from "./pages/client/event-pages/EventPage";
 import { useEffect, useState } from "react";
 import { RxCaretUp } from "react-icons/rx";
+import TheaterPage from "./pages/client/Theater-pages/TheaterPage";
 function App() {
    // Xử lý cuộc trang
    const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -50,6 +51,7 @@ function App() {
             <Route path="/">
               <Route index element={<HomePage />} />
               <Route path="/event" element={<EventPage />} />
+              <Route path="/theater" element={<TheaterPage />} />
               <Route path="/auth" element={<AuthPage />} />
               <Route
                 path="/auth/forgot-password"
@@ -62,7 +64,7 @@ function App() {
         <Footer />
         {/* Xử lí cuộn trang */}
         {isVisible && (
-        <button className="fixed bottom-14 right-5  text-white px-2 py-2 rounded-full bg-transparent border-[1.5px] border-solid border-#fff hover:bg-#72be43 hover:border-#72be43"
+        <button className="fixed bottom-6 right-2 z-50 text-white px-1 py-1 rounded-full bg-transparent border-[1.5px] border-solid border-#fff hover:bg-#72be43 hover:border-#72be43"
                 onClick={scrollToTop}>
           <RxCaretUp size={24} className="text-fff"/>
         </button>

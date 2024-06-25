@@ -1,0 +1,18 @@
+.ButtonGradientReversed {
+    border-radius: 4px;
+    transition: all 0.3s ease-out;
+    background: linear-gradient(
+      180deg,
+      #50b648 0%,
+      #90c63f 59.9%,
+      #b2ec0f 99.48%
+    );
+    &:hover {
+      background: linear-gradient(
+        0deg,
+        #50b648 0%,
+        #90c63f 59.9%,
+        #b2ec0f 99.48%
+      );
+    }
+  }

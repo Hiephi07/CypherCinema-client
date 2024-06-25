@@ -1,3 +1,5 @@
+import src from "node_modules/react-select/dist/declarations/src";
+
 export const forgotPassword = {
   title: "Quên mật khẩu",
   description:
@@ -34,22 +36,19 @@ export const footerInfo2 = [
     link: "",
   },
   {
-    title:
-      "Chính sách bảo vệ thông tin cá nhân của người tiêu dùng",
+    title: "Chính sách bảo vệ thông tin cá nhân của người tiêu dùng",
     link: "",
   },
 ];
 
 export const footerInfo3 = [
   {
-    title:
-      "Công ty TNHH MTV Ngôi Sao Cineplex BHD Việt Nam ",
+    title: "Công ty TNHH MTV Ngôi Sao Cineplex BHD Việt Nam ",
     detail: "",
   },
   {
     title: "",
-    detil:
-      "Công ty TNHH MTV Ngôi Sao Cineplex BHD Việt Nam",
+    detil: "Công ty TNHH MTV Ngôi Sao Cineplex BHD Việt Nam",
   },
   {
     title: "Giấy CNĐKDN: ",
@@ -98,9 +97,8 @@ export const footerIcons = [
 export const selectDay = {
   title: " Ngày",
   data: [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
-    17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-    31,
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
   ],
   width: "229px",
 };
@@ -186,3 +184,56 @@ export const selectCity = {
   ],
   width: "100%",
 };
+
+export const Theaters = [
+  {
+    title: "BHD Start The Garden",
+    src: "/public/assets//images/TheaterAddress/3.2-243x330-1.jpg",
+    span: "Thông tin chi tiết",
+  },
+  {
+    title: "BHD Start Le Van Viet",
+    src: "/public/assets//images/TheaterAddress/Cau-giay-copy-243x330-1.jpg",
+    span: "Thông tin chi tiết",
+  },
+  {
+    title: "BHD Start Pham Ngoc Thach",
+    src: "/public/assets//images/TheaterAddress/GARDEN-243x330-1.jpg",
+    span: "Thông tin chi tiết",
+  },
+  {
+    title: "BHD Start Long Khanh",
+    src: "/public/assets//images/TheaterAddress/HUE-copy-243x330-1.jpg",
+    span: "Thông tin chi tiết",
+  },
+  {
+    title: "BHD Start Long Khanh",
+    src: "/public/assets//images/TheaterAddress/long-khanh-243x330-1.jpg",
+    span: "Thông tin chi tiết",
+  },
+  {
+    title: "BHD Start Pham Hung",
+    src: "/public/assets//images/TheaterAddress/LVV-243x330-1.jpg",
+    span: "Thông tin chi tiết",
+  },
+  {
+    title: "BHD Start Quang Trung",
+    src: "/public/assets//images/TheaterAddress/PH-243x330-1.jpg",
+    span: "Thông tin chi tiết",
+  },
+  {
+    title: "BHD Start Thao Dien",
+    src: "/public/assets//images/TheaterAddress/PNT-CINEMA-243x330-1.jpg",
+    span: "Thông tin chi tiết",
+  },
+  {
+    title: "BHD Start Hue",
+    src: "/public/assets//images/TheaterAddress/QUANG-TRUNG-243x330-1.jpg",
+    span: "Thông tin chi tiết",
+  },
+  {
+    title: "BHD Start Discovery",
+    src: "/public/assets//images/TheaterAddress/THAO-DIEN-CINEMA-243x330-1.jpg",
+    span: "Thông tin chi tiết",
+  },
+];
