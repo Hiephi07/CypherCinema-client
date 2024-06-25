@@ -201,7 +201,7 @@ const ComingsoonMovie = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <h1
-          className={`font-black text-17.6px text-#fff text-center relative z-10 pb-[30px]`}
+          className={`font-black text-17.6px text-#fff text-center relative z-10 pb-[26px] pt-[36px]`}
         >
           Phim sắp chiếu
         </h1>

@@ -1,11 +1,8 @@
 import React from 'react'
 import  Event  from '@/components/client/Event/Event';
 
-interface Props {
-    
-}
 
-const EventPage = (props: Props) => {
+const EventPage = () => {
     return (
         <div className='pt-[100px]'>
             <Event />

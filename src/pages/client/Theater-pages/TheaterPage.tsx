@@ -4,7 +4,7 @@ import React from 'react'
 const TheaterPage = () => {
   return (
     <>
-      <div className='pt-[100px]'>
+      <div className='pt-[100px] pb-[60px]'>
             <Theater />
         </div>
     </>

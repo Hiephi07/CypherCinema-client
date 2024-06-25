@@ -69,7 +69,7 @@ const Header = () => {
                       ? "hover:text-#72be43"
                       : "hover:text-#fff "
                   } py-2.5 font-black`}
-                  to={``}
+                  to={`/showsTime`}
                 >
                   Lịch chiếu
                 </Link>

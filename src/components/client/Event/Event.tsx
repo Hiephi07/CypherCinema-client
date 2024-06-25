@@ -101,7 +101,7 @@ const settings = {
      <section id="Event" className="px-4 pb-16"
      onMouseEnter={() => setIsHovered(true)}
      onMouseLeave={() => setIsHovered(false)}>
-      <h1 className="font-black text-17.6px text-#fff text-center pb-6 pt-8">Sự kiện</h1>
+      <h1 className="font-black text-17.6px text-#fff text-center pb-[26px] pt-[36px]">Sự kiện</h1>
       <Slider {...settings} className="cursor-grab">
         {arrBanner.map((slider, index) => (
           <div className="px-8 pb-7 " key={index}>

@@ -11,7 +11,8 @@ import AuthPage from "./pages/client/auth/AuthPage";
 import EventPage from "./pages/client/event-pages/EventPage";
 import { useEffect, useState } from "react";
 import { RxCaretUp } from "react-icons/rx";
-import TheaterPage from "./pages/client/Theater-pages/TheaterPage";
+import TheaterPage from "./pages/client/theater-pages/TheaterPage";
+import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
 function App() {
    // Xử lý cuộc trang
    const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -52,6 +53,7 @@ function App() {
               <Route index element={<HomePage />} />
               <Route path="/event" element={<EventPage />} />
               <Route path="/theater" element={<TheaterPage />} />
+              <Route path="/showsTime" element={<ShowTimePage />} />
               <Route path="/auth" element={<AuthPage />} />
               <Route
                 path="/auth/forgot-password"
