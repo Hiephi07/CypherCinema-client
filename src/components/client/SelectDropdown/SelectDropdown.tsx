@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SelectDropdown.module.scss";
 const SelectDropdown = ({
   selectPosition,
@@ -7,7 +7,22 @@ const SelectDropdown = ({
   toggle,
 }) => {
   const isWidthFull = type.width == "100%";
-  console.log(isWidthFull);
+  const [input, setInput] = useState("");
+  const [filterData, setFilterData] = useState(type.data);
+
+  const handleFilter = (e) => {
+    let newFilterData;
+    if (typeof e.target.value == "string") {
+      newFilterData = type.data.filter((item) =>
+        item.toString().includes(e.target.value.toString())
+      );
+    } else {
+      newFilterData = type.data.filter((item) =>
+        item.includes(e.target.value)
+      );
+    }
+    setFilterData(newFilterData);
+  };
   return (
     <>
       <span
@@ -22,12 +37,16 @@ const SelectDropdown = ({
         }}
       >
         <span>
-          <input type="number" />
+          <input
+            type="number"
+            min={1}
+            onChange={handleFilter}
+          />
         </span>
         <span className={styles["select-result"]}>
           <ul>
             <li> Chọn {type.title} </li>
-            {type.data.map((item, idx) => {
+            {filterData.map((item, idx) => {
               return (
                 <li
                   key={idx}

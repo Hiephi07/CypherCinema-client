@@ -11,37 +11,41 @@ import AuthPage from "./pages/client/auth/AuthPage";
 import EventPage from "./pages/client/event-pages/EventPage";
 import { useEffect, useState } from "react";
 import { RxCaretUp } from "react-icons/rx";
-import TheaterPage from "./pages/client/theater-pages/TheaterPage";
 import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
+import TheaterPage from "./pages/client/Theater-pages/TheaterPage";
+import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
 function App() {
-   // Xử lý cuộc trang
-   const [isVisible, setIsVisible] = useState<boolean>(false);
+  // Xử lý cuộc trang
+  const [isVisible, setIsVisible] =
+    useState<boolean>(false);
 
-   // Xử lý hiển thị nút khi cuộn xuống 200px
-   useEffect(() => {
-     const toggleVisibility = () => {
-       if (window.pageYOffset > 500) {
-         setIsVisible(true);
-       } else {
-         setIsVisible(false);
-       }
-     };
- 
-     window.addEventListener('scroll', toggleVisibility);
- 
-     return () => {
-       window.removeEventListener('scroll', toggleVisibility);
-     };
-   }, []);
- 
-   // Xử lý sự kiện khi click vào nút
-   const scrollToTop = () => {
-     window.scrollTo({
-       top: 0,
-       behavior: 'smooth'
-     });
-   };
- 
+  // Xử lý hiển thị nút khi cuộn xuống 200px
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 500) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => {
+      window.removeEventListener(
+        "scroll",
+        toggleVisibility
+      );
+    };
+  }, []);
+
+  // Xử lý sự kiện khi click vào nút
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
@@ -51,10 +55,23 @@ function App() {
           <Routes>
             <Route path="/">
               <Route index element={<HomePage />} />
-              <Route path="/event" element={<EventPage />} />
-              <Route path="/theater" element={<TheaterPage />} />
-              <Route path="/showsTime" element={<ShowTimePage />} />
+              <Route
+                path="/event"
+                element={<EventPage />}
+              />
+              <Route
+                path="/theater"
+                element={<TheaterPage />}
+              />
+              <Route
+                path="/showsTime"
+                element={<ShowTimePage />}
+              />
               <Route path="/auth" element={<AuthPage />} />
+              <Route
+                path="/auth/:id"
+                element={<UserInfomation />}
+              />
               <Route
                 path="/auth/forgot-password"
                 element={<ForgotPasswordPage />}
@@ -66,11 +83,13 @@ function App() {
         <Footer />
         {/* Xử lí cuộn trang */}
         {isVisible && (
-        <button className="fixed bottom-6 right-2 z-50 text-white px-1 py-1 rounded-full bg-transparent border-[1.5px] border-solid border-#fff hover:bg-#72be43 hover:border-#72be43"
-                onClick={scrollToTop}>
-          <RxCaretUp size={24} className="text-fff"/>
-        </button>
-      )}
+          <button
+            className="fixed bottom-6 right-2 z-50 text-white px-1 py-1 rounded-full bg-transparent border-[1.5px] border-solid border-#fff hover:bg-#72be43 hover:border-#72be43"
+            onClick={scrollToTop}
+          >
+            <RxCaretUp size={24} className="text-fff" />
+          </button>
+        )}
       </div>
     </>
   );

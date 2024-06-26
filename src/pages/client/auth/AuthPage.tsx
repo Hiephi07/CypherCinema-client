@@ -7,6 +7,7 @@ import {
   selectYear,
 } from "@/_constant";
 import { selectMonth } from "../../../_constant";
+import { getPositionEl } from "@/lib/utils";
 const AuthPage = () => {
   const [type, setType] = useState("");
   const [day, setDay] = useState(" Chọn ngày");
@@ -14,14 +15,6 @@ const AuthPage = () => {
   const [year, setYear] = useState(" Chọn năm");
   const [city, setCity] = useState(" Chọn Tỉnh/Thành phố");
 
-  console.log(
-    document.getElementsByClassName(
-      `${styles["selection"]}`
-    )
-  );
-  useEffect(() => {
-    console.log(day, month, year);
-  }, [day, month, year]);
   const [selectPosition, setSelectPosition] = useState({
     x: 0,
     y: 0,
@@ -29,17 +22,6 @@ const AuthPage = () => {
   });
 
   // count distance of el
-  const getPositionEl = (el: HTMLElement) => {
-    let totalOffsetX = 0;
-    let totalOffsetY = 0;
-
-    while (el) {
-      totalOffsetX += el.offsetLeft;
-      totalOffsetY += el.offsetTop;
-      el = el.offsetParent;
-    }
-    return { x: totalOffsetX, y: totalOffsetY };
-  };
   const handleVisibleSelect = (
     e: React.MouseEvent<HTMLSpanElement, MouseEvent>,
     type: string

@@ -1,3 +1,4 @@
+import { userPoint } from "@/_constant";
 import src from "node_modules/react-select/dist/declarations/src";
 
 export const forgotPassword = {
@@ -36,19 +37,22 @@ export const footerInfo2 = [
     link: "",
   },
   {
-    title: "Chính sách bảo vệ thông tin cá nhân của người tiêu dùng",
+    title:
+      "Chính sách bảo vệ thông tin cá nhân của người tiêu dùng",
     link: "",
   },
 ];
 
 export const footerInfo3 = [
   {
-    title: "Công ty TNHH MTV Ngôi Sao Cineplex BHD Việt Nam ",
+    title:
+      "Công ty TNHH MTV Ngôi Sao Cineplex BHD Việt Nam ",
     detail: "",
   },
   {
     title: "",
-    detil: "Công ty TNHH MTV Ngôi Sao Cineplex BHD Việt Nam",
+    detil:
+      "Công ty TNHH MTV Ngôi Sao Cineplex BHD Việt Nam",
   },
   {
     title: "Giấy CNĐKDN: ",
@@ -97,8 +101,9 @@ export const footerIcons = [
 export const selectDay = {
   title: " Ngày",
   data: [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-    22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+    17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    31,
   ],
   width: "229px",
 };
@@ -235,5 +240,27 @@ export const Theaters = [
     title: "BHD Start Discovery",
     src: "/public/assets//images/TheaterAddress/THAO-DIEN-CINEMA-243x330-1.jpg",
     span: "Thông tin chi tiết",
+  },
+];
+
+export const userPoint = [
+  {
+    title: " Điểm RP: ",
+  },
+  {
+    title: "Tổng visit: ",
+  },
+  {
+    title: "Expried visit: ",
+  },
+  {
+    title: "Active visit: ",
+  },
+  {
+    title: "Tổng chi tiêu trong tháng (6/2024): ",
+  },
+  {
+    title:
+      "Vui lòng đăng ảnh chân dung, thấy rõ mặt có kích thước: ngang 200 pixel và dọc 200 pixel (dung lượng dưới 1MB)",
   },
 ];
