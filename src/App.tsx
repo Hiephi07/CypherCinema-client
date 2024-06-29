@@ -15,6 +15,8 @@ import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
 import TheaterPage from "./pages/client/Theater-pages/TheaterPage";
 import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
 import ChangePwPage from "./pages/client/change-password/ChangePwPage";
+import AboutUsPage from "./pages/client/about-us/AboutUsPage";
+import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
 function App() {
   // Xử lý cuộc trang
   const [isVisible, setIsVisible] =
@@ -47,41 +49,40 @@ function App() {
       behavior: "smooth",
     });
   };
+  const routes = [
+    { path: "/event", element: <EventPage /> },
+    { path: "/theater", element: <TheaterPage /> },
+    { path: "/showsTime", element: <ShowTimePage /> },
+    { path: "/auth", element: <AuthPage /> },
+    { path: "/auth/:id", element: <UserInfomation /> },
+    {
+      path: "/auth/forgot-password",
+      element: <ForgotPasswordPage />,
+    },
+    {
+      path: "/auth/change-password/:id",
+      element: <ChangePwPage />,
+    },
+    { path: "*", element: <NotFoundPage /> },
+    { path: "/about-us", element: <AboutUsPage /> },
+  ];
 
   return (
     <>
+      <ScrollToTop />
       <div className="container- p-0 m-0 relative bg-#1a1d29">
         <Header />
         <main>
           <Routes>
             <Route path="/">
               <Route index element={<HomePage />} />
-              <Route
-                path="/event"
-                element={<EventPage />}
-              />
-              <Route
-                path="/theater"
-                element={<TheaterPage />}
-              />
-              <Route
-                path="/showsTime"
-                element={<ShowTimePage />}
-              />
-              <Route path="/auth" element={<AuthPage />} />
-              <Route
-                path="/auth/:id"
-                element={<UserInfomation />}
-              />
-              <Route
-                path="/auth/forgot-password"
-                element={<ForgotPasswordPage />}
-              />
-              <Route
-                path="/auth/change-password/:id"
-                element={<ChangePwPage />}
-              />
-              <Route path="*" element={<NotFoundPage />} />
+              {routes.map((route, idx) => (
+                <Route
+                  key={idx}
+                  path={route.path}
+                  element={route.element}
+                />
+              ))}
             </Route>
           </Routes>
         </main>

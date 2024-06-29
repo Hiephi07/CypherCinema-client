@@ -264,3 +264,28 @@ export const userPoint = [
       "Vui lòng đăng ảnh chân dung, thấy rõ mặt có kích thước: ngang 200 pixel và dọc 200 pixel (dung lượng dưới 1MB)",
   },
 ];
+
+export const aboutUs = [
+  {
+    img: "https://bhdstar.vn/wp-content/uploads/2023/09/aboutus4.jpg",
+    text: "BHD Star Cineplex Cinema là hệ thống cụm rạp cao cấp với chất lượng âm thanh và hình ảnh hiện đại, được thành lập vào năm 2010.",
+    text2: "",
+  },
+  {
+    img: "https://bhdstar.vn/wp-content/uploads/2023/09/aboutus1.jpg",
+    text: "BHD Star Cineplex được biết đến với cụm rạp đầu tiên với 5 phòng chiếu vào năm 2010. Từ 2014, BHD Star Cineplex là cụm rạp của doanh nghiệp Việt Nam duy nhất có sức phát triển mạnh mẽ, qua việc liên tục mở thêm các vị trí rạp mới, ở những khu vực đắc địa của Thành phố Hồ Chí Minh, Hà Nội, Huế và các tỉnh thành khác.",
+    text2:
+      "Bên cạnh việc sẽ tiếp tục mở rộng ra các tỉnh thành khác, giá trị cốt lõi của thương hiệu BHD Star Cineplex là luôn luôn bảo đảm trải nghiệm của khách hàng qua chất lượng phục vụ, đồng nhất tại tất cả các cụm rạp.",
+  },
+  {
+    img: "https://bhdstar.vn/wp-content/uploads/2023/09/aboutus2.jpg",
+    text: "BHD có tên đầy đủ là Công ty TNHH Bình Hạnh Đan, thành lập vào năm 1996. Công ty có hoạt động về Gameshow truyền hình và các hoạt động về phim như sản xuất phim, hợp tác đưa phim nước ngoài về Việt Nam và mở các rạp chiếu phim gọi tên là BHD Star Cineplex.",
+    text2:
+      "BHD Star Cineplex là một trong những cụm rạp đầu tiên. Luôn đặt trải nghiệm khách hàng lên hàng đầu nên BHD Star Cineplex ngày càng thu hút được đông đảo khách hàng và tiến thân trở thành cụm rạp hàng đầu Việt Nam.",
+  },
+  {
+    img: "https://bhdstar.vn/wp-content/uploads/2023/09/aboutus3.jpg",
+    text: "BHD Star Cineplex luôn được trang bị kỹ lưỡng về âm thanh hình ảnh luôn được áp dụng các công nghệ tối tân nhất mang lại trải nghiệm chân thật nhất, không gian thoải mái, sạch sẽ để khách hàng luôn yên tâm khi sử dụng dịch vụ và đội ngũ nhân viên được cam kết phục vụ đầy đủ, chuyên nghiệp thoả mãn các yêu cầu của khách hàng kịp thời.",
+    text2: "",
+  },
+];
