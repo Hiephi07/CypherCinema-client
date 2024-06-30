@@ -17,6 +17,7 @@ import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
 import ChangePwPage from "./pages/client/change-password/ChangePwPage";
 import AboutUsPage from "./pages/client/about-us/AboutUsPage";
 import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
+import HistoryPage from "./pages/client/history/HistoryPage";
 function App() {
   // Xử lý cuộc trang
   const [isVisible, setIsVisible] =
@@ -62,6 +63,10 @@ function App() {
     {
       path: "/auth/change-password/:id",
       element: <ChangePwPage />,
+    },
+    {
+      path: "/auth/history",
+      element: <HistoryPage />,
     },
     { path: "*", element: <NotFoundPage /> },
     { path: "/about-us", element: <AboutUsPage /> },
