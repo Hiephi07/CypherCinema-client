@@ -1,5 +1,4 @@
 import Theater from '@/components/client/Theater/Theater'
-import React from 'react'
 
 const TheaterPage = () => {
   return (

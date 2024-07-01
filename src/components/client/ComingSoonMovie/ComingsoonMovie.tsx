@@ -258,7 +258,7 @@ const ComingsoonMovie = () => {
                 </Link>
               </div>
               
-                  <div className="w-[80%] flex items-center justify-start font-bold uppercase transition-all duration-600 ease-in-out mt-4 text-10px py-0 px-3 h-8 border rounded border-#90C63F border-solid text-#fff bg-#2c2c2c4a hover:text-#fff hover:bg-#72be43">
+                  <div className="w-[80%] flex items-center text-center justify-center font-bold uppercase transition-all duration-600 ease-in-out mt-4 text-10px py-0 px-3 h-8 border rounded border-#90C63F border-solid text-#fff bg-#2c2c2c4a hover:text-#fff hover:bg-#72be43">
                     <IoIosInformationCircle className="mr-1 size-3" />{" "}
                     Thông tin chi tiết
                   </div>
