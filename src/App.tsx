@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
-// import HomePage from "./pages/client/home-pages/HomePage";
-// import LoginPage from "./pages/client/login/LoginPage";
 import Header from "@/components/client/Header/Header";
 import HomePage from "./pages/client/home-pages/HomePage";
 import Footer from "@/components/client/Footer/Footer";
@@ -63,6 +61,7 @@ function App() {
       path: "/auth/change-password/:id",
       element: <ChangePwPage />,
     },
+    { path: "*", element: <NotFoundPage /> },
     { path: "/about-us", element: <AboutUsPage /> },
     { path: "*", element: <NotFoundPage /> },
   ];
