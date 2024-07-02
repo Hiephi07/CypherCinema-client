@@ -1,6 +1,3 @@
-import { userPoint } from "@/_constant";
-import src from "node_modules/react-select/dist/declarations/src";
-
 export const forgotPassword = {
   title: "Quên mật khẩu",
   description:
@@ -289,3 +286,34 @@ export const aboutUs = [
     text2: "",
   },
 ];
+
+export const months = [
+  {
+    month: [1, 2, 3],
+    text: ["Tháng 1", "Tháng 2", "Tháng 3"],
+  },
+  {
+    month: [4, 5, 6],
+    text: ["Tháng 4", "Tháng 5", "Tháng 6"],
+  },
+  {
+    month: [7, 8, 9],
+    text: ["Tháng 7", "Tháng 8", "Tháng 9"],
+  },
+  {
+    month: [10, 11, 12],
+    text: ["Tháng 10", "Tháng 11", "Tháng 12"],
+  },
+];
+
+export const years = Array.from(
+  { length: Math.ceil((2100 - 1900 + 1) / 3) },
+  (_, index) => {
+    const startYear = 1900 + index * 3;
+    const middleYear = 1900 + index * 3 + 1;
+    const endYear = 1900 + index * 3 + 2;
+    return [startYear, middleYear, endYear];
+    // need return [1990,1991,1992]
+    // [1993,1994,1995]
+  }
+);
