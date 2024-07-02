@@ -10,6 +10,7 @@ import { useState, useEffect, useContext } from "react";
 import { HiMiniTicket } from "react-icons/hi2";
 import { FaChevronDown } from "react-icons/fa";
 import { ThemeContext } from "@/_context/ThemeProvider";
+import UserDropBox from "./UserDropBox/UserDropBox";
 
 const Header = () => {
   const [selecdOption, setOption] = useState<string | null>(
@@ -117,7 +118,7 @@ const Header = () => {
                     sideOffset={1}
                     align="start"
                     alignOffset={-18}
-                    className="rounded-xl w-56 px-0 text-12.8px border-#bababa bg-#2c2c2c4a py-2.5 min-w-56"
+                    className="rounded-xl w-56 px-0 text-12.8px border-#bababa bg-#2c2c2c4a py-2.5 min-w-56 backdrop-blur-[3px]"
                   >
                     <Link
                       to={``}
@@ -157,7 +158,7 @@ const Header = () => {
                     sideOffset={0}
                     align="end"
                     alignOffset={-18}
-                    className="rounded-xl w-56 px-0 text-12.8px bg-#2c2c2c4a border-#bababa py-2 min-w-64"
+                    className="rounded-xl w-56 px-0 text-12.8px bg-#2c2c2c4a border-#bababa py-2 min-w-64 backdrop-blur-[3px]"
                   >
                     <ul className="text-left">
                       <li
@@ -216,8 +217,11 @@ const Header = () => {
               </HoverCardTrigger>
             </HoverCard>
 
+            {/* User - Dropdown */}
+            <UserDropBox />
+
             {/* Đăng ký - Đăng nhập */}
-            <HoverCard openDelay={200}>
+            {/* <HoverCard openDelay={200}>
               <HoverCardTrigger asChild>
                 <Link
                   to={`/auth`}
@@ -227,9 +231,9 @@ const Header = () => {
                 </Link>
               </HoverCardTrigger>
               <HoverCardContent
-                sideOffset={1}
+                sideOffset={8}
                 align="start"
-                alignOffset={-13}
+                alignOffset={-100}
                 className="rounded min-w-72 w-56 px-2.5 bg-#1A1D29 border-#9A9A9A py-2.5"
               >
                 <form className="pt-2.5 px-2 mb-4 text-#fff">
@@ -277,16 +281,18 @@ const Header = () => {
                   </Button>
                   <Link
                     to={"/auth"}
-                    className="transition-all duration-300 ease-in-out rounded h-8  text-12.8px border-#90C63F border font-bold w-full hover:bg-#5B9836"
+                    className="block transition-all duration-300 ease-in-out rounded text-center text-12.8px border-#90C63F border font-bold px-[63px] py-[8px] mb-4 hover:bg-#5B9836"
                   >
                     ĐĂNG KÝ THÀNH VIÊN
                   </Link>
                 </form>
               </HoverCardContent>
-            </HoverCard>
+            </HoverCard> */}
+
+            
 
             {/* Đặt vé */}
-            <Link
+            {/* <Link
               className={`${styles.ButtonGradientReversed} mx-2 font-black text-15.64px text-#fff`}
               to={``}
             >
@@ -294,7 +300,7 @@ const Header = () => {
                 <HiMiniTicket className="mr-2 size-6 " />{" "}
                 MUA VÉ
               </span>
-            </Link>
+            </Link> */}
 
             {/*toggle theme */}
             <button>

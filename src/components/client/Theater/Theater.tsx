@@ -17,7 +17,7 @@ const Theater = () => {
         Hệ thống rạp
       </h1>
       <div className="grid grid-cols-4 gap-12 mx-[90px] ">
-        {Theaters.map((theater) => (
+        {Theaters.map((theater, index) => (
           <div className="max-w-[244px] ">
             <Sheet>
               <SheetTrigger>

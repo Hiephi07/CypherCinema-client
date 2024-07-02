@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.scss";
-// import HomePage from "./pages/client/home-pages/HomePage";
-// import LoginPage from "./pages/client/login/LoginPage";
 import Header from "@/components/client/Header/Header";
 import HomePage from "./pages/client/home-pages/HomePage";
 import Footer from "@/components/client/Footer/Footer";
@@ -12,12 +10,11 @@ import EventPage from "./pages/client/event-pages/EventPage";
 import { useEffect, useState } from "react";
 import { RxCaretUp } from "react-icons/rx";
 import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
-import TheaterPage from "./pages/client/Theater-pages/TheaterPage";
 import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
 import ChangePwPage from "./pages/client/change-password/ChangePwPage";
 import AboutUsPage from "./pages/client/about-us/AboutUsPage";
 import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
-import HistoryPage from "./pages/client/history/HistoryPage";
+import TheaterPage from "./pages/client/theater-pages/TheaterPage";
 function App() {
   // Xử lý cuộc trang
   const [isVisible, setIsVisible] =
@@ -64,12 +61,9 @@ function App() {
       path: "/auth/change-password/:id",
       element: <ChangePwPage />,
     },
-    {
-      path: "/auth/history",
-      element: <HistoryPage />,
-    },
     { path: "*", element: <NotFoundPage /> },
     { path: "/about-us", element: <AboutUsPage /> },
+    { path: "*", element: <NotFoundPage /> },
   ];
 
   return (
