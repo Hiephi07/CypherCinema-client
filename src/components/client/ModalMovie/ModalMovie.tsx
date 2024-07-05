@@ -40,7 +40,7 @@ const ModalMovie = ({
             {/* <div
               className={`${styles["modal-content"]} mx-auto my-auto `}
             > */}
-            <div className="max-w-[1100px] h-[650px] m-auto py-[10x] px-[40px] rounded-[20px]  z-1024 ">
+            <div className="max-w-[1100px] h-[650px] m-auto py-[10x] px-[2rem] rounded-[20px]  z-1024 ">
               <section
                 className={styles.section}
                 id="section_1022680122"
@@ -101,7 +101,7 @@ const ModalMovie = ({
                   </div>
                   {!isTrailerVideo && (
                     <div
-                      className="flex flex-row gap-3 single-film-row justify-between"
+                      className={`${styles["modal-content"]}`}
                       id="row-1224851334"
                     >
                       <div
@@ -113,9 +113,9 @@ const ModalMovie = ({
                             className="img has-hover x md-x lg-x y md-y lg-y"
                             id="image_2125486326"
                           >
-                            <div className="img-inner dark px-[15px]">
+                            <div className="img-inner dark w-full px-[0rem]">
                               <img
-                                className="rounded-[12px]  mb-[20px]"
+                                className="rounded-[12px]  mb-[20px] w-full max-w-[330px]"
                                 src="https://bhdstar.vn/wp-content/uploads/2024/04/referenceSchemeHeadOfficeallowPlaceHoldertrueheight700ldapp-35.jpg"
                                 alt="LẬT MẶT 7: MỘT ĐIỀU ƯỚC"
                               />
@@ -149,7 +149,7 @@ const ModalMovie = ({
                       </div>
                       <div
                         id="col-2049549367"
-                        className="col w-[700px]"
+                        className="col w-full max-w-[700px]"
                       >
                         <div className="col-inner">
                           <h1 className="title text-uppercase text-[var(--primary-color)] text-[1.5em] mb-[25px] uppercase font-[700]">

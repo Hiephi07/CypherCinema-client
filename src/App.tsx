@@ -16,6 +16,7 @@ import AboutUsPage from "./pages/client/about-us/AboutUsPage";
 import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
 import BookTicketStepOne from "./components/client/BookTicketStepOne/BookTicketStepOne";
 import StepOne from "./pages/client/BookTicket/StepOne/StepOne";
+import TheaterPage from "./pages/client/Theater-pages/TheaterPage";
 function App() {
   // Xử lý cuộc trang
   const [isVisible, setIsVisible] =

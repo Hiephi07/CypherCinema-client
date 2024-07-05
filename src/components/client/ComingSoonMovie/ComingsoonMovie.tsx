@@ -171,6 +171,16 @@ const ComingsoonMovie = () => {
     autoplay: false,
     autoplaySpeed: 3000,
     dots: true,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+    ],
 
     customPaging: (index: number) => (
       <li className="rounded-full ">
@@ -196,7 +206,7 @@ const ComingsoonMovie = () => {
     <>
       <section
         id="Promotion"
-        className="px-4 pb-12 "
+        className="px-0 pb-12 "
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -210,70 +220,76 @@ const ComingsoonMovie = () => {
           className="cursor-grab  relative z-10"
         >
           {arrBanner.map((slider, index) => (
-            <div className="px-3 pb-3 " key={index}>
+            <div
+              className={`px-3 pb-3 ${styles["banner-content"]} `}
+              key={index}
+            >
               <Sheet>
-              <SheetTrigger className="">
-
-              <div className="wrap-img ">
-                  <img
-                    className="rounded-xl"
-                    src={slider.img}
-                    alt={slider.title}
-                  />
-              </div>
-              <div
-                className={`font-black text-12.8px text-#fff hover:text-#72be43 inline-block`}
-              >
-                <TooltipProvider delayDuration={0}>
-                  <Tooltip>
-                    <TooltipTrigger className="text-left mt-3 truncate w-[220px]">
-                      {slider.title}
-                    </TooltipTrigger>
-                    <TooltipContent
-                      sideOffset={5}
-                      className=" border-0 bg-black rounded-[6px]"
+                <SheetTrigger className="w-full">
+                  <div className="wrap-img w-full ">
+                    <img
+                      className="rounded-xl w-full"
+                      src={slider.img}
+                      alt={slider.title}
+                    />
+                  </div>
+                  <div
+                    className={`font-black text-12.8px text-#fff hover:text-#72be43 inline-block`}
+                  >
+                    <TooltipProvider delayDuration={0}>
+                      <Tooltip>
+                        <TooltipTrigger
+                          className={`text-left mt-3 truncate w-full ${styles["banner-content__text"]} `}
+                        >
+                          {slider.title}
+                        </TooltipTrigger>
+                        <TooltipContent
+                          sideOffset={5}
+                          className=" border-0 bg-black rounded-[6px]"
+                        >
+                          <p className="text-10px text-#fff uppercase">
+                            {slider.title}
+                          </p>
+                          <TooltipArrow
+                            asChild={false}
+                            className="fill-black"
+                            width={16}
+                            height={8}
+                          />
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </div>
+                  <div className="flex mt-2 text-11px">
+                    <p className="block text-#ccc  mr-1">
+                      Thể loại phim:
+                    </p>
+                    <Link
+                      to={``}
+                      className="text-#fff hover:text-#72be43"
                     >
-                      <p className="text-10px text-#fff uppercase">
-                        {slider.title}
-                      </p>
-                      <TooltipArrow
-                        asChild={false}
-                        className="fill-black"
-                        width={16}
-                        height={8}
-                      />
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </div>
-              <div className="flex mt-2 text-11px">
-                <p className="block text-#ccc  mr-1">
-                  Thể loại phim:
-                </p>
-                <Link
-                  to={``}
-                  className="text-#fff hover:text-#72be43"
-                >
-                  {slider.category}
-                </Link>
-              </div>
-              
-                  <div className="w-[80%] flex items-center text-center justify-center font-bold uppercase transition-all duration-600 ease-in-out mt-4 text-10px py-0 px-3 h-8 border rounded border-#90C63F border-solid text-#fff bg-#2c2c2c4a hover:text-#fff hover:bg-#72be43">
+                      {slider.category}
+                    </Link>
+                  </div>
+
+                  <div
+                    className={`max-w-[160px] w-[100%] flex items-center text-center justify-center font-bold uppercase transition-all duration-600 ease-in-out mt-4 text-10px py-0 px-3 h-8 border rounded border-#90C63F border-solid text-#fff bg-#2c2c2c4a hover:text-#fff hover:bg-#72be43`}
+                  >
                     <IoIosInformationCircle className="mr-1 size-3" />{" "}
                     Thông tin chi tiết
                   </div>
                 </SheetTrigger>
                 <SheetContent
-                  className="mt-12 ml-40 w-[996px] h-[550px] bg-#1a1a1a border-0 rounded-xl"
+                  className={styles["banner-content-slide"]}
                   side={"top"}
                 >
-                  <div className="flex box-border justify-center ">
-                    <div className="pr-4">
+                  <div className={styles["slide-content"]}>
+                    <div className="pr-4 mx-auto">
                       <div className="w-[320px] h-[476px] rounded-xl ">
                         <img
                           src={slider.img}
                           alt=""
-                          className="rounded-xl h-full w-full"
+                          className="rounded-xl h-full mx-auto w-full"
                         />
                       </div>
                       <div className="flex justify-center"></div>
@@ -327,7 +343,7 @@ const ComingsoonMovie = () => {
                     asChild
                   >
                     <button type="submit">
-                      <IoIosClose className="size-7" />
+                      <IoIosClose className="size-7 fill-white" />
                     </button>
                   </SheetClose>
                 </SheetContent>

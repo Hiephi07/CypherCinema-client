@@ -1,7 +1,37 @@
+@use "../../../_css/common.scss" as *;
 .truncateMultiline {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3; /* Số dòng bạn muốn hiển thị */
+}
+
+.banner-content-slide {
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  overflow-y: scroll;
+
+  @include laptop {
     overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 3; /* Số dòng bạn muốn hiển thị */
+    margin-top: 20vh;
+    max-width: 996px;
+    max-height: 550px;
+    background: #1a1a1a;
+    border: 0px solid;
+    border-radius: 0.75rem;
   }
+
+  .slide-content {
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include laptop {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}

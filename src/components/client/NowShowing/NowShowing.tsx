@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-// import styles from "./UpComingMovies.scss";
+// import styles from "./NowShowingMovies.scss";
 import { useMovieQuery } from "@/_hooks/useMovieQuery";
 import {
   motion,
@@ -11,7 +11,7 @@ import ModalMovie from "../ModalMovie/ModalMovie";
 import { ModalContext } from "@/_context/ModalMovie";
 import ModalConfirm from "@/components/client/ModalConfirm/ModalConfirm";
 
-const UpComingMovies = () => {
+const NowShowingMovies = () => {
   const { data: movies } = useMovieQuery();
 
   const [direction, setDirection] = useState(0);
@@ -215,4 +215,4 @@ const UpComingMovies = () => {
   );
 };
 
-export default UpComingMovies;
+export default NowShowingMovies;
