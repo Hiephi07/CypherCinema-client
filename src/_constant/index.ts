@@ -1,3 +1,5 @@
+import src from "node_modules/react-select/dist/declarations/src";
+
 export const forgotPassword = {
   title: "Quên mật khẩu",
   description:
