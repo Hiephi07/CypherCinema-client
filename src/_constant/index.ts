@@ -1,4 +1,3 @@
-import { userPoint } from "@/_constant";
 import src from "node_modules/react-select/dist/declarations/src";
 
 export const forgotPassword = {

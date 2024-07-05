@@ -1,3 +1,5 @@
+@use "../../../_css/common.scss" as *;
+
 header {
   height: 108px;
   transition: all ease-in-out 0,6;
@@ -7,11 +9,19 @@ header {
     rgba(144, 145, 146, 0.3) 59.9%,
     rgba(216, 216, 216, 0.3) 99.48%
   );
-
-    nav {
-        margin: 0 auto;
-        max-width: 1328px;
-    }
+  @include laptop {
+    width: 100%;
+  }
+  @include tablet {
+    width: 100%;
+  }
+  @include mobile {
+    width: 100%;
+  }
+    // nav {
+    //     // margin: 0 auto;
+    //     // max-width: 1328px;
+    // }
 }
 
 @keyframes stuckMoveDown {
@@ -27,15 +37,11 @@ header {
 .scrolled {
   background: #0d0e14; 
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+  z-index: 60;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm shadow để header trở nên nổi bật */
   animation: stuckMoveDown .6s ease 0s 1 normal none running ;
   height: 60px;
   align-items: center;
-
 }
 
 .ButtonGradientReversed {

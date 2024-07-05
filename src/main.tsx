@@ -5,6 +5,7 @@ import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
 import ThemeProvider from "./_context/ThemeProvider.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import BookTicketStepone_Provider from "./_context/BookTicketStepOne.tsx";
 
 
 const queryClient = new QueryClient();
@@ -16,7 +17,9 @@ ReactDOM.createRoot(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <ThemeProvider>
+        <BookTicketStepone_Provider>
           <App />
+        </BookTicketStepone_Provider>
         </ThemeProvider>
       </BrowserRouter>
     </QueryClientProvider>

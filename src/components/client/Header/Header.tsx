@@ -41,18 +41,18 @@ const Header = () => {
     setOption(option);
   };
   return (
-    <div className="">
+    <>
       <header
-        className={`fixed z-50 left-0 right-0  ${
+        className={`fixed z-50 left-0 right-0 ${
           styles.header
-        } ${scrolled ? styles.scrolled : ""} `}
+        } ${scrolled ? styles.scrolled : ""}`}
       >
-        <nav className="flex justify-between items-center h-full px-3.5">
+        <nav className="flex justify-between items-center w-full h-full px-3.5 ">
           {/*Section box letf */}
           <div className="box-left flex justify-start items-center">
             <Link
               to="/"
-              className={`mr-8 bg-white rounded-full   ${
+              className={`mr-8 bg-white rounded-full ml-2  ${
                 scrolled ? "h-10 w-10" : "w-16 h-16"
               }`}
             >
@@ -62,8 +62,8 @@ const Header = () => {
                 alt=""
               />
             </Link>
-            <ul className="flex text-12.8px text-#ffc items-center ">
-              <li className="first:mr-1.5">
+            <ul className={` ${styles['ul-box-left']} lg:flex md:hidden sm:hidden text-12.8px text-#ffc items-center`}>
+              <li className="mx-1.5">
                 <Link
                   className={`${
                     scrolled
@@ -99,7 +99,7 @@ const Header = () => {
                   Sự kiện
                 </Link>
               </li>
-              <li className="last:ml-1.5">
+              <li className="mx-1.5">
                 <HoverCard openDelay={200}>
                   <HoverCardTrigger asChild>
                     <Button
@@ -121,7 +121,7 @@ const Header = () => {
                     className="rounded-xl w-56 px-0 text-12.8px border-#bababa bg-#2c2c2c4a py-2.5 min-w-56 backdrop-blur-[3px]"
                   >
                     <Link
-                      to={``}
+                      to={`/about-us`}
                       className="hover:bg-#2c2c2c4a hover:text-#72be43 block py-2 px-5"
                     >
                       Giới thiệu
@@ -145,7 +145,7 @@ const Header = () => {
           </div>
 
           {/*Section box right */}
-          <div className="box-right flex items-center">
+          <div className="box-right lg:flex md:hidden sm:hidden items-center">
             {/* Vị trí */}
             <HoverCard openDelay={200}>
               <HoverCardTrigger asChild>
@@ -335,7 +335,7 @@ const Header = () => {
           </div>
         </nav>
       </header>
-    </div>
+    </>
   );
 };
 

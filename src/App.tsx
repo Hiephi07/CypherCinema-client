@@ -15,10 +15,11 @@ import ChangePwPage from "./pages/client/change-password/ChangePwPage";
 import AboutUsPage from "./pages/client/about-us/AboutUsPage";
 import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
 import TheaterPage from "./pages/client/theater-pages/TheaterPage";
+import BookTicketStepOne from "./components/client/BookTicketStepOne/BookTicketStepOne";
+import StepOne from "./pages/client/BookTicket/StepOne/StepOne";
 function App() {
   // Xử lý cuộc trang
-  const [isVisible, setIsVisible] =
-    useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   // Xử lý hiển thị nút khi cuộn xuống 200px
   useEffect(() => {
@@ -61,15 +62,15 @@ function App() {
       path: "/auth/change-password/:id",
       element: <ChangePwPage />,
     },
-    { path: "*", element: <NotFoundPage /> },
     { path: "/about-us", element: <AboutUsPage /> },
+    { path: "/book-ticket1", element: <StepOne />},
     { path: "*", element: <NotFoundPage /> },
   ];
 
   return (
     <>
       <ScrollToTop />
-      <div className="container- p-0 m-0 relative bg-#1a1d29">
+      <div className="p-0 m-0 relative bg-#1a1d29">
         <Header />
         <main>
           <Routes>
