@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="w-full">
       <section id="footerTop" className="bg-#090b13 ">
         <div
           className={`flex  text-#fff font-light ${styles["footer-content"]}`}
@@ -80,8 +80,8 @@ const Footer = () => {
                 <span className="block">
                   <strong className="font-black">
                     Hotline:
-                  </strong>
-                  {" "}19002099
+                  </strong>{" "}
+                  19002099
                 </span>
               </li>
               <li className=" mb-1">

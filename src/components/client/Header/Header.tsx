@@ -1,11 +1,26 @@
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
+
+import { IoIosArrowDown } from "react-icons/io";
 import { Button } from "@/components/ui/button";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+
+import { GiHamburgerMenu } from "react-icons/gi";
+
+import { FaUser } from "react-icons/fa";
+
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { useState, useEffect, useContext } from "react";
 import { HiMiniTicket } from "react-icons/hi2";
 import { FaChevronDown } from "react-icons/fa";
@@ -40,16 +55,20 @@ const Header = () => {
   const handleOptionClick = (option: string) => {
     setOption(option);
   };
+
+  const [selectArrow, setSelectArrow] = useState(false);
+  const [selectArrow2, setSelectArrow2] = useState(false);
+
   return (
-    <div className="">
+    <>
       <header
-        className={`fixed z-50 left-0 right-0  ${
+        className={`fixed z-50 left-0 top-0 mx-auto  ${
           styles.header
         } ${scrolled ? styles.scrolled : ""} `}
       >
         <nav className="flex justify-between items-center h-full px-3.5">
           {/*Section box letf */}
-          <div className="box-left flex justify-start items-center">
+          <div className={styles["box-left"]}>
             <Link
               to="/"
               className={`mr-8 bg-white rounded-full   ${
@@ -62,7 +81,7 @@ const Header = () => {
                 alt=""
               />
             </Link>
-            <ul className="flex text-12.8px text-#ffc items-center ">
+            <ul className="flex flex-row text-12.8px text-#ffc items-center ">
               <li className="first:mr-1.5">
                 <Link
                   className={`${
@@ -145,8 +164,7 @@ const Header = () => {
           </div>
 
           {/*Section box right */}
-          <div className="box-right flex items-center">
-            {/* Vị trí */}
+          <div className={styles["box-right"]}>
             <HoverCard openDelay={200}>
               <HoverCardTrigger asChild>
                 <Button className="transition-all duration-300 mx-2 h-9 px-3 py-2 text-#fff bg-#2c2c2c4a hover:bg-#72be43 border rounded border-#787878">
@@ -289,8 +307,6 @@ const Header = () => {
               </HoverCardContent>
             </HoverCard> */}
 
-            
-
             {/* Đặt vé */}
             {/* <Link
               className={`${styles.ButtonGradientReversed} mx-2 font-black text-15.64px text-#fff`}
@@ -333,9 +349,121 @@ const Header = () => {
               </label>
             </button>
           </div>
+
+          <div className={styles["mobile"]}>
+            <Sheet>
+              <SheetTrigger className="flex flex-row gap-[14px] items-center">
+                {" "}
+                <Link to={"/auth"}>
+                  <FaUser className="fill-white stroke-white  w-[18px] h-[24px] " />{" "}
+                </Link>
+                <GiHamburgerMenu className="fill-white w-[25px] h-[50px]" />
+              </SheetTrigger>
+              <SheetContent className="text-[var(--theme-text)] ">
+                {/* <SheetHeader>
+                <SheetTitle className="">
+                  Are you absolutely sure?
+                </SheetTitle>
+                <SheetDescription>
+                  This action cannot be undone. This will
+                  permanently delete your account and remove
+                  your data from our servers.
+                </SheetDescription>
+              </SheetHeader> */}
+                <ul className={styles["mobile-nav"]}>
+                  <li
+                    className={styles["mobile-btn-ticket"]}
+                  >
+                    <Link
+                      className={`${styles.ButtonGradientReversed} mx-2 font-black text-15.64px `}
+                      to={``}
+                    >
+                      <span className="flex items-center px-3 py-2 h-9">
+                        <HiMiniTicket className="mr-2 size-6 " />{" "}
+                        MUA VÉ
+                      </span>
+                    </Link>
+                  </li>
+                  <li>
+                    <a href=""> Lịch chiếu </a>
+                    <button
+                      onClick={() =>
+                        setSelectArrow(!selectArrow)
+                      }
+                      className={`flex items-center transform transition ${
+                        selectArrow
+                          ? "rotate-[-180deg]"
+                          : "rotate-0"
+                      }`}
+                    >
+                      <IoIosArrowDown className="w-[18px] h-[33px] " />
+                    </button>
+                    {selectArrow && (
+                      <ul className="w-full">
+                        <li className="!border-none">
+                          {" "}
+                          Lịch chiếu phim{" "}
+                        </li>
+                        <li className="!border-none">
+                          {" "}
+                          Lịch chiếu rạp{" "}
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+                  <li>
+                    <a href=""> Hệ thống rạp </a>
+                  </li>
+                  <li>
+                    <a href=""> Của hàng </a>
+                  </li>
+                  <li>
+                    <a href="">Khuyến mãi </a>
+                  </li>
+                  <li>
+                    <a href=""> Khác</a>
+                    <button
+                      onClick={() =>
+                        setSelectArrow2(!selectArrow2)
+                      }
+                      className={`flex items-center transform transition ${
+                        selectArrow
+                          ? "rotate-[-180deg]"
+                          : "rotate-0"
+                      }`}
+                    >
+                      <IoIosArrowDown className="w-[18px] h-[33px] " />
+                    </button>
+                    {selectArrow2 && (
+                      <ul className="w-full">
+                        <li className="!border-none">
+                          {" "}
+                          <a href="/about-us">
+                            {" "}
+                            Về chúng tôi{" "}
+                          </a>
+                        </li>
+                        <li className="!border-none">
+                          {" "}
+                          <a href="#">
+                            {" "}
+                            Dịch vụ quảng cáo{" "}
+                          </a>
+                        </li>
+                        <li className="!border-none">
+                          {" "}
+                          <a href="#"> Tuyển dụng </a>
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+                </ul>
+              </SheetContent>
+            </Sheet>
+          </div>
         </nav>
       </header>
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,10 @@
+@use "../../../_css/common.scss" as *;
 header {
-  height: 108px;
-  transition: all ease-in-out 0,6;
+  width: 100vw;
+  max-width: 100%;
+  height: 100%;
+  max-height: 108px;
+  transition: all ease-in-out 0, 6;
   background: linear-gradient(
     180deg,
     rgba(106, 107, 108, 0.3) 0%,
@@ -8,52 +12,55 @@ header {
     rgba(216, 216, 216, 0.3) 99.48%
   );
 
-    nav {
-        margin: 0 auto;
-        max-width: 1328px;
-    }
+  @include laptop {
+    width: 100%;
+  }
+  nav {
+    max-width: 1328px;
+    margin: 0 auto;
+  }
 }
 
 @keyframes stuckMoveDown {
   0% {
-      transform: translateY(-100%);
+    transform: translateY(-100%);
   }
   100% {
-      transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
 /* Màu nền mới khi header được cuộn xuống */
 .scrolled {
-  background: #0d0e14; 
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  background: #0d0e14;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm shadow để header trở nên nổi bật */
-  animation: stuckMoveDown .6s ease 0s 1 normal none running ;
+  animation: stuckMoveDown 0.6s ease 0s 1 normal none
+    running;
   height: 60px;
-  align-items: center;
-
 }
 
 .ButtonGradientReversed {
-  border-radius: 4px;
-  transition: all 0.3s ease-out;
-  background: linear-gradient(
-    180deg,
-    #50b648 0%,
-    #90c63f 59.9%,
-    #b2ec0f 99.48%
-  );
-  &:hover {
+  span {
+    border-radius: 4px;
+
+    width: 100%;
+    max-width: 123px;
+    transition: all 0.3s ease-out;
     background: linear-gradient(
-      0deg,
+      180deg,
       #50b648 0%,
       #90c63f 59.9%,
       #b2ec0f 99.48%
     );
+    &:hover {
+      background: linear-gradient(
+        0deg,
+        #50b648 0%,
+        #90c63f 59.9%,
+        #b2ec0f 99.48%
+      );
+    }
   }
 }
 
@@ -170,5 +177,69 @@ header {
 
   &:checked + .slider:before {
     transform: translateX(30px);
+  }
+}
+
+.box-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+
+  ul {
+    display: none;
+    @include laptop {
+      display: flex;
+    }
+  }
+}
+.box-right {
+  align-items: center;
+  display: none;
+
+  @include laptop {
+    display: flex;
+  }
+}
+
+.mobile {
+  display: block;
+  @include laptop {
+    display: none;
+  }
+}
+.mobile-nav {
+  li {
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    color: #d2d2d2;
+    font-size: 12.8px;
+    font-weight: 700;
+    line-height: 20.48px;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    text-align: left;
+    padding: 15px 0 15px 20px;
+
+    button {
+      display: inline-block;
+      margin-top: -4px;
+      letter-spacing: 0.4656px;
+      line-height: 33.5253px;
+      text-align: center;
+      :checked {
+        transform: rotate(-180deg) 300ms;
+      }
+    }
+    a {
+      width: 90%;
+    }
+  }
+
+  .mobile-btn-ticket {
+    margin-bottom: 30px;
+    color: white;
+    border-top: none;
   }
 }

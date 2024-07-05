@@ -37,6 +37,7 @@ const MovieCard: React.FC<{
                     data-url="https://bhdstar.vn/phim/the-watchers-nhung-ke-theo-doi/"
                     href="#filmQuickView"
                     data-id={63473}
+                    onClick={() => toggleModal()}
                   >
                     <img
                       className="w-full rounded-[12px]"

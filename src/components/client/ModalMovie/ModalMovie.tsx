@@ -30,13 +30,16 @@ const ModalMovie = ({
               zIndex: 1,
             }}
           />
-
           <motion.div
             className={styles["modal-movie"]}
             initial={{ opacity: 0, y: 200 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
+            onClick={() => toggleModal()}
           >
+            {/* <div
+              className={`${styles["modal-content"]} mx-auto my-auto `}
+            > */}
             <div className="max-w-[1100px] h-[650px] m-auto py-[10x] px-[40px] rounded-[20px]  z-1024 ">
               <section
                 className={styles.section}
@@ -316,6 +319,7 @@ const ModalMovie = ({
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
+            {/* </div> */}
           </motion.div>
         </>
       </AnimatePresence>

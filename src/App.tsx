@@ -14,7 +14,8 @@ import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
 import ChangePwPage from "./pages/client/change-password/ChangePwPage";
 import AboutUsPage from "./pages/client/about-us/AboutUsPage";
 import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
-import TheaterPage from "./pages/client/theater-pages/TheaterPage";
+import TheaterPage from "./pages/client/Theater-pages/TheaterPage";
+
 function App() {
   // Xử lý cuộc trang
   const [isVisible, setIsVisible] =
@@ -69,7 +70,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
-      <div className="container- p-0 m-0 relative bg-#1a1d29">
+      <div className=" p-0 m-0 relative bg-#1a1d29">
         <Header />
         <main>
           <Routes>

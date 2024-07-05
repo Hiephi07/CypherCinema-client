@@ -13,7 +13,6 @@ import ModalConfirm from "@/components/client/ModalConfirm/ModalConfirm";
 
 const UpComingMovies = () => {
   const { data: movies } = useMovieQuery();
-  console.log(movies);
 
   const [direction, setDirection] = useState(0);
   const maxCardSlide = 3;
