@@ -5,6 +5,7 @@ import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
 import ThemeProvider from "./_context/ThemeProvider.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import CalendarProvider from "./_context/CalendarProvider.tsx";
 import BookTicketStepone_Provider from "./_context/BookTicketStepOne.tsx";
 
 
@@ -18,7 +19,9 @@ ReactDOM.createRoot(
       <BrowserRouter>
         <ThemeProvider>
         <BookTicketStepone_Provider>
-          <App />
+          <CalendarProvider>
+            <App />
+          </CalendarProvider>
         </BookTicketStepone_Provider>
         </ThemeProvider>
       </BrowserRouter>

@@ -1,0 +1,43 @@
+@use "../../../_css/common.scss" as *;
+.calendar-wrapper {
+  position: absolute;
+  top: 2.8rem;
+  font-size: 16px;
+  left: 0;
+  width: 262px;
+  height: auto;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--theme-text);
+  @include laptop {
+    max-width: 262px;
+    max-height: 269px;
+    left: -2rem;
+  }
+
+  .calendar-arrow_top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: var(--bg-color);
+    border-inline-end: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .calendar-menu {
+    width: 100%;
+    padding-top: 0.3rem;
+
+    .active {
+      background: var(--color-green-300);
+      color: black;
+    }
+    .disable {
+      cursor: not-allowed;
+      background: var(--disabled-color);
+    }
+  }
+}

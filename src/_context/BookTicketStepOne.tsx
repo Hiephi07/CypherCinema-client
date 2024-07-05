@@ -1,4 +1,4 @@
-import { Month, getMonth, getYear, isBefore, isFriday, isMonday, isSaturday, isSunday, isThursday, isTuesday, isWednesday, startOfDay, startOfMonth } from "date-fns";
+import { getMonth, getYear, isBefore, isFriday, isMonday, isSaturday, isSunday, isThursday, isTuesday, isWednesday, startOfDay, startOfMonth } from "date-fns";
 import { ReactNode, createContext, useMemo, useState } from "react";
 import { Formatters } from "react-day-picker";
 

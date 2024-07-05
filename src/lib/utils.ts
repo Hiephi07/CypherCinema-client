@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -15,4 +16,11 @@ export const getPositionEl = (el: HTMLElement) => {
     el = el.offsetParent;
   }
   return { x: totalOffsetX, y: totalOffsetY };
+};
+
+export const getCurrentDate = () => {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  return { year, month };
 };

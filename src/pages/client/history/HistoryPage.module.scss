@@ -29,8 +29,8 @@
     }
   }
   .calendar-container {
-    // w-full max-w-[192px] relative  text-[16px] cursor-pointer
     width: 100%;
+    box-sizing: border-box;
     position: relative;
     font-size: 16px;
     cursor: pointer;
