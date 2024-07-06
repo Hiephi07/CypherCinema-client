@@ -1,6 +1,7 @@
 @use "../../../_css/common.scss" as *;
 .member-content {
   display: flex;
+  width: full;
   justify-content: space-between;
   flex-direction: column;
   padding-bottom: 30px;

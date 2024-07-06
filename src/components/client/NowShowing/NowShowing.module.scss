@@ -1,0 +1,17 @@
+.shadowBoxMovieLeft {
+  background: linear-gradient(
+    90deg,
+    rgba(26, 29, 41, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transform: translateX(-10%);
+}
+
+.shadowBoxMovieRight {
+  background: linear-gradient(
+    270deg,
+    rgba(26, 29, 41, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transform: translateX(10%);
+}

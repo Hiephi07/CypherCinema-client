@@ -13,7 +13,7 @@ const StarMember = () => {
   };
   return (
     <>
-      <div className="bg-[#0d0e14] px-[40px] py-[45px]">
+      <div className="bg-[#0d0e14] px-[40px] py-[2rem]">
         <div className="flex justify-center pb-[30px]">
           <img
             className="max-w-[320px]"
@@ -24,7 +24,7 @@ const StarMember = () => {
         <div className={styles["member-content"]}>
           <Link onClick={CrollOnTop} to={`#`}>
             <img
-              className="max-w-[320px]"
+              className="max-w-[320px] w-full"
               src={Member1}
               alt=""
             />

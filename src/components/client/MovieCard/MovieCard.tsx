@@ -16,12 +16,7 @@ const MovieCard: React.FC<{
   return (
     <>
       <div
-        className="col film-col-item h-[500px] w-[266px] "
-        style={{
-          position: "absolute",
-          left: `${number * 20}%`,
-          padding: "0 15px 30px",
-        }}
+        className={`col film-col-item  w-full ${styles["movie-card"]} `}
         aria-hidden="true"
       >
         <div className={styles["col-inner"]}>
@@ -59,7 +54,7 @@ const MovieCard: React.FC<{
                   <a
                     data-url="https://bhdstar.vn/phim/the-watchers-nhung-ke-theo-doi/"
                     title="THE WATCHERS: NHỮNG KẺ THEO DÕI"
-                    className="tooltip"
+                    className="tooltip truncate"
                     href="#filmQuickView"
                     data-id={63473}
                   >

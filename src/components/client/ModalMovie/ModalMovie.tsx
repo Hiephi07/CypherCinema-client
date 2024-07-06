@@ -8,9 +8,7 @@ const ModalMovie = ({
   toggleModal: () => void;
 }) => {
   const [isTrailerVideo, setTrailerVideo] = useState(false);
-  const toggleTrailerVideo = () => {
-    setTrailerVideo(!isTrailerVideo);
-  };
+
   return (
     <>
       <AnimatePresence>
@@ -35,7 +33,6 @@ const ModalMovie = ({
             initial={{ opacity: 0, y: 200 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            onClick={() => toggleModal()}
           >
             {/* <div
               className={`${styles["modal-content"]} mx-auto my-auto `}
@@ -87,7 +84,11 @@ const ModalMovie = ({
                                 style={{ margin: 0 }}
                                 className="button  trailer-viewer white is-outline is-small"
                                 href="#"
-                                onClick={toggleTrailerVideo}
+                                onClick={() =>
+                                  setTrailerVideo(
+                                    !isTrailerVideo
+                                  )
+                                }
                               >
                                 <span className="uppercase mt-[5px] font-[700] hover:bg-[#fff] duration-300 transition  border-solid border-[#fff] rounded-[4px] border-2 text-[.8em] px-4 py-4">
                                   ← Xem thông tin
@@ -135,15 +136,18 @@ const ModalMovie = ({
                                 Mua vé ngay
                               </span>
                             </a>
-                            <a
+                            <button
                               className="button rounded-[4px] border border-solid border-[#fff] px-[4px] py-[4px] text-[.8em] hover:bg-[#fff] duration-300"
-                              href="#"
-                              onClick={toggleTrailerVideo}
+                              onClick={() =>
+                                setTrailerVideo(
+                                  !isTrailerVideo
+                                )
+                              }
                             >
                               <span className="uppercase mt-[5px] font-bold">
                                 Xem trailer
                               </span>
-                            </a>
+                            </button>
                           </div>
                         </div>
                       </div>

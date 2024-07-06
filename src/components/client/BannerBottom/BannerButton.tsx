@@ -3,25 +3,30 @@ import { motion } from "framer-motion";
 import bannerButtom from "@@/assets/images/Banner/BannerButtom.png";
 import Slider from "react-slick";
 import { GoDotFill } from "react-icons/go";
-import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 const PrevArrow = ({ style, onClick, isVisible }: any) => {
   return (
     <motion.button
       initial={{ x: "80%" }}
-      animate={{ x: isVisible ? "50%" : " 80%", opacity: isVisible ? 1 : 0 }}
+      animate={{
+        x: isVisible ? "50%" : " 80%",
+        opacity: isVisible ? 1 : 0,
+      }}
       exit={{ x: "50%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       type="button"
-      className={`left-[-40px] top-0  z-30 absolute h-full ${isVisible ? "" : "hidden"} `}
+      className={`left-[-40px] top-0  z-30 absolute h-full ${
+        isVisible ? "" : "hidden"
+      } `}
       style={{ ...style }}
       onClick={onClick}
     >
-     <div className=" h-[96%] flex items-center">
-     <GrFormPrevious
-        className={`text-#98CF74 hover:text-#72be43 hover:transition-colors hover:duration-700 hover:ease-in-out size-20 `}
-      />
-     </div>
+      <div className=" h-[96%] flex items-center">
+        <GrFormPrevious
+          className={`text-#98CF74 hover:text-#72be43 hover:transition-colors hover:duration-700 hover:ease-in-out size-20 `}
+        />
+      </div>
     </motion.button>
   );
 };
@@ -30,25 +35,35 @@ const NextArrow = ({ style, onClick, isVisible }: any) => {
   return (
     <motion.button
       initial={{ x: "-80%" }}
-      animate={{ x: isVisible ? "-50%" : "-80%", opacity: isVisible ? 1 : 0 }}
+      animate={{
+        x: isVisible ? "-50%" : "-80%",
+        opacity: isVisible ? 1 : 0,
+      }}
       type="button"
-      className={`right-[-40px] top-0 absolute z-30 h-full ${isVisible ? "block" : "none"}`}
+      className={`right-[-40px] top-0 absolute z-30 h-full ${
+        isVisible ? "block" : "none"
+      }`}
       style={{ ...style }}
       onClick={onClick}
     >
       <div className=" h-[96%] flex items-center">
-      <GrFormNext
-        className={`text-#98CF74 hover:text-#72be43 hover:transition-colors hover:duration-300 hover:ease-in-out size-20`}
-      />
+        <GrFormNext
+          className={`text-#98CF74 hover:text-#72be43 hover:transition-colors hover:duration-300 hover:ease-in-out size-20`}
+        />
       </div>
     </motion.button>
   );
 };
 
 const BannerButton = () => {
-  const arrBanner = [{id:1, img: bannerButtom }, {id:2, img: bannerButtom }];
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  const [currentSlider, setCurrentSlider] = useState<number>(0);
+  const arrBanner = [
+    { id: 1, img: bannerButtom },
+    { id: 2, img: bannerButtom },
+  ];
+  const [isHovered, setIsHovered] =
+    useState<boolean>(false);
+  const [currentSlider, setCurrentSlider] =
+    useState<number>(0);
 
   const settings = {
     infinite: true,
@@ -62,9 +77,14 @@ const BannerButton = () => {
     autoplaySpeed: 5000,
     dots: true,
     customPaging: (index: number) => (
-    
       <li className="rounded-full ">
-        <GoDotFill className={`w-6 h-6 m-auto ${index === currentSlider ? 'text-#72be43': 'text-#76777f'}`} />
+        <GoDotFill
+          className={`w-6 h-6 m-auto ${
+            index === currentSlider
+              ? "text-#72be43"
+              : "text-#76777f"
+          }`}
+        />
       </li>
     ),
     appendDots: (dots: React.ReactNode) => (
@@ -74,10 +94,8 @@ const BannerButton = () => {
     ),
     afterChange: (index: number) => {
       setCurrentSlider(index);
-    }
-    
+    },
   };
-  console.log(currentSlider)
   return (
     <>
       <section
@@ -88,8 +106,11 @@ const BannerButton = () => {
       >
         <Slider {...settings}>
           {arrBanner.map((slider) => (
-            <div className=" border border-solid rounded-full" key={slider.id}>
-              <img src={slider.img} alt=""/>
+            <div
+              className=" border border-solid rounded-full"
+              key={slider.id}
+            >
+              <img src={slider.img} alt="" />
             </div>
           ))}
         </Slider>

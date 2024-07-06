@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-// import styles from "./NowShowingMovies.scss";
+import styles from "./NowShowing.module.scss";
 import { useMovieQuery } from "@/_hooks/useMovieQuery";
 import {
   motion,
@@ -10,6 +10,27 @@ import MovieCard from "../MovieCard/MovieCard";
 import ModalMovie from "../ModalMovie/ModalMovie";
 import { ModalContext } from "@/_context/ModalMovie";
 import ModalConfirm from "@/components/client/ModalConfirm/ModalConfirm";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import Slider from "react-slick";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import {
+  Tooltip,
+  TooltipArrow,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@radix-ui/react-tooltip";
+import { Link } from "react-router-dom";
+import {
+  IoIosClose,
+  IoIosInformationCircle,
+} from "react-icons/io";
+import { GoDotFill } from "react-icons/go";
 
 const NowShowingMovies = () => {
   const { data: movies } = useMovieQuery();
@@ -35,7 +56,7 @@ const NowShowingMovies = () => {
     initial: { scale: 1, x: -10, opacity: 0 },
   };
 
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
 
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -75,144 +96,160 @@ const NowShowingMovies = () => {
   const controlDrag = useDragControls();
   const slideDistance = 100;
   // slide run automatic
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (
-        movies &&
-        Math.abs(activeSlide) >=
-          movies?.length - maxCardSlide
-      ) {
-        setActiveSlide(0);
-        setDirection(0);
-        control.start({
-          x: `${0}%`,
-        });
-      } else slide(-1);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [activeSlide, movies, control]);
 
   //control drag slide
   // useEffect(() => {});
-
-  return (
-    <>
-      {/* Up coming movies  */}
-      <section
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="flex flex-col overflow-hidden  justify-center items-center max-w-[1330px] mx-[auto] relative"
+  const PrevArrow = ({
+    style,
+    onClick,
+    isVisible,
+  }: any) => {
+    return (
+      <motion.button
+        initial={{ x: "-10%" }}
+        animate={{
+          x: isVisible ? "0%" : "-10%",
+          opacity: isVisible ? 1 : 0,
+        }}
+        type="button"
+        className={`left-[-5px] top-0 absolute z-10 h-full ${
+          isVisible ? "block" : "none"
+        }`}
+        style={{ ...style }}
+        onClick={onClick}
       >
-        <h2 className="text-[var(--theme-text)] font-700 text-[1.6em] my-[20px]">
-          Phim sắp chiếu
-        </h2>
-        <motion.div
-          animate={control}
-          drag="x"
-          transition={{ duration: 0.5 }}
-          className="block w-full l-0 h-[537px] "
+        <div
+          className={`${styles.shadowBoxMovieLeft} h-[100%]  flex items-center pb-20`}
         >
-          {movies &&
-            movies.map((item, idx) => {
-              return (
+          <GrFormPrevious
+            className={`text-#98CF74 hover:text-#72be43 hover:transition-colors hover:duration-300 hover:ease-in-out size-20`}
+          />
+        </div>
+      </motion.button>
+    );
+  };
+
+  const NextArrow = ({
+    style,
+    onClick,
+    isVisible,
+  }: any) => {
+    return (
+      <motion.button
+        initial={{ x: "10%" }}
+        animate={{
+          x: isVisible ? "0%" : "10%",
+          opacity: isVisible ? 1 : 0,
+        }}
+        type="button"
+        className={`right-[-6px] top-0 absolute z-10 h-full ${
+          isVisible ? "block" : "none"
+        }`}
+        style={{ ...style }}
+        onClick={onClick}
+      >
+        <div
+          className={`${styles.shadowBoxMovieRight} h-[100%] flex items-center pb-20`}
+        >
+          <GrFormNext
+            className={`text-#98CF74 hover:text-#72be43 hover:transition-colors hover:duration-300 hover:ease-in-out size-20`}
+          />
+        </div>
+      </motion.button>
+    );
+  };
+  const [isHovered, setIsHovered] =
+    useState<boolean>(false);
+  const [currentSlider, setCurrentSlider] =
+    useState<number>(0);
+
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    arrows: true,
+    prevArrow: <PrevArrow isVisible={isHovered} />,
+    nextArrow: <NextArrow isVisible={isHovered} />,
+    autoplay: false,
+    autoplaySpeed: 3000,
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+    ],
+
+    customPaging: (index: number) => (
+      <li className="rounded-full ">
+        <GoDotFill
+          className={`w-6 h-6 m-auto ${
+            index === currentSlider
+              ? "text-#72be43"
+              : "text-#76777f"
+          }`}
+        />
+      </li>
+    ),
+    appendDots: (dots: React.ReactNode) => (
+      <div>
+        <ul className="flex justify-center">{dots}</ul>
+      </div>
+    ),
+    afterChange: (index: number) => {
+      setCurrentSlider(index);
+    },
+  };
+  if (movies)
+    return (
+      <>
+        {/* Up coming movies  */}
+
+        <section
+          id="Promotion"
+          className="px-0 pb-12 h-auto  "
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <h1
+            className={`font-black text-17.6px text-#fff text-center relative z-10 pb-[26px] pt-[36px]`}
+          >
+            Phim đang chiếu
+          </h1>
+          <Slider
+            {...settings}
+            className="cursor-grab  relative z-10"
+          >
+            {movies.map((item, idx) => (
+              <div
+                className="block w-full l-0 h-auto mb-[40px] "
+                // className={`px-3 pb-3 ${styles["banner-content"]} `}
+                key={idx}
+              >
                 <MovieCard
                   key={idx}
                   movie={item}
                   number={idx}
                   toggleConfirm={toggleConfirmModal}
                 />
-              );
-            })}
-        </motion.div>
-        {/* dots start */}
-        <div className="">
-          {movies && (
-            <ol className="flex flex-row gap-3 mx-auto mt-[35px] mb-[30px] ">
-              {movies.map((item, idx) => {
-                return (
-                  <li
-                    onClick={() => btnDot(-idx)}
-                    key={idx}
-                    className={` w-[12px] h-[12px] rounded-[50%] cursor-pointer  duration-300 ${
-                      -idx === activeSlide
-                        ? "active"
-                        : "bg-[var(--theme-dot)] "
-                    }`}
-                  ></li>
-                );
-              })}
-            </ol>
-          )}
-        </div>
-        {/* dots end */}
-
-        {/* btn control start  */}
-        <motion.button
-          variants={{
-            hover: {
-              background:
-                "linear-gradient(90deg,rgba(26,29,41,1) 0%,rgba(0,0,0,0) 100%)",
-            },
-          }}
-          animate={isHovered ? "hover" : ""}
-          className="absolute z-5 duration-200 left-0 h-[532px]  "
-          type="button"
-          aria-label="Previous"
-          onClick={() => slide(1)}
-        >
-          <motion.img
-            variants={btnAnimate}
-            animate={isHovered ? "hover" : "initial"}
-            src="/assets/images/Icons/left-arrow.svg"
-            alt=""
-            style={{
-              width: "50px",
-              height: "50px",
-            }}
-          />
-        </motion.button>
-        <motion.button
-          variants={{
-            hover: {
-              background:
-                "linear-gradient(270deg, rgba(26, 29, 41, 1) 0%, rgba(0, 0, 0, 0) 100%)",
-            },
-          }}
-          animate={isHovered ? "hover" : ""}
-          className="absolute z-5 right-[0px] h-[532px] "
-          type="button"
-          aria-label="Next"
-          onClick={() => slide(-1)}
-        >
-          <motion.img
-            variants={{
-              hover: {
-                scale: 1.2,
-                x: 0,
-                opacity: 0.7,
-              },
-              initial: { scale: 1, x: 10, opacity: 0 },
-            }}
-            animate={isHovered ? "hover" : "initial"}
-            src="/assets/images/Icons/right-arrow.svg"
-            alt=""
-            style={{
-              width: "50px",
-              height: "50px",
-            }}
-          />
-        </motion.button>
-        {/* btn control end */}
-      </section>{" "}
-      {isModalOpen && (
-        <ModalMovie toggleModal={toggleModal} />
-      )}
-      <ModalConfirm
-        isOpen={isConfirmModal}
-        toggleModal={toggleConfirmModal}
-      ></ModalConfirm>
-    </>
-  );
+              </div>
+            ))}
+          </Slider>
+        </section>
+        {isModalOpen && (
+          <ModalMovie toggleModal={toggleModal} />
+        )}
+        <ModalConfirm
+          isOpen={isConfirmModal}
+          toggleModal={toggleConfirmModal}
+        ></ModalConfirm>
+      </>
+    );
 };
 
 export default NowShowingMovies;
