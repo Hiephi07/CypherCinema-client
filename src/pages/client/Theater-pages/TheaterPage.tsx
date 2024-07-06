@@ -1,13 +1,11 @@
-import Theater from '@/components/client/Theater/Theater'
+import Theater from "@/components/client/Theater/Theater";
 
 const TheaterPage = () => {
   return (
     <>
-      <div className='pt-[100px] pb-[60px]'>
-            <Theater />
-        </div>
+      <Theater />
     </>
-  )
-}
+  );
+};
 
-export default TheaterPage
+export default TheaterPage;
