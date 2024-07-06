@@ -1,0 +1,9 @@
+@use "../../../_css/common.scss" as *;
+.link-reset-content {
+  max-width: 390px;
+  padding: 1rem;
+  @include laptop {
+    padding: 0;
+    max-width: 440px;
+  }
+}

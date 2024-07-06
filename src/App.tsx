@@ -17,6 +17,7 @@ import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
 import BookTicketStepOne from "./components/client/BookTicketStepOne/BookTicketStepOne";
 import StepOne from "./pages/client/BookTicket/StepOne/StepOne";
 import TheaterPage from "./pages/client/Theater-pages/TheaterPage";
+import LinkResetSent from "./components/client/LinkResetSent/LinkResetSent";
 function App() {
   // Xử lý cuộc trang
   const [isVisible, setIsVisible] =
@@ -62,6 +63,10 @@ function App() {
     {
       path: "/auth/change-password/:id",
       element: <ChangePwPage />,
+    },
+    {
+      path: "/auth/reset-link-sent",
+      element: <LinkResetSent />,
     },
     { path: "/about-us", element: <AboutUsPage /> },
     { path: "/book-ticket1", element: <StepOne /> },

@@ -71,7 +71,6 @@ const AboutUsPage = () => {
   const settings = {
     className: "",
     infinite: true,
-    // adaptiveHeight: true,
     centerPadding: "350px",
     centerMode: true,
     speed: 400,
@@ -83,6 +82,16 @@ const AboutUsPage = () => {
     autoplay: false,
     autoplaySpeed: 5000,
     dots: true,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          // adaptiveHeight: true,
+          centerPadding: "0px",
+          centerMode: false,
+        },
+      },
+    ],
 
     customPaging: (index: number) => (
       <li className="rounded-full ">
