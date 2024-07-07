@@ -8,9 +8,7 @@ const ModalMovie = ({
   toggleModal: () => void;
 }) => {
   const [isTrailerVideo, setTrailerVideo] = useState(false);
-  const toggleTrailerVideo = () => {
-    setTrailerVideo(!isTrailerVideo);
-  };
+
   return (
     <>
       <AnimatePresence>
@@ -30,14 +28,16 @@ const ModalMovie = ({
               zIndex: 1,
             }}
           />
-
           <motion.div
             className={styles["modal-movie"]}
             initial={{ opacity: 0, y: 200 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
           >
-            <div className="max-w-[1100px] h-[650px] m-auto py-[10x] px-[40px] rounded-[20px]  z-1024 ">
+            {/* <div
+              className={`${styles["modal-content"]} mx-auto my-auto `}
+            > */}
+            <div className="max-w-[1100px] h-[650px] m-auto py-[10x] px-[2rem] rounded-[20px]  z-1024 ">
               <section
                 className={styles.section}
                 id="section_1022680122"
@@ -84,7 +84,11 @@ const ModalMovie = ({
                                 style={{ margin: 0 }}
                                 className="button  trailer-viewer white is-outline is-small"
                                 href="#"
-                                onClick={toggleTrailerVideo}
+                                onClick={() =>
+                                  setTrailerVideo(
+                                    !isTrailerVideo
+                                  )
+                                }
                               >
                                 <span className="uppercase mt-[5px] font-[700] hover:bg-[#fff] duration-300 transition  border-solid border-[#fff] rounded-[4px] border-2 text-[.8em] px-4 py-4">
                                   ← Xem thông tin
@@ -98,7 +102,7 @@ const ModalMovie = ({
                   </div>
                   {!isTrailerVideo && (
                     <div
-                      className="flex flex-row gap-3 single-film-row justify-between"
+                      className={`${styles["modal-content"]}`}
                       id="row-1224851334"
                     >
                       <div
@@ -110,9 +114,9 @@ const ModalMovie = ({
                             className="img has-hover x md-x lg-x y md-y lg-y"
                             id="image_2125486326"
                           >
-                            <div className="img-inner dark px-[15px]">
+                            <div className="img-inner dark w-full px-[0rem]">
                               <img
-                                className="rounded-[12px]  mb-[20px]"
+                                className="rounded-[12px]  mb-[20px] w-full max-w-[330px]"
                                 src="https://bhdstar.vn/wp-content/uploads/2024/04/referenceSchemeHeadOfficeallowPlaceHoldertrueheight700ldapp-35.jpg"
                                 alt="LẬT MẶT 7: MỘT ĐIỀU ƯỚC"
                               />
@@ -132,21 +136,24 @@ const ModalMovie = ({
                                 Mua vé ngay
                               </span>
                             </a>
-                            <a
+                            <button
                               className="button rounded-[4px] border border-solid border-[#fff] px-[4px] py-[4px] text-[.8em] hover:bg-[#fff] duration-300"
-                              href="#"
-                              onClick={toggleTrailerVideo}
+                              onClick={() =>
+                                setTrailerVideo(
+                                  !isTrailerVideo
+                                )
+                              }
                             >
                               <span className="uppercase mt-[5px] font-bold">
                                 Xem trailer
                               </span>
-                            </a>
+                            </button>
                           </div>
                         </div>
                       </div>
                       <div
                         id="col-2049549367"
-                        className="col w-[700px]"
+                        className="col w-full max-w-[700px]"
                       >
                         <div className="col-inner">
                           <h1 className="title text-uppercase text-[var(--primary-color)] text-[1.5em] mb-[25px] uppercase font-[700]">
@@ -316,6 +323,7 @@ const ModalMovie = ({
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
+            {/* </div> */}
           </motion.div>
         </>
       </AnimatePresence>

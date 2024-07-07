@@ -4,11 +4,13 @@ import { useEffect, useState } from "react";
 import { RxCaretUp } from "react-icons/rx";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
+import LinkResetSent from "./components/client/LinkResetSent/LinkResetSent";
 import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
 import NotFoundPage from "./pages/client/404-notfound/NotFound";
 import AboutUsPage from "./pages/client/about-us/AboutUsPage";
 import AuthPage from "./pages/client/auth/AuthPage";
 import StepOne from "./pages/client/BookTicket/StepOne/StepOne";
+import StepThree from "./pages/client/BookTicket/StepThree/StepThree";
 import StepTwo from "./pages/client/BookTicket/StepTwo/StepTwo";
 import ChangePwPage from "./pages/client/change-password/ChangePwPage";
 import EventPage from "./pages/client/event-pages/EventPage";
@@ -17,10 +19,10 @@ import HomePage from "./pages/client/home-pages/HomePage";
 import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
 import TheaterPage from "./pages/client/theater-pages/TheaterPage";
 import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
-import StepThree from "./pages/client/BookTicket/StepThree/StepThree";
 function App() {
   // Xử lý cuộc trang
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isVisible, setIsVisible] =
+    useState<boolean>(false);
 
   // Xử lý hiển thị nút khi cuộn xuống 200px
   useEffect(() => {
@@ -62,6 +64,10 @@ function App() {
     {
       path: "/auth/change-password/:id",
       element: <ChangePwPage />,
+    },
+    {
+      path: "/auth/reset-link-sent",
+      element: <LinkResetSent />,
     },
     { path: "/about-us", element: <AboutUsPage /> },
     { path: "/book-ticket1", element: <StepOne />},

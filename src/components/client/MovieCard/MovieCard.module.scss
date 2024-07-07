@@ -1,3 +1,4 @@
+@use "../../../_css/common.scss" as *;
 .col-inner {
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -16,10 +17,15 @@
     #b2ec0f 99.48%
   );
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-start;
-  align-items: center;
-  gap: 8px;
+  align-items: start;
+  gap: 0;
+  @include laptop {
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
 }
 .meta {
   margin-top: 20px;
@@ -95,11 +101,14 @@
 }
 
 .cats {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   font-size: 0.8em;
   color: #ccc;
   height: 21px;
   overflow: hidden;
+  @include laptop {
+    margin-bottom: 20px;
+  }
 }
 
 .ticket-button {
@@ -161,4 +170,12 @@
   width: 24px;
   height: 24px;
   background-image: url("https://www.bhdstar.vn/wp-content/themes/loodo-starter/inc/imgs/infoIcon.svg");
+}
+
+.movie-card {
+  max-width: 143px;
+
+  @include laptop {
+    max-width: 239px;
+  }
 }
