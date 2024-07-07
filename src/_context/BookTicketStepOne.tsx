@@ -12,7 +12,9 @@ export interface BookTicketStepone_Type {
 
 interface ProviderProps {
     children: ReactNode;
-  }
+}
+
+
 
 export const BookTicketStepone_Context = createContext<BookTicketStepone_Type | undefined>(undefined)
 
@@ -74,6 +76,8 @@ const BookTicketStepone_Provider = ({children}: ProviderProps) => {
         }
         return false;
     }
+
+    
 
 
 

@@ -5,6 +5,7 @@ import { vi } from 'date-fns/locale';
 import { useContext } from "react";
 import "react-day-picker/dist/style.css";
 import InfoBookingMovie from "../InfoBookingMovie/InfoBookingMovie";
+import { Link } from "react-router-dom";
 
 interface Props {
 }
@@ -47,7 +48,7 @@ const BookTicketStepOne = (props: Props) => {
                 </div> 
 
                 {/* Nơi chiếu -khung giờ */}
-                <div className="grid grid-cols-1 lg:col-span-8 md:col-span-6 rounded-[36px] px-[20px] pt-[20px] border-[1px] border-solid border-[#454D6A] text-[#fff]">
+                <div className="grid grid-cols-1 mb-11 lg:col-span-8 md:col-span-6 rounded-[36px] px-[20px] pt-[20px] border-[1px] border-solid border-[#454D6A] text-[#fff]">
                     {showTimeMovies.map((item, index) => (
                         <div className="rounded-[16px] p-[16px] border-[1px] border-solid border-[#454D6A] mb-[20px]" key={index}>
                             <div className="flex items-center mb-[10px]">
@@ -59,7 +60,7 @@ const BookTicketStepOne = (props: Props) => {
                                 {/* Phần lịch chiếu */}
                                 {item.timeandtype.map((childTtem,idx) => (
                                 <div className="col-span-1 lg:col-span-3 md:col-span-3 text-center" key={idx}>
-                                    <span className="px-[10px] py-[10px] text-[16px] font-medium bg-#454D6A block mb-[8px] rounded-[4px] hover:bg-#72be43">{childTtem.time}</span>
+                                    <Link to={`/book-ticket2`}><span className="px-[10px] py-[10px] text-[16px] font-medium bg-#454D6A block mb-[8px] rounded-[4px] hover:bg-#72be43">{childTtem.time}</span></Link> 
                                     <div className="block text-[9.4px] w-full">
                                         <span className="inline-block px-[4px] py-[2px] mr-[2px] border-[1px] uppercase border-solid border-#FFD600 rounded-[4px]">{childTtem.audio}</span>
                                         <span className="inline-block px-[4px] py-[2px] ml-[2px] bg-#50b648 uppercase rounded-[4px]">{childTtem.video}</span>
@@ -74,7 +75,6 @@ const BookTicketStepOne = (props: Props) => {
 
             </div>
         </div>
-        <div className={`class="rdp-button_reset rdp-button inline-flex items-center justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-[36px] w-[36px] p-[5px] font-normal aria-selected:opacity-100 rounded-[4px] day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30"`}></div>
         </section>
         </>
     );

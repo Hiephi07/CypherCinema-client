@@ -1,0 +1,25 @@
+.spanbackground {
+    background: linear-gradient(0deg, rgba(0,181,238,1) 0%, rgba(63,198,190,1) 50%, rgba(72,182,142,1) 100%);
+ }
+ 
+ .buttonSubmit {
+    padding: 10px;
+    width: 100%;
+    color: #fff;
+    border-radius: 4px;
+   transition: all 0.3s ease-out;
+   background: linear-gradient(
+     180deg,
+     #50b648 0%,
+     #90c63f 59.9%,
+     #b2ec0f 99.48%
+   );
+   &:hover {
+     background: linear-gradient(
+       0deg,
+       #50b648 0%,
+       #90c63f 59.9%,
+       #b2ec0f 99.48%
+     );
+   }
+ }

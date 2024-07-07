@@ -1,22 +1,23 @@
-import { Routes, Route } from "react-router-dom";
-import "./App.scss";
-import Header from "@/components/client/Header/Header";
-import HomePage from "./pages/client/home-pages/HomePage";
 import Footer from "@/components/client/Footer/Footer";
-import NotFoundPage from "./pages/client/404-notfound/NotFound";
-import ForgotPasswordPage from "./pages/client/forgot-password/ForgotPasswordPage";
-import AuthPage from "./pages/client/auth/AuthPage";
-import EventPage from "./pages/client/event-pages/EventPage";
+import Header from "@/components/client/Header/Header";
 import { useEffect, useState } from "react";
 import { RxCaretUp } from "react-icons/rx";
-import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
-import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
-import ChangePwPage from "./pages/client/change-password/ChangePwPage";
-import AboutUsPage from "./pages/client/about-us/AboutUsPage";
+import { Route, Routes } from "react-router-dom";
+import "./App.scss";
 import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
-import TheaterPage from "./pages/client/theater-pages/TheaterPage";
-import BookTicketStepOne from "./components/client/BookTicketStepOne/BookTicketStepOne";
+import NotFoundPage from "./pages/client/404-notfound/NotFound";
+import AboutUsPage from "./pages/client/about-us/AboutUsPage";
+import AuthPage from "./pages/client/auth/AuthPage";
 import StepOne from "./pages/client/BookTicket/StepOne/StepOne";
+import StepTwo from "./pages/client/BookTicket/StepTwo/StepTwo";
+import ChangePwPage from "./pages/client/change-password/ChangePwPage";
+import EventPage from "./pages/client/event-pages/EventPage";
+import ForgotPasswordPage from "./pages/client/forgot-password/ForgotPasswordPage";
+import HomePage from "./pages/client/home-pages/HomePage";
+import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
+import TheaterPage from "./pages/client/theater-pages/TheaterPage";
+import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
+import StepThree from "./pages/client/BookTicket/StepThree/StepThree";
 function App() {
   // Xử lý cuộc trang
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -64,6 +65,8 @@ function App() {
     },
     { path: "/about-us", element: <AboutUsPage /> },
     { path: "/book-ticket1", element: <StepOne />},
+    { path: "/book-ticket2", element: <StepTwo />},
+    { path: "/book-ticket3", element: <StepThree />},
     { path: "*", element: <NotFoundPage /> },
   ];
 

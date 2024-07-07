@@ -16,7 +16,7 @@ export const logoforTicket = {
     image: '/public/assets/images/Logo/logo.png'
 }
 
-    // Data tạm thời
+// Data tạm thời địa điểm và khung giờ
 export const showTimeMovies = [
         {
             id: 1, 
@@ -51,3 +51,10 @@ export const showTimeMovies = [
             ]
         }
     ]
+
+// Ảnh mô tả ghế
+export const imageScreen = '/public/assets/images/BookTicket/seatMapHeader.png'
+
+// Mã hàng ghế
+export const rowOfSeat = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+// , 'H', 'I', 'J', 'K'
