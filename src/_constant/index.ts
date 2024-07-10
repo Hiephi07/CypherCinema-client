@@ -319,3 +319,7 @@ export const years = Array.from(
     // [1993,1994,1995]
   }
 );
+
+export const logoBHD = {
+  image: '/public/assets/images/Logo/logo.png'
+}

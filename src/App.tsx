@@ -1,11 +1,11 @@
-import Footer from "@/components/client/Footer/Footer";
-import Header from "@/components/client/Header/Header";
 import { useEffect, useState } from "react";
 import { RxCaretUp } from "react-icons/rx";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import LinkResetSent from "./components/client/LinkResetSent/LinkResetSent";
 import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
+import LayoutAdmin from "./layouts/LayoutAdmin";
+import LayoutClient from "./layouts/LayoutClient";
 import NotFoundPage from "./pages/client/404-notfound/NotFound";
 import AboutUsPage from "./pages/client/about-us/AboutUsPage";
 import AuthPage from "./pages/client/auth/AuthPage";
@@ -18,7 +18,11 @@ import ForgotPasswordPage from "./pages/client/forgot-password/ForgotPasswordPag
 import HomePage from "./pages/client/home-pages/HomePage";
 import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
 import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
+
+import UserList from "./components/admin/user/user";
+import TheaterManagement from "./components/admin/TheaterManagement/TheaterManagement";
 import TheaterPage from "./pages/client/Theater-pages/TheaterPage";
+
 function App() {
   // Xử lý cuộc trang
   const [isVisible, setIsVisible] =
@@ -51,7 +55,7 @@ function App() {
       behavior: "smooth",
     });
   };
-  const routes = [
+  const routesClient = [
     { path: "/event", element: <EventPage /> },
     { path: "/theater", element: <TheaterPage /> },
     { path: "/showsTime", element: <ShowTimePage /> },
@@ -76,26 +80,46 @@ function App() {
     { path: "*", element: <NotFoundPage /> },
   ];
 
+  const RoutesAdmin = [
+    { path: "/admin/user", element: <UserList /> },
+    {
+      path: "/admin/TheaterManagement",
+      element: <TheaterManagement />,
+    },
+  ];
+
   return (
     <>
       <ScrollToTop />
       <div className="p-0 m-0 relative bg-#1a1d29">
-        <Header />
         <main>
           <Routes>
-            <Route path="/">
-              <Route index element={<HomePage />} />
-              {routes.map((route, idx) => (
+            {/* Client */}
+            <Route path="/" element={<LayoutClient />}>
+              <Route path="/">
+                <Route index element={<HomePage />} />
+                {routesClient.map((route, idx) => (
+                  <Route
+                    key={idx}
+                    path={route.path}
+                    element={route.element}
+                  />
+                ))}
+              </Route>
+            </Route>
+
+            {/* Admin */}
+            <Route path="/admin" element={<LayoutAdmin />}>
+              {RoutesAdmin.map((router, idx) => (
                 <Route
                   key={idx}
-                  path={route.path}
-                  element={route.element}
+                  path={router.path}
+                  element={router.element}
                 />
               ))}
             </Route>
           </Routes>
         </main>
-        <Footer />
         {/* Xử lí cuộn trang */}
         {isVisible && (
           <button
