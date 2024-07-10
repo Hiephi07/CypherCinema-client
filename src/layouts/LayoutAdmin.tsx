@@ -1,4 +1,4 @@
-import HeaderAdmin from '@/components/admin/HeaderAdmin/HeaderAdmin'
+import HeaderAdmin from '@/components/admin/Header/HeaderAdmin'
 import SideBar from '@/components/admin/Sidebar/Sidebar'
 import { Outlet } from 'react-router-dom'
 
@@ -13,9 +13,9 @@ const LayoutAdmin = (props: Props) => {
               <div className="w-[20%]">
                 <SideBar />
               </div>
-            <div className=" bg-[#0f1111] w-[100%]">
+            <div className="bg-[#1e2021] w-[100%]">
                 <HeaderAdmin/>
-                <main className=''>
+                <main className='mt-16'>
                   <Outlet />
                 </main>
             </div>

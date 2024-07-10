@@ -18,11 +18,12 @@ import {
 } from "@/components/ui/table";
 import FormTheaterManagement from "./FormTheater";
 import RemoveTheater from "./RemoveTheater";
+import { ITheater } from "@/_interfaces/ITheater";
 interface Props {
 
 }
 
-const Theater = [
+const Theater: ITheater[] = [
   {
     id: 1,
     name: "bhd cầu giấy",
@@ -101,6 +102,7 @@ const TheaterManagement = (props: Props) => {
               key={idx}
               className="text-[14px] text-[#e5e5e5] border-b-[1px] border-solid border-[#35393b]"
             >
+              <TableCell>{idx + 1}</TableCell>
               <TableCell>{item.name}</TableCell>
               <TableCell>{item.city}</TableCell>
               <TableCell>{item.address}</TableCell>

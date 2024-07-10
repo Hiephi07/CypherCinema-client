@@ -6,6 +6,10 @@ import LinkResetSent from "./components/client/LinkResetSent/LinkResetSent";
 import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
 import LayoutAdmin from "./layouts/LayoutAdmin";
 import LayoutClient from "./layouts/LayoutClient";
+import ActorPage from "./pages/admin/ActorPage/ActorPage";
+import DirectorPage from "./pages/admin/DirectorPage/DirectorPage";
+import MovieGenrePage from "./pages/admin/MovieGenrePage/MovieGenrePage";
+import TheaterManagementPage from "./pages/admin/TheaterManagementPage/TheaterManagementPage";
 import NotFoundPage from "./pages/client/404-notfound/NotFound";
 import AboutUsPage from "./pages/client/about-us/AboutUsPage";
 import AuthPage from "./pages/client/auth/AuthPage";
@@ -19,8 +23,6 @@ import HomePage from "./pages/client/home-pages/HomePage";
 import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
 import TheaterPage from "./pages/client/theater-pages/TheaterPage";
 import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
-import UserList from "./components/admin/user/user";
-import TheaterManagement from "./components/admin/TheaterManagement/TheaterManagement";
 
 
 function App() {
@@ -81,9 +83,10 @@ function App() {
   ];
 
   const RoutesAdmin = [
-    {path: '/admin/user', element: <UserList />},
-    {path: '/admin/TheaterManagement', element: <TheaterManagement />}
-
+    {path: '/admin/theaterManagement', element: <TheaterManagementPage />},
+    {path: '/admin/movieGenre', element: <MovieGenrePage />},
+    {path: '/admin/director', element: <DirectorPage />},
+    {path: '/admin/actor', element: <ActorPage />}
   ]
 
   return (
@@ -104,9 +107,8 @@ function App() {
                 />
               ))}
             </Route>
-            
             </Route>
-            
+
             {/* Admin */}
             <Route path="/admin" element={<LayoutAdmin />}>
             {RoutesAdmin.map((router,idx) => (
