@@ -390,11 +390,11 @@ const Header = () => {
                     </button>
                     {selectArrow && (
                       <ul className="w-full">
-                        <li className="!border-none">
+                        <li className="!border-none hover:text-[var(--primary-color)] ">
                           {" "}
                           Lịch chiếu phim{" "}
                         </li>
-                        <li className="!border-none">
+                        <li className="!border-none hover:text-[var(--primary-color)]">
                           {" "}
                           Lịch chiếu rạp{" "}
                         </li>
@@ -427,7 +427,7 @@ const Header = () => {
                     {selectArrow3 && (
                       <ul className="w-full">
                         <li
-                          className={` !border-none ${
+                          className={` !border-none hover:text-[var(--primary-color)] ${
                             selecdOption ===
                             "TP.Hồ Chí Minh"
                               ? "bg-#72be43 :text-#ffc"
@@ -442,7 +442,7 @@ const Header = () => {
                           TP.Hồ Chí Minh
                         </li>
                         <li
-                          className={` !border-none ${
+                          className={` !border-none hover:text-[var(--primary-color)] ${
                             selecdOption === "Hà Nội"
                               ? "bg-#72be43 :text-#ffc"
                               : "hover:bg-#2c2c2c4a hover:text-#72be43"
@@ -454,7 +454,7 @@ const Header = () => {
                           Hà Nội
                         </li>
                         <li
-                          className={`!border-none ${
+                          className={`!border-none hover:text-[var(--primary-color)] ${
                             selecdOption === "TP.Huế"
                               ? "bg-#72be43 :text-#ffc"
                               : "hover:bg-#2c2c2c4a hover:text-#72be43"
@@ -466,7 +466,7 @@ const Header = () => {
                           TP.Huế
                         </li>
                         <li
-                          className={`!border-none ${
+                          className={`!border-none hover:text-[var(--primary-color)] ${
                             selecdOption === "Đồng Nai"
                               ? "bg-#72be43 :text-#ffc"
                               : "hover:bg-#2c2c2c4a hover:text-#72be43"
@@ -496,21 +496,21 @@ const Header = () => {
                     </button>
                     {selectArrow2 && (
                       <ul className="w-full">
-                        <li className="!border-none">
+                        <li className="!border-none hover:text-[var(--primary-color)]">
                           {" "}
                           <a href="/about-us">
                             {" "}
                             Về chúng tôi{" "}
                           </a>
                         </li>
-                        <li className="!border-none">
+                        <li className="!border-none hover:text-[var(--primary-color)]">
                           {" "}
                           <a href="#">
                             {" "}
                             Dịch vụ quảng cáo{" "}
                           </a>
                         </li>
-                        <li className="!border-none">
+                        <li className="!border-none hover:text-[var(--primary-color)]">
                           {" "}
                           <a href="#"> Tuyển dụng </a>
                         </li>
