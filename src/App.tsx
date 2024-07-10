@@ -17,8 +17,8 @@ import EventPage from "./pages/client/event-pages/EventPage";
 import ForgotPasswordPage from "./pages/client/forgot-password/ForgotPasswordPage";
 import HomePage from "./pages/client/home-pages/HomePage";
 import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
-import TheaterPage from "./pages/client/theater-pages/TheaterPage";
 import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
+import TheaterPage from "./pages/client/Theater-pages/TheaterPage";
 function App() {
   // Xử lý cuộc trang
   const [isVisible, setIsVisible] =
@@ -70,9 +70,9 @@ function App() {
       element: <LinkResetSent />,
     },
     { path: "/about-us", element: <AboutUsPage /> },
-    { path: "/book-ticket1", element: <StepOne />},
-    { path: "/book-ticket2", element: <StepTwo />},
-    { path: "/book-ticket3", element: <StepThree />},
+    { path: "/book-ticket1", element: <StepOne /> },
+    { path: "/book-ticket2", element: <StepTwo /> },
+    { path: "/book-ticket3", element: <StepThree /> },
     { path: "*", element: <NotFoundPage /> },
   ];
 

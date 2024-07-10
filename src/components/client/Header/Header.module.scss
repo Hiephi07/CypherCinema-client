@@ -205,6 +205,7 @@ header {
 
 .mobile {
   display: block;
+  overflow-y: scroll;
   @include laptop {
     display: none;
   }

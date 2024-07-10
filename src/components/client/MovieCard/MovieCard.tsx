@@ -35,7 +35,7 @@ const MovieCard: React.FC<{
                     onClick={() => toggleModal()}
                   >
                     <img
-                      className="w-full rounded-[12px]"
+                      className="w-full max-w-[209px] rounded-[12px]"
                       src={movie.image}
                       alt="THE WATCHERS: NHỮNG KẺ THEO DÕI"
                     />

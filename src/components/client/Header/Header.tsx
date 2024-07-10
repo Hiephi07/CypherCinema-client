@@ -55,6 +55,7 @@ const Header = () => {
 
   const [selectArrow, setSelectArrow] = useState(false);
   const [selectArrow2, setSelectArrow2] = useState(false);
+  const [selectArrow3, setSelectArrow3] = useState(false);
 
   return (
     <>
@@ -359,16 +360,6 @@ const Header = () => {
                 <GiHamburgerMenu className="fill-white w-[25px] h-[50px]" />
               </SheetTrigger>
               <SheetContent className="text-[var(--theme-text)] ">
-                {/* <SheetHeader>
-                <SheetTitle className="">
-                  Are you absolutely sure?
-                </SheetTitle>
-                <SheetDescription>
-                  This action cannot be undone. This will
-                  permanently delete your account and remove
-                  your data from our servers.
-                </SheetDescription>
-              </SheetHeader> */}
                 <ul className={styles["mobile-nav"]}>
                   <li
                     className={styles["mobile-btn-ticket"]}
@@ -420,13 +411,83 @@ const Header = () => {
                     <a href="">Khuyến mãi </a>
                   </li>
                   <li>
+                    <a href=""> Thành phố</a>
+                    <button
+                      onClick={() =>
+                        setSelectArrow3(!selectArrow3)
+                      }
+                      className={`flex items-center transform transition ${
+                        selectArrow3
+                          ? "rotate-[-180deg]"
+                          : "rotate-0"
+                      }`}
+                    >
+                      <IoIosArrowDown className="w-[18px] h-[33px] " />
+                    </button>
+                    {selectArrow3 && (
+                      <ul className="w-full">
+                        <li
+                          className={` !border-none ${
+                            selecdOption ===
+                            "TP.Hồ Chí Minh"
+                              ? "bg-#72be43 :text-#ffc"
+                              : "hover:bg-#2c2c2c4a hover:text-#72be43"
+                          } font-normal  block py-2 px-4`}
+                          onClick={() =>
+                            handleOptionClick(
+                              "TP.Hồ Chí Minh"
+                            )
+                          }
+                        >
+                          TP.Hồ Chí Minh
+                        </li>
+                        <li
+                          className={` !border-none ${
+                            selecdOption === "Hà Nội"
+                              ? "bg-#72be43 :text-#ffc"
+                              : "hover:bg-#2c2c2c4a hover:text-#72be43"
+                          } font-normal  block py-2 px-4 `}
+                          onClick={() =>
+                            handleOptionClick("Hà Nội")
+                          }
+                        >
+                          Hà Nội
+                        </li>
+                        <li
+                          className={`!border-none ${
+                            selecdOption === "TP.Huế"
+                              ? "bg-#72be43 :text-#ffc"
+                              : "hover:bg-#2c2c2c4a hover:text-#72be43"
+                          } font-normal  block py-2 px-4 `}
+                          onClick={() =>
+                            handleOptionClick("TP.Huế")
+                          }
+                        >
+                          TP.Huế
+                        </li>
+                        <li
+                          className={`!border-none ${
+                            selecdOption === "Đồng Nai"
+                              ? "bg-#72be43 :text-#ffc"
+                              : "hover:bg-#2c2c2c4a hover:text-#72be43"
+                          } font-normal  block py-2 px-4 `}
+                          onClick={() =>
+                            handleOptionClick("Đồng Nai")
+                          }
+                        >
+                          Đồng Nai
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+                  <li>
                     <a href=""> Khác</a>
                     <button
                       onClick={() =>
                         setSelectArrow2(!selectArrow2)
                       }
                       className={`flex items-center transform transition ${
-                        selectArrow
+                        selectArrow2
                           ? "rotate-[-180deg]"
                           : "rotate-0"
                       }`}

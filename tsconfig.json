@@ -23,12 +23,8 @@
     /* Configure path for shadcnUI */
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*",
-      ],
-      "@@/*": [
-        "./public/*",
-      ]
+      "@/*": ["./src/*"],
+      "@@/*": ["./public/*"]
     }
   },
   "include": ["src", "public"],
