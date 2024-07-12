@@ -2,7 +2,7 @@
 export const path_Sidebar = [
     {path: '/admin/theaterManagement', name: 'Quản lý rạp chiếu'},
     {path: '/admin', name: 'Quản lý phòng chiếu'},
-    {path: '/admin', name: 'Quản lý phim'},
+    {path: '/admin/movieManagement', name: 'Quản lý phim'},
     {path: '/admin', name: 'Suất chiếu'},
     {path: '/admin', name: 'Quản lý đơn hàng'},
     {path: '/admin', name: 'Giá vé'},
@@ -22,6 +22,16 @@ export const titleTableTheater = [
     {name:"Điện thoại"},
     {name:"Email"},
     {name:"Ảnh đại diện"},
+    {name:"Hành động"}
+]
+
+export const titleTableMovie = [
+    {name: "Stt"},
+    {name: "Tên phim"},
+    {name: "Thể loại"},
+    {name: "Lịch chiếu"},
+    {name: "Trạng thái"},
+    {name: "Ngày tạo"},
     {name:"Hành động"}
 ]
 

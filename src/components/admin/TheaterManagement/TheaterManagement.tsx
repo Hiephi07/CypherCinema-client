@@ -86,7 +86,7 @@ const TheaterManagement = (props: Props) => {
       <FormTheaterManagement isAdd={true}/>
       </div>
       <div className="bg-[#181a1b] border-[1px] border-solid border-[#27374C]">
-      <Table className="table-cell text-#ffc px-[26px] pt-[26px] w-full">
+      <Table className=" text-#ffc px-[26px] pt-[26px] w-full">
         <TableHeader>
           <TableRow className="text-center text-[16px] text-[#CFCBC4]  bg-[#1b1d1f] hover:bg-[#1b1d1f] border-none">
             {titleTableTheater.map((item, idx) => (

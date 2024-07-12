@@ -23,6 +23,7 @@ import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
 import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
 import TheaterManagement from "./components/admin/TheaterManagement/TheaterManagement";
 import TheaterPage from "./pages/client/theater-pages/TheaterPage";
+import MovieManagementPage from "./pages/admin/MovieManagementPage/MovieManagementPage";
 
 
 function App() {
@@ -84,9 +85,11 @@ function App() {
 
   const RoutesAdmin = [
     {path: '/admin/TheaterManagement', element: <TheaterManagement />},
+    {path: '/admin/movieManagement', element: <MovieManagementPage />},
     {path: '/admin/movieGenre', element: <MovieGenrePage />},
     {path: '/admin/director', element: <DirectorPage />},
     {path: '/admin/actor', element: <ActorPage />}
+
   ]
 
   return (
