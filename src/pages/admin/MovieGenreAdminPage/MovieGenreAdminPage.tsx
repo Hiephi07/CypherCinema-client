@@ -5,7 +5,7 @@ interface Props {
     
 }
 
-const MovieGenrePage = (props: Props) => {
+const MovieGenreAdminPage = (props: Props) => {
     return (
         <>
             <MovieGenre />
@@ -13,4 +13,4 @@ const MovieGenrePage = (props: Props) => {
     )
 }
 
-export default MovieGenrePage
+export default MovieGenreAdminPage

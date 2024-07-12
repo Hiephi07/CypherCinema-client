@@ -6,9 +6,12 @@ import LinkResetSent from "./components/client/LinkResetSent/LinkResetSent";
 import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
 import LayoutAdmin from "./layouts/LayoutAdmin";
 import LayoutClient from "./layouts/LayoutClient";
-import ActorPage from "./pages/admin/ActorPage/ActorPage";
-import DirectorPage from "./pages/admin/DirectorPage/DirectorPage";
-import MovieGenrePage from "./pages/admin/MovieGenrePage/MovieGenrePage";
+import ActorAdminPage from "./pages/admin/ActorAdminPage/ActorAdminPage";
+import DirectorAdminPage from "./pages/admin/DirectorAdminPage/DirectorAdminPage";
+import EventAdminPage from "./pages/admin/EventAdminPage/EventAdminPage";
+import MovieAdminPage from "./pages/admin/MovieAdminPage/MovieAdminPage";
+import MovieGenreAdminPage from "./pages/admin/MovieGenreAdminPage/MovieGenreAdminPage";
+import TheaterAdminPage from "./pages/admin/TheaterAdminPage/TheaterAdminPage";
 import NotFoundPage from "./pages/client/404-notfound/NotFound";
 import AboutUsPage from "./pages/client/about-us/AboutUsPage";
 import AuthPage from "./pages/client/auth/AuthPage";
@@ -16,14 +19,13 @@ import StepOne from "./pages/client/BookTicket/StepOne/StepOne";
 import StepThree from "./pages/client/BookTicket/StepThree/StepThree";
 import StepTwo from "./pages/client/BookTicket/StepTwo/StepTwo";
 import ChangePwPage from "./pages/client/change-password/ChangePwPage";
-import EventPage from "./pages/client/event-pages/EventPage";
+import EventPage from './pages/client/event-pages/EventPage';
 import ForgotPasswordPage from "./pages/client/forgot-password/ForgotPasswordPage";
 import HomePage from "./pages/client/home-pages/HomePage";
 import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
-import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
-import TheaterManagement from "./components/admin/TheaterManagement/TheaterManagement";
 import TheaterPage from "./pages/client/theater-pages/TheaterPage";
-import MovieManagementPage from "./pages/admin/MovieManagementPage/MovieManagementPage";
+import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
+import ShowTimesAdminPage from "./pages/admin/ShowTimesAdminPage/ShowTimesAdminPage";
 
 
 function App() {
@@ -84,12 +86,13 @@ function App() {
   ];
 
   const RoutesAdmin = [
-    {path: '/admin/TheaterManagement', element: <TheaterManagement />},
-    {path: '/admin/movieManagement', element: <MovieManagementPage />},
-    {path: '/admin/movieGenre', element: <MovieGenrePage />},
-    {path: '/admin/director', element: <DirectorPage />},
-    {path: '/admin/actor', element: <ActorPage />}
-
+    {path: '/admin/TheaterManagement', element: <TheaterAdminPage />},
+    {path: '/admin/movieManagement', element: <MovieAdminPage />},
+    {path: '/admin/movieGenre', element: <MovieGenreAdminPage />},
+    {path: '/admin/director', element: <DirectorAdminPage />},
+    {path: '/admin/actor', element: <ActorAdminPage />},
+    {path: '/admin/event', element: <EventAdminPage />},
+    {path: '/admin/showTimes', element: <ShowTimesAdminPage />},
   ]
 
   return (

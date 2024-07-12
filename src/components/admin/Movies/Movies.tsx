@@ -195,7 +195,7 @@ const Movies_data: IMovieAdmin[] = [
   },
 ];
 
-const MovieManagement = (props: Props) => {
+const Movies = (props: Props) => {
   return (
     <>
       <div className="p-[28px] bg-[#1e2021]">
@@ -300,4 +300,4 @@ const MovieManagement = (props: Props) => {
   );
 };
 
-export default MovieManagement;
+export default Movies;

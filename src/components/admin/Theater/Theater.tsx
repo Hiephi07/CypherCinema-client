@@ -23,7 +23,7 @@ interface Props {
 
 }
 
-const Theater: ITheater[] = [
+const Theater_data: ITheater[] = [
   {
     id: 1,
     name: "bhd cầu giấy",
@@ -97,7 +97,7 @@ const TheaterManagement = (props: Props) => {
           </TableRow>
         </TableHeader>
         <TableBody className="">
-          {Theater.map((item, idx) => (
+          {Theater_data.map((item, idx) => (
             <TableRow
               key={idx}
               className="text-[14px] text-[#e5e5e5] border-b-[1px] border-solid border-[#35393b]"

@@ -5,7 +5,7 @@ interface Props {
     
 }
 
-const DirectorPage = (props: Props) => {
+const DirectorAdminPage = (props: Props) => {
     return (
         <>
            <Director /> 
@@ -13,4 +13,5 @@ const DirectorPage = (props: Props) => {
     )
 }
 
-export default DirectorPage
+export default DirectorAdminPage
+

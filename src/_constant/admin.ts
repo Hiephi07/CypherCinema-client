@@ -3,11 +3,11 @@ export const path_Sidebar = [
     {path: '/admin/theaterManagement', name: 'Quản lý rạp chiếu'},
     {path: '/admin', name: 'Quản lý phòng chiếu'},
     {path: '/admin/movieManagement', name: 'Quản lý phim'},
-    {path: '/admin', name: 'Suất chiếu'},
+    {path: '/admin/showTimes', name: 'Suất chiếu'},
     {path: '/admin', name: 'Quản lý đơn hàng'},
     {path: '/admin', name: 'Giá vé'},
     {path: '/admin', name: 'Quản lý Voucher'},
-    {path: '/admin', name: 'Sự kiện'},
+    {path: '/admin/event', name: 'Sự kiện'},
     {path: '/admin', name: 'Quản lý người dùng'},
     {path: '/admin/movieGenre', name: 'Thể loại phim'},
     {path: '/admin/director', name: 'Đạo diễn'},
@@ -52,3 +52,15 @@ export const titleTableActor = [
     {name: "Diễn viên"},
     {name: "Hành động"}
 ]
+
+
+export const titleTableShowTimes = [
+    {name: "Stt"},
+    {name: "Rạp chiếu"},
+    {name: "Ngày chiếu"},
+    {name: "Giờ chiếu - giờ hết"},
+    {name: "Tên phim"},
+    {name: "Phòng chiếu"},
+    {name:"Hành động"}
+]
+

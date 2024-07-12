@@ -1,11 +1,10 @@
 import Actor from '@/components/admin/Actor/Actor'
-import React from 'react'
 
 interface Props {
     
 }
 
-const ActorPage = (props: Props) => {
+const ActorAdminPage = (props: Props) => {
     return (
         <>
             <Actor />
@@ -13,4 +12,4 @@ const ActorPage = (props: Props) => {
     )
 }
 
-export default ActorPage
+export default ActorAdminPage
