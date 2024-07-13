@@ -19,10 +19,11 @@ import {
 import { IoSearch } from "react-icons/io5";
 import FormShowTime from "./FormShowTime";
 import RemoveShowTime from "./RemoveShowTime";
+import { IShowTime } from "@/_interfaces/IShowTime";
 
 interface Props {}
 
-const showTimes_data = [
+const showTimes_data: IShowTime[] = [
     {
         id: 1,
         cinema: "Cinema 1",

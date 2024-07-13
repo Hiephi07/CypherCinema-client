@@ -10,10 +10,6 @@ interface Props {
     isAdd : boolean
 }
 
-interface Props {
-    
-}
-
 const FormShowTime = ({isAdd}: Props) => {
     const [isClearable, setIsClearable] = useState(true);
     const [isSearchable, setIsSearchable] = useState(true);

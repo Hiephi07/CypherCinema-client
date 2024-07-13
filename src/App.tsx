@@ -26,6 +26,7 @@ import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
 import TheaterPage from "./pages/client/theater-pages/TheaterPage";
 import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
 import ShowTimesAdminPage from "./pages/admin/ShowTimesAdminPage/ShowTimesAdminPage";
+import DetailEventPage from "./pages/admin/EventAdminPage/DetailEventPage/DetailEventPage";
 
 
 function App() {
@@ -92,6 +93,7 @@ function App() {
     {path: '/admin/director', element: <DirectorAdminPage />},
     {path: '/admin/actor', element: <ActorAdminPage />},
     {path: '/admin/event', element: <EventAdminPage />},
+    {path: '/admin/event/:id', element: <DetailEventPage />},
     {path: '/admin/showTimes', element: <ShowTimesAdminPage />},
   ]
 

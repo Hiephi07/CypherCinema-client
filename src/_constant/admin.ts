@@ -64,3 +64,26 @@ export const titleTableShowTimes = [
     {name:"Hành động"}
 ]
 
+
+export const titleTableEvent = [
+    {name: "Stt"},
+    {name: "Tiêu đề"},
+    {name: "Bắt đầu - Kết thúc"},
+    {name: "Lượt xem"},
+    {name: "Trạng thái"},
+    {name: "Ngày tạo"},
+    {name:"Hành động"}
+]
+
+export const titleDetailEvent = [
+    {name: "Stt"},
+    {name: "Tiêu đề"},
+    {name: "Ảnh đại diện"},
+    {name: "Nội dung"},
+    {name: "Bắt đầu"},
+    {name: "Kết thúc"},
+    {name: "Lượt xem"},
+    {name: "Trạng thái"},
+    {name: "Ngày tạo"},
+
+]

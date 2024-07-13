@@ -114,8 +114,8 @@ const FormMovie = ({isAdd}: Props) => {
                         <input type="text" className="w-full inline-block text-[#9ba2ae] text-[16px] p-2 border-[1px] border-solid border-[#302c27] rounded-[6px] bg-[#181a1b] hover:border-[#ced4da] focus:outline-0 focus:border-[#172693]" placeholder="Nhập tên phim"/>
                     </div>
                     <div className="mb-6">
-                    <label htmlFor="" className="w-[100%] block text-[16px] text-[#CFCBC4] mb-3">Giới thiệu ngắn</label>
-                            <textarea name="" id=""className="w-[100%] h-[200px] block text-[#9ba2ae] text-[16px] p-2 border-[1px] border-solid border-[#302c27] rounded-[6px] bg-[#181a1b] hover:border-[#ced4da] focus:outline-0 focus:border-[#172693]" placeholder="Nhập đoạn giới thiệu ngắn"></textarea>
+                        <label htmlFor="" className="w-[100%] block text-[16px] text-[#CFCBC4] mb-3">Giới thiệu ngắn</label>
+                        <textarea name="" id=""className="w-[100%] h-[200px] block text-[#9ba2ae] text-[16px] p-2 border-[1px] border-solid border-[#302c27] rounded-[6px] bg-[#181a1b] hover:border-[#ced4da] focus:outline-0 focus:border-[#172693]" placeholder="Nhập đoạn giới thiệu ngắn"></textarea>
                     </div>
                     <div className="mb-6 grid grid-cols-2 gap-x-10">
                         <div className="">

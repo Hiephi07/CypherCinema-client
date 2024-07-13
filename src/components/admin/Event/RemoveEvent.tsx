@@ -8,14 +8,13 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+  } from "@/components/ui/alert-dialog"
 import { FaRegTrashCan } from "react-icons/fa6";
-
 interface Props {
     
 }
 
-const RemoveDirector = (props: Props) => {
+const RemoveEvent = (props: Props) => {
     return (
         <>
             <AlertDialog>
@@ -37,4 +36,4 @@ const RemoveDirector = (props: Props) => {
     )
 }
 
-export default RemoveDirector
+export default RemoveEvent
