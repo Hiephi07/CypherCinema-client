@@ -6,27 +6,26 @@ import LinkResetSent from "./components/client/LinkResetSent/LinkResetSent";
 import ScrollToTop from "./components/client/ScrollToTop/ScrollToTop";
 import LayoutAdmin from "./layouts/LayoutAdmin";
 import LayoutClient from "./layouts/LayoutClient";
-import NotFoundPage from "./pages/client/404-notfound/NotFound";
-import AboutUsPage from "./pages/client/about-us/AboutUsPage";
-import AuthPage from "./pages/client/auth/AuthPage";
+import NotFoundPage from "./pages/client/404NotFound/NotFound";
+import AboutUsPage from "./pages/client/AboutUs/AboutUsPage";
+import AuthPage from "./pages/client/Auth/AuthPage";
 import StepOne from "./pages/client/BookTicket/StepOne/StepOne";
 import StepThree from "./pages/client/BookTicket/StepThree/StepThree";
 import StepTwo from "./pages/client/BookTicket/StepTwo/StepTwo";
-import ChangePwPage from "./pages/client/change-password/ChangePwPage";
-import EventPage from "./pages/client/event-pages/EventPage";
-import ForgotPasswordPage from "./pages/client/forgot-password/ForgotPasswordPage";
-import HomePage from "./pages/client/home-pages/HomePage";
-import ShowTimePage from "./pages/client/showtime-pages/ShowTimePage";
+import ChangePwPage from "./pages/client/ChangePassword/ChangePwPage";
+import EventPage from "./pages/client/EventPages/EventPage";
+import ForgotPasswordPage from "./pages/client/ForgotPassword/ForgotPasswordPage";
+import HomePage from "./pages/client/HomePage/HomePage";
+import ShowTimePage from "./pages/client/ShowtimePage/ShowTimePage";
 import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
 
 import UserList from "./components/admin/user/user";
 import TheaterManagement from "./components/admin/TheaterManagement/TheaterManagement";
-import TheaterPage from "./pages/client/Theater-pages/TheaterPage";
+import TheaterPage from "./pages/client/TheaterPage/TheaterPage";
 
 function App() {
   // Xử lý cuộc trang
-  const [isVisible, setIsVisible] =
-    useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   // Xử lý hiển thị nút khi cuộn xuống 200px
   useEffect(() => {
@@ -41,10 +40,7 @@ function App() {
     window.addEventListener("scroll", toggleVisibility);
 
     return () => {
-      window.removeEventListener(
-        "scroll",
-        toggleVisibility
-      );
+      window.removeEventListener("scroll", toggleVisibility);
     };
   }, []);
 
@@ -99,11 +95,7 @@ function App() {
               <Route path="/">
                 <Route index element={<HomePage />} />
                 {routesClient.map((route, idx) => (
-                  <Route
-                    key={idx}
-                    path={route.path}
-                    element={route.element}
-                  />
+                  <Route key={idx} path={route.path} element={route.element} />
                 ))}
               </Route>
             </Route>
@@ -111,17 +103,11 @@ function App() {
             {/* Admin */}
             <Route path="/admin" element={<LayoutAdmin />}>
               {RoutesAdmin.map((router, idx) => (
-                <Route
-                  key={idx}
-                  path={router.path}
-                  element={router.element}
-                />
+                <Route key={idx} path={router.path} element={router.element} />
               ))}
             </Route>
 
-            <Route > 
-
-            </Route>
+            <Route></Route>
           </Routes>
         </main>
         {/* Xử lí cuộn trang */}
