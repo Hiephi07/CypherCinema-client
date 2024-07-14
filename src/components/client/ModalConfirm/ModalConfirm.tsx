@@ -7,10 +7,7 @@ interface ModalConfirmProps {
   toggleModal: () => void;
 }
 
-const ModalConfirm: React.FC<ModalConfirmProps> = ({
-  isOpen,
-  toggleModal,
-}) => {
+const ModalConfirm: React.FC<ModalConfirmProps> = ({ isOpen, toggleModal }) => {
   const [isShaking, setIsShaking] = useState(false);
 
   const handleShake = () => {
@@ -40,8 +37,7 @@ const ModalConfirm: React.FC<ModalConfirmProps> = ({
         className={styles["confirm-bg"]}
         style={{
           transitionDuration: "0.4s",
-          transitionTimingFunction:
-            "cubic-bezier(0.36, 0.55, 0.19, 1)",
+          transitionTimingFunction: "cubic-bezier(0.36, 0.55, 0.19, 1)",
         }}
       />
       <div className={styles.scrollpane}>
@@ -87,11 +83,7 @@ const ModalConfirm: React.FC<ModalConfirmProps> = ({
                       </div>
                       <div className="jconfirm-title-c">
                         <span className="jconfirm-icon-c" />
-                        <span
-                          className={
-                            styles["confirm-title"]
-                          }
-                        >
+                        <span className={styles["confirm-title"]}>
                           Xác nhận mua vé
                         </span>
                       </div>
@@ -105,15 +97,12 @@ const ModalConfirm: React.FC<ModalConfirmProps> = ({
                         }}
                       >
                         <div
-                          className={
-                            styles["confirm-content"]
-                          }
+                          className={styles["confirm-content"]}
                           id="jconfirm-box18803"
                         >
                           <div>
-                            Phim được phổ biến đến người xem
-                            dưới 13 tuổi với điều kiện xem
-                            cùng cha, mẹ hoặc người giám hộ
+                            Phim được phổ biến đến người xem dưới 13 tuổi với
+                            điều kiện xem cùng cha, mẹ hoặc người giám hộ
                           </div>
                         </div>
                       </div>
@@ -134,7 +123,7 @@ const ModalConfirm: React.FC<ModalConfirmProps> = ({
                           type="button"
                           className="btn-primary text-[var(--theme-text)] rounded-[4px] px-[10px] py-[8px] min-w-[125px] mb-[1em]"
                         >
-                          Tiếp tục
+                          <a href="/book-ticket1">Tiếp tục</a>
                         </button>
                       </div>
                       <div className="jconfirm-clear" />
