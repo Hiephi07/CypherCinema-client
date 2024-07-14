@@ -1,8 +1,9 @@
 export interface ITheater {
     id?: string | number
-    name_theater: string
+    name: string
     city: string
     address: string
     phone_number: string
+    email: string
     image: string
 }

@@ -1,14 +1,13 @@
-import React from "react";
 import { Theaters } from "@/_constant";
-import styles from "./Theater.module.scss";
 import {
   Sheet,
   SheetClose,
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Link } from "react-router-dom";
 import { IoIosClose } from "react-icons/io";
+import { Link } from "react-router-dom";
+import styles from "./Theater.module.scss";
 
 const Theater = () => {
   return (

@@ -17,11 +17,25 @@ import EventPage from "./pages/client/EventPages/EventPage";
 import ForgotPasswordPage from "./pages/client/ForgotPassword/ForgotPasswordPage";
 import HomePage from "./pages/client/HomePage/HomePage";
 import ShowTimePage from "./pages/client/ShowtimePage/ShowTimePage";
-import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
 
-import UserList from "./components/admin/user/user";
-import TheaterManagement from "./components/admin/TheaterManagement/TheaterManagement";
+import UserInfomation from "./pages/client/UserInfomation/UserInfomation";
+import ShowTimesAdminPage from "./pages/admin/ShowTimesAdminPage/ShowTimesAdminPage";
+import DetailEventPage from "./pages/admin/EventAdminPage/DetailEventPage/DetailEventPage";
+
 import TheaterPage from "./pages/client/TheaterPage/TheaterPage";
+import TheaterAdminPage from "./pages/admin/TheaterAdminPage/TheaterAdminPage";
+import MovieAdminPage from "./pages/admin/MovieAdminPage/MovieAdminPage";
+import MovieGenreAdminPage from "./pages/admin/MovieGenreAdminPage/MovieGenreAdminPage";
+import DirectorAdminPage from "./pages/admin/DirectorAdminPage/DirectorAdminPage";
+import ActorAdminPage from "./pages/admin/ActorAdminPage/ActorAdminPage";
+import EventAdminPage from "./pages/admin/EventAdminPage/EventAdminPage";
+import OrderPage from "./pages/admin/OrderPage/OrderPage";
+import UserPage from "./pages/admin/UserPage/UserPage";
+import VoucherPage from "./pages/admin/VoucherPage/VoucherPage";
+import TicketPage from "./pages/admin/TicketPage/TicketPage";
+import OrderDetailsPage from "./pages/admin/OrderDetailPage/OrderDetailsPage";
+import UserDetailsPage from "./pages/admin/UserDetailsPage/UserDetailsPage";
+import HistoryPage from "./pages/client/History/HistoryPage";
 
 function App() {
   // Xử lý cuộc trang
@@ -61,6 +75,7 @@ function App() {
       path: "/auth/forgot-password",
       element: <ForgotPasswordPage />,
     },
+    { path: "/auth/history", element: <HistoryPage /> },
     {
       path: "/auth/change-password/:id",
       element: <ChangePwPage />,
@@ -77,11 +92,20 @@ function App() {
   ];
 
   const RoutesAdmin = [
-    { path: "/admin/user", element: <UserList /> },
-    {
-      path: "/admin/TheaterManagement",
-      element: <TheaterManagement />,
-    },
+    { path: "/admin/TheaterManagement", element: <TheaterAdminPage /> },
+    { path: "/admin/movieManagement", element: <MovieAdminPage /> },
+    { path: "/admin/movieGenre", element: <MovieGenreAdminPage /> },
+    { path: "/admin/director", element: <DirectorAdminPage /> },
+    { path: "/admin/actor", element: <ActorAdminPage /> },
+    { path: "/admin/event", element: <EventAdminPage /> },
+    { path: "/admin/event/:id", element: <DetailEventPage /> },
+    { path: "/admin/showTimes", element: <ShowTimesAdminPage /> },
+    { path: "/admin/orders", element: <OrderPage /> },
+    { path: "/admin/orders/details", element: <OrderDetailsPage /> },
+    { path: "/admin/tickets", element: <TicketPage /> },
+    { path: "/admin/users", element: <UserPage /> },
+    { path: "/admin/users/:id", element: <UserDetailsPage /> },
+    { path: "/admin/vouchers", element: <VoucherPage /> },
   ];
 
   return (

@@ -1,4 +1,3 @@
-import React from 'react'
 import {
     AlertDialog,
     AlertDialogAction,
@@ -11,12 +10,11 @@ import {
     AlertDialogTrigger,
   } from "@/components/ui/alert-dialog"
 import { FaRegTrashCan } from "react-icons/fa6";
-
 interface Props {
     
 }
 
-const RemoveTheater = (props: Props) => {
+const RemoveEvent = (props: Props) => {
     return (
         <>
             <AlertDialog>
@@ -38,4 +36,4 @@ const RemoveTheater = (props: Props) => {
     )
 }
 
-export default RemoveTheater
+export default RemoveEvent

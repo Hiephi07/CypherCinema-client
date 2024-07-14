@@ -18,11 +18,12 @@ import {
 } from "@/components/ui/table";
 import FormTheaterManagement from "./FormTheater";
 import RemoveTheater from "./RemoveTheater";
+import { ITheater } from "@/_interfaces/ITheater";
 interface Props {
 
 }
 
-const Theater = [
+const Theater_data: ITheater[] = [
   {
     id: 1,
     name: "bhd cầu giấy",
@@ -85,7 +86,7 @@ const TheaterManagement = (props: Props) => {
       <FormTheaterManagement isAdd={true}/>
       </div>
       <div className="bg-[#181a1b] border-[1px] border-solid border-[#27374C]">
-      <Table className="table-cell text-#ffc px-[26px] pt-[26px] w-full">
+      <Table className=" text-#ffc px-[26px] pt-[26px] w-full">
         <TableHeader>
           <TableRow className="text-center text-[16px] text-[#CFCBC4]  bg-[#1b1d1f] hover:bg-[#1b1d1f] border-none">
             {titleTableTheater.map((item, idx) => (
@@ -96,11 +97,12 @@ const TheaterManagement = (props: Props) => {
           </TableRow>
         </TableHeader>
         <TableBody className="">
-          {Theater.map((item, idx) => (
+          {Theater_data.map((item, idx) => (
             <TableRow
               key={idx}
               className="text-[14px] text-[#e5e5e5] border-b-[1px] border-solid border-[#35393b]"
             >
+              <TableCell>{idx + 1}</TableCell>
               <TableCell>{item.name}</TableCell>
               <TableCell>{item.city}</TableCell>
               <TableCell>{item.address}</TableCell>
